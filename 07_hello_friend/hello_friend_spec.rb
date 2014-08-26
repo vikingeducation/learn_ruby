@@ -88,7 +88,7 @@
 #
 #
 
-require "friend"
+require "hello_friend.rb"
 
 describe Friend do
   it "says hello" do
