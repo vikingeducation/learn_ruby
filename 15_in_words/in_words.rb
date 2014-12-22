@@ -4,11 +4,26 @@ class Fixnum
   @@by_tens = [nil,nil,"twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"]
 
   def in_words
-    words = []
-    if self < 100
-      words += two_digit_handler(self)
+    if self == 0
+      return "zero"
     end
+    words = []
+    words += three_digit_handler(self)
     words.join(" ")
+  end
+
+  def three_digit_handler(three_digit_number)
+    words = []
+    hundreds_digit = three_digit_number / 100
+    two_digit_remainder = three_digit_number - hundreds_digit * 100
+    if hundreds_digit > 0
+      words << @@zero_to_nineteen[hundreds_digit]
+      words << "hundred"
+    end
+    if two_digit_remainder > 0
+      words += two_digit_handler(two_digit_remainder)
+    end
+    words
   end
 
   def two_digit_handler(two_digit_number)
