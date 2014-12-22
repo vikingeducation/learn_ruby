@@ -12,20 +12,17 @@ class Fixnum
   end
 
   def two_digit_handler(two_digit_number)
-    words = []
     if two_digit_number < 20
-      words << @@zero_to_nineteen[two_digit_number]
+      [@@zero_to_nineteen[two_digit_number]]
     else
-      words << twenty_to_ninety_nine(two_digit_number)
+      twenty_to_ninety_nine(two_digit_number)
     end
-    words
   end
 
   def twenty_to_ninety_nine(two_digit_number)
     tens_digit = two_digit_number / 10
     ones_digit = two_digit_number - tens_digit * 10
-    words = []
-    words << @@by_tens[tens_digit]
+    words = [@@by_tens[tens_digit]]
     if ones_digit > 0
       words << @@zero_to_nineteen[ones_digit]
     end
