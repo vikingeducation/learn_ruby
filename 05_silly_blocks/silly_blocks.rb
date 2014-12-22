@@ -7,12 +7,10 @@ def reverser
   reverse_words.join(" ")
 end
 
-def adder(*add_this_much)
-  how_much_to_add = add_this_much[0] || 1
-  yield + how_much_to_add
+def adder(add_this_much=1)
+  yield + add_this_much
 end
 
-def repeater(*number_of_repeats)
-  how_many_times = number_of_repeats[0] || 1
-  how_many_times.times { yield }
+def repeater(number_of_repeats=1)
+  number_of_repeats.times { yield }
 end
