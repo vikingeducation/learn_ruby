@@ -4,13 +4,11 @@ class Fixnum
 
   @@by_tens = [nil,nil,"twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"]
 
-  @@segments = [
-    { name: "trillion", value: 1_000_000_000_000 },
-    { name: "billion", value: 1_000_000_000 },
-    { name: "million", value: 1_000_000 },
-    { name: "thousand", value: 1_000 },
-    { name: nil, value: 1}
-  ]
+  @@segments = [ { name: "trillion", value: 1_000_000_000_000 },
+                 { name: "billion",  value: 1_000_000_000 },
+                 { name: "million",  value: 1_000_000 },
+                 { name: "thousand", value: 1_000 },
+                 { name: nil,        value: 1}                   ]
 
   def in_words 
     if self == 0
@@ -64,5 +62,4 @@ class Fixnum
     ones_digit = two_digit_number - tens_digit * 10
     [@@by_tens[tens_digit],@@zero_to_nineteen[ones_digit]].compact
   end
-
 end
