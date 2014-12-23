@@ -4,12 +4,21 @@ class Fixnum
   @@by_tens = [nil,nil,"twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"]
 
   def in_words
-    if self == 0
+    n = self
+    if n == 0
       return "zero"
     end
     words = []
-    words += handle_three_digits(self)
-    words.join(" ")
+    
+    thousands = n / 1000
+    words += handle_three_digits(thousands)
+    if thousands > 0 
+      words << "thousand"
+    end
+    n = n - thousands * 1000
+
+    words += handle_three_digits(n)
+    words.compact.join(" ")
   end
 
   def handle_three_digits(three_digit_number)
