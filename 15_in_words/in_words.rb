@@ -13,6 +13,9 @@ class Fixnum
       return "zero"
     end
 
+    words += segment_handler(number, "billion", 1_000_000_000)
+    number = reducer(number, 1_000_000_000)
+
     words += segment_handler(number, "million", 1_000_000)
     number = reducer(number, 1_000_000)
 
