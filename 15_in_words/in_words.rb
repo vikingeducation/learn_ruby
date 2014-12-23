@@ -1,5 +1,5 @@
 class Fixnum
-  @@zero_to_nineteen = ["zero","one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
+  @@zero_to_nineteen = [nil,"one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
 
   @@by_tens = [nil,nil,"twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"]
 
@@ -8,25 +8,22 @@ class Fixnum
       return "zero"
     end
     words = []
-    words += three_digit_handler(self)
+    words += handle_three_digits(self)
     words.join(" ")
   end
 
-  def three_digit_handler(three_digit_number)
-    words = []
+  def handle_three_digits(three_digit_number)
     hundreds_digit = three_digit_number / 100
     two_digit_remainder = three_digit_number - hundreds_digit * 100
+    words = [@@zero_to_nineteen[hundreds_digit]]
     if hundreds_digit > 0
-      words << @@zero_to_nineteen[hundreds_digit]
       words << "hundred"
     end
-    if two_digit_remainder > 0
-      words += two_digit_handler(two_digit_remainder)
-    end
-    words
+    words += handle_two_digits(two_digit_remainder)
+    words.compact
   end
 
-  def two_digit_handler(two_digit_number)
+  def handle_two_digits(two_digit_number)
     if two_digit_number < 20
       [@@zero_to_nineteen[two_digit_number]]
     else
@@ -37,11 +34,7 @@ class Fixnum
   def twenty_to_ninety_nine(two_digit_number)
     tens_digit = two_digit_number / 10
     ones_digit = two_digit_number - tens_digit * 10
-    words = [@@by_tens[tens_digit]]
-    if ones_digit > 0
-      words << @@zero_to_nineteen[ones_digit]
-    end
-    words
+    [@@by_tens[tens_digit],@@zero_to_nineteen[ones_digit]].compact
   end
 
 
