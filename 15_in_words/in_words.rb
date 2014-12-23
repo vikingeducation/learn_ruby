@@ -4,28 +4,25 @@ class Fixnum
 
   @@by_tens = [nil,nil,"twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"]
 
-  def in_words
-    
-    number = self
-    words = []
+  @@segments = [
+    { name: "trillion", value: 1_000_000_000_000 },
+    { name: "billion", value: 1_000_000_000 },
+    { name: "million", value: 1_000_000 },
+    { name: "thousand", value: 1_000 },
+    { name: nil, value: 1}
+  ]
 
-    if number == 0
+  def in_words 
+    if self == 0
       return "zero"
     end
 
-    words += segment_handler(number, "trillion", 1_000_000_000_000)
-    number = reducer(number, 1_000_000_000_000)
-
-    words += segment_handler(number, "billion", 1_000_000_000)
-    number = reducer(number, 1_000_000_000)
-
-    words += segment_handler(number, "million", 1_000_000)
-    number = reducer(number, 1_000_000)
-
-    words += segment_handler(number, "thousand", 1_000)
-    number = reducer(number, 1_000)
-
-    words += handle_three_digits(number)
+    number = self
+    words = []
+    @@segments.each do |segment|
+      words += segment_handler(number, segment[:name], segment[:value])
+      number = reducer(number, segment[:value])
+    end
     words.compact.join(" ")
   end
 
