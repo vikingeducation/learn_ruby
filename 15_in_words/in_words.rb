@@ -9,8 +9,15 @@ class Fixnum
       return "zero"
     end
     words = []
-    
-    thousands = n / 1000
+
+    millions = n / 1_000_000
+    words += handle_three_digits(millions)
+    if millions > 0
+      words << "million"
+    end
+    n = n - millions * 1_000_000
+
+    thousands = n / 1_000
     words += handle_three_digits(thousands)
     if thousands > 0 
       words << "thousand"
