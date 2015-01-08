@@ -1,5 +1,5 @@
 def reverser
-  yield.split(' ').map(&:reverse).join(' ')
+  yield.split(' ').map{|p| p.reverse}.join(' ')
 end
 
 def adder (num = 1)
