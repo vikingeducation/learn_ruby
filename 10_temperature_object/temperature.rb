@@ -1,18 +1,41 @@
 class Temperature
-  def initialize(params)
-    @fahrenheit = params(:f)
-    @celsius = params(:c)
+  def initialize (options = {})
+    if options.include?(:f)
+      @fahrenheit = options[:f]
+      @celsius = (@fahrenheit - 32)*(5.0/9.0)
+    elsif options.include?(:c)
+      @celsius = options[:c]
+      @fahrenheit = @celsius*(9.0/5.0)+32
+    end
   end
 
   def in_fahrenheit
-    @fahrenheit = (@celsius * (9/5)) + 32
-    @fahreneit
-
+    @fahrenheit
   end
 
   def in_celsius
-    @celsius = (@fahrenheit-32)*(5/9)
     @celsius
+  end
+
+  def self.from_celsius(atemp)
+    self.new(:c => atemp)
+  end
+
+  def self.from_fahrenheit(atemp)
+    self.new(:f => atemp)
+  end
+
+end
+
+class Celsius < Temperature
+  def initialize(c)
+    super(:c => c)
+  end
+end
+
+class Fahrenheit < Temperature
+  def initialize(f)
+    super(:f => f)
   end
 end
 
