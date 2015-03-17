@@ -22,6 +22,7 @@ def adder(num=1)
 	start + increment
 end
 
+
 def repeater(cycles=1)
 	cycles.times {yield}
 end
