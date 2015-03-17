@@ -19,4 +19,12 @@ class Temperature
 			(@f - 32) * (5.0/9.0)
 		end
 	end
+
+	def from_celsius(temp)
+		Temperature.new(:c => temp)
+	end
+
+	def from_fahrenheit(temp)
+		Temperature.new(:f => temp)
+	end
 end
