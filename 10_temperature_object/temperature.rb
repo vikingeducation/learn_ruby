@@ -20,11 +20,23 @@ class Temperature
 		end
 	end
 
-	def from_celsius(temp)
+	def self.from_celsius(temp)
 		Temperature.new(:c => temp)
 	end
 
-	def from_fahrenheit(temp)
+	def self.from_fahrenheit(temp)
 		Temperature.new(:f => temp)
+	end
+end
+
+class Celsius < Temperature
+	def initialize(temp)
+		@c = temp
+	end
+end
+
+class Fahrenheit < Temperature
+	def initialize(temp)
+		@f = temp
 	end
 end
