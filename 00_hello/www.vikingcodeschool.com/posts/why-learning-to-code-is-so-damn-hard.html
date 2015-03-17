@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from www.vikingcodeschool.com/posts/why-learning-to-code-is-so-damn-hard by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 15 Mar 2015 04:15:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <title itemprop="name">
+    Why Learning to Code is So Damn Hard
+  </title>
+
+  <!-- favicon -->
+  <link href="../assets/favicon-d5b8f8cd71b03d62073db56646af4fa8.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+  <!-- CSS -->
+  <link data-turbolinks-track="true" href="../assets/application-77eb9024ae8bb8b1eee08f052f43a619.css" media="all" rel="stylesheet" />
+  
+  <!-- scripts -->
+  <script data-turbolinks-track="true" src="../assets/application-7ed894c9eff5e2b9b37456de6bb3fdef.js"></script>
+
+  <!-- Analytics -->
+    
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-50753703-1', 'vikingcodeschool.com');
+    ga('send', 'pageview');
+
+  </script>
+
+
+
+  <!-- FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Bing Webmaster Verification  -->
+  <meta name="msvalidate.01" content="34B181612CA472DE47B9342855B65B01" />
+  
+  <!-- META -->
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="bxeTnuuiioH+K7FQTT4Fz6SCrbeFOZQds98AkCQfnpI=" name="csrf-token" />
+
+  <!-- Google Sites -->
+  <meta name="google-site-verification" content="NeYN2FsBCW5FN1dWdXdq_xAw2FTNLE1IoUPqpYweoK4" />
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"17c2e9d24a","applicationID":"3046207","transactionName":"JgkKERMNWQhQERwTWRYSF0oSCloT","queueTime":9,"applicationTime":74,"agentToken":null,"agent":"js-agent.newrelic.com/nr-593.min.js"}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var o=e[t]={exports:{}};n[t][0].call(o.exports,function(e){var o=n[t][1][e];return r(o?o:e)},o,o.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({QJf3ax:[function(n,e){function t(n){function e(e,t,a){n&&n(e,t,a),a||(a={});for(var u=c(e),f=u.length,s=i(a,o,r),p=0;f>p;p++)u[p].apply(s,t);return s}function a(n,e){f[n]=c(n).concat(e)}function c(n){return f[n]||[]}function u(){return t(e)}var f={};return{on:a,emit:e,create:u,listeners:c,_events:f}}function r(){return{}}var o="nr@context",i=n("gos");e.exports=t()},{gos:"7eSDFh"}],ee:[function(n,e){e.exports=n("QJf3ax")},{}],3:[function(n,e){function t(n){return function(){r(n,[(new Date).getTime()].concat(i(arguments)))}}var r=n("handle"),o=n(1),i=n(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(n,e){window.NREUM[e]=t("api-"+e)}),e.exports=window.NREUM},{1:12,2:13,handle:"D5DuLP"}],gos:[function(n,e){e.exports=n("7eSDFh")},{}],"7eSDFh":[function(n,e){function t(n,e,t){if(r.call(n,e))return n[e];var o=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return n[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=t},{}],D5DuLP:[function(n,e){function t(n,e,t){return r.listeners(n).length?r.emit(n,e,t):(o[n]||(o[n]=[]),void o[n].push(e))}var r=n("ee").create(),o={};e.exports=t,t.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(n,e){e.exports=n("D5DuLP")},{}],XL7HBI:[function(n,e){function t(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:i(n,o,function(){return r++})}var r=1,o="nr@id",i=n("gos");e.exports=t},{gos:"7eSDFh"}],id:[function(n,e){e.exports=n("XL7HBI")},{}],loader:[function(n,e){e.exports=n("G9z0Bl")},{}],G9z0Bl:[function(n,e){function t(){var n=h.info=NREUM.info;if(n&&n.licenseKey&&n.applicationID&&f&&f.body){c(l,function(e,t){e in n||(n[e]=t)}),h.proto="https"===d.split(":")[0]||n.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=f.createElement("script");e.src=h.proto+n.agent,f.body.appendChild(e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=n("handle"),c=n(1),u=(n(2),window),f=u.document,s="addEventListener",p="attachEvent",d=(""+location).split("?")[0],l={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-593.min.js"},h=e.exports={offset:i(),origin:d,features:{}};f[s]?(f[s]("DOMContentLoaded",o,!1),u[s]("load",t,!1)):(f[p]("onreadystatechange",r),u[p]("onload",t)),a("mark",["firstbyte",i()])},{1:12,2:3,handle:"D5DuLP"}],12:[function(n,e){function t(n,e){var t=[],o="",i=0;for(o in n)r.call(n,o)&&(t[i]=e(o,n[o]),i+=1);return t}var r=Object.prototype.hasOwnProperty;e.exports=t},{}],13:[function(n,e){function t(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,o=t-e||0,i=Array(0>o?0:o);++r<o;)i[r]=n[e+r];return i}e.exports=t},{}]},{},["G9z0Bl"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
+  <meta itemprop="description" name="description" content="Viking Code School is the premier program for learning professional web development online.">
+  <link rel="publisher" href="https://plus.google.com/105284911993210538737"/>
+
+  <!-- Facebook Open Graph Sharing Defaults -->
+  <meta property="og:title" content="Why Learning to Code is So Damn Hard"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_headliner.png"/>
+  <meta property="og:description" content= "What every beginner absolutely needs to know about the journey ahead" />
+  <meta property="fb:app_id" content="1517547965192641"/>
+
+
+
+</head>
+
+<body class="language-bash" data-no-turbolink>
+  
+    <div class="activate-bootstrap" id="navbar">
+
+  <div class="student-nav-spacer">
+  </div>
+
+  <nav class="navbar navbar-default student-navbar">
+    <div class="container-fluid">
+
+      <div class="navbar-header">
+
+        
+        <div class="logo">
+  <a href="../index.html">
+      
+    <img alt="Viking Code School Logo| Become A Web Developer Online" height="32px" src="../assets/home_page/bluerfillshield-05388ccb7efb03c510a0768cffed08e5.png" width="32px" />
+
+    <h1 class="nav-text">
+      Viking Code School 
+    </h1>
+
+</a>
+    <a href="../blog.html">
+      <span class="title-addendum">Blog</span>
+</a>
+</div>
+
+
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsed-navbar">
+
+          <img alt="Missing" class="user-icon" height="40px" src="http://s3.amazonaws.com/viking_education/users/avatars/default_avatars/thumb_mini/missing.jpg" width="40px" />
+
+        </button>
+
+      </div>
+
+
+        <ul class="nav navbar-nav navbar-right hidden-xs">
+
+          <li>
+            <a class="" href="../prep.html" title="Prep Work">
+              <img alt="Icon blocks 2" class="prep-icon" height="25px" src="http://s3.amazonaws.com/viking_education/icons/icon_blocks_2.png" width="25px" />
+</a>          </li>
+
+          <li>
+            <a class="" href="../dashboard.html" title="Dashboard">
+              <img alt="Icon book" class="dashboard-icon" height="38px" src="http://s3.amazonaws.com/viking_education/icons/icon_book.png" width="38px" />
+</a>          </li>
+
+          <li>
+            <a href="https://plus.google.com/hangouts/_/calendar/ZXJpay50cmF1dG1hbkBnbWFpbC5jb20.3kfa86kd25m6to7c0t4cj5ln8g?authuser=0" target="_blank" title="Hangout">
+              <img alt="Icon hangout" class="hangout-icon" height="40px" src="http://s3.amazonaws.com/viking_education/icons/icon_hangout.png" width="40px" />
+</a>          </li>
+
+
+          <li class="dropdown hidden-xs">
+
+            <a href="#" class="dropdown-toggle user-avatar" data-toggle="dropdown" role="button" aria-expanded="false">
+
+              <img alt="Missing" class="user-icon" src="http://s3.amazonaws.com/viking_education/users/avatars/default_avatars/thumb_mini/missing.jpg" /><span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu dropdown-links" role="menu">
+
+
+              <!-- Link only exists for admins -->
+
+              
+
+              <a class="disabled" href="#" title="Not Available Yet">
+                <li>
+                  <img src="http://s3.amazonaws.com/viking_education/icons/icon_calendar.png" class="schedule-icon">
+                  <span class="menu-text">Schedule</span>
+                </li>
+</a>
+              <a class="" height="28px" href="../users/edit.html" title="Edit Account Settings" width="28px">
+                <li>
+                  <img src="http://s3.amazonaws.com/viking_education/icons/icon_settings.png" class="settings-icon">
+                  <span class="menu-text">Account</span>
+                </li>
+</a>
+
+
+
+              <li class="divider"></li>
+
+              <a data-method="delete" href="../logout.html" rel="nofollow" title="Logout">
+                <li>
+                  <img src="http://s3.amazonaws.com/viking_education/icons/logout.png" class="logout-icon">
+                  <span class="menu-text">Log Out</span>
+                </li>
+</a>                
+            </ul>
+
+          </li>
+        </ul>
+
+
+      <div class="links collapse navbar-collapse" id="collapsed-navbar">
+
+
+        <ul class="dropdown-links nav navbar-nav mobile-nav hidden-sm hidden-md hidden-lg" role="menu">
+
+
+          <li>
+            <a class="" href="../prep.html" title="Prep Work">
+              <img alt="Icon blocks 2" class="prep-icon" height="25px" src="http://s3.amazonaws.com/viking_education/icons/icon_blocks_2.png" width="25px" />
+              <span class="menu-text">Prep Work</span>
+</a>          </li>
+
+          <li>
+            <a class="" href="../dashboard.html" title="Dashboard">
+              <img alt="Icon book" class="dashboard-icon" height="38px" src="http://s3.amazonaws.com/viking_education/icons/icon_book.png" width="38px" />
+              <span class="menu-text">Dashboard</span>
+</a>          </li>
+
+          <li>
+            <a href="https://plus.google.com/hangouts/_/calendar/ZXJpay50cmF1dG1hbkBnbWFpbC5jb20.3kfa86kd25m6to7c0t4cj5ln8g?authuser=0" target="_blank" title="Hangout">
+              <img alt="Icon hangout" class="hangout-icon" height="40px" src="http://s3.amazonaws.com/viking_education/icons/icon_hangout.png" width="40px" />
+              <span class="menu-text">Group Hangout</span>
+</a>          </li>
+
+          <a class="disabled" href="#" title="Not Available Yet">
+            <li>
+              <img src="http://s3.amazonaws.com/viking_education/icons/icon_calendar.png" class="schedule-icon">
+              <span class="menu-text">Schedule</span>
+            </li>
+</a>
+          <a class="" height="28px" href="../users/edit.html" title="Edit Account Settings" width="28px">
+            <li>
+              <img src="http://s3.amazonaws.com/viking_education/icons/icon_settings.png" class="settings-icon">
+              <span class="menu-text">Account</span>
+            </li>
+</a>
+          <li class="divider"></li>
+
+          <a data-method="delete" href="../logout.html" rel="nofollow" title="Logout">
+            <li>
+              <img src="http://s3.amazonaws.com/viking_education/icons/logout.png" class="logout-icon">
+              <span class="menu-text">Log Out</span>
+            </li>
+</a>            
+        </ul>
+
+      </div>
+
+
+
+
+
+
+    </div>
+  </nav>
+
+
+</div>
+
+  <div class="flash-wrapper">
+    
+ 
+  </div> 
+
+  
+<div class="activate-bootstrap">
+
+  
+
+
+  
+
+
+  <main id="blog" class="blog-post ">
+
+    <div class="container">
+      <article>
+
+        
+<header>
+
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+
+
+      <div class="headline-image row">
+        <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-lg-8 col-lg-offset-2">
+          <img alt="Why Learning to Code is So Damn Hard" src="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_headliner.png" title="Why Learning to Code is So Damn Hard" />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h1>
+            Why Learning to Code is So Damn Hard
+          </h1>
+        </div>
+      </div>
+
+
+      <time datetime="2015-02-04 16:39:56 UTC">
+
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+
+      <p class="teaser">
+        What every beginner absolutely needs to know about the journey ahead
+      </p>
+
+    </div>
+  </div>
+
+
+  <div class="row">
+    <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3 post-byline-mini-wrapper">
+      <div class="byline byline-mini">
+
+  <img alt="Erik Trautman" class="round-image" height="32px" src="http://s3.amazonaws.com/viking_education/users/avatars/000/000/001/thumb_mini/sunny_portrait.jpg?1419844213" title="Erik Trautman" width="32px" />
+
+  Erik Trautman wrote this on Feb 4, 2015 
+
+
+    &nbsp; | &nbsp;
+    <a data-disqus-identifier="3" href="why-learning-to-code-is-so-damn-hard.html">0 Comments</a>
+
+
+
+
+</div>
+    </div>
+  </div>
+
+</header>
+
+
+<div class="row post-body">
+  
+  <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+    
+
+    <p><span class="large-words">Quincy Larson</span> was just a &quot;guy in a suit in an office&quot; and decided he wanted to learn how to code.  So he asked around.  He started by picking up a bit of Ruby then found himself skimming through other languages like Scala, Clojure and Go.  He learned Emacs then Vim and even the Dvorak keyboard layout.  He picked up Linux, dabbled in Lisp and coded in Python while living on the command line for more than half a year.</p>
+
+<p>Like a leaf in a tornado, the advice Quincy received jerked him first one way and then another and then another until he&#39;d finally taken &quot;every online course program imaginable&quot;.  By the end of it all, despite having ultimately <a href="http://blog.freecodecamp.com/2014/11/a-cautionary-tale-of-learning-to-code.html">landed a software development job</a>, Quincy:</p>
+
+<blockquote>
+<p>... was convinced that the seemingly normal programmers I ran into were actually sociopaths who had experienced, then repressed, the trauma of learning to code.</p>
+</blockquote>
+
+<p>Ouch.  Does that sound familiar?  </p>
+
+<h3>Phase I: The Hand-Holding Honeymoon</h3>
+
+<p>It&#39;s really hard to blame anyone for coming into the programming industry with outrageous expectations.  </p>
+
+<p>On the one hand, you&#39;ve heard rumors of how difficult programming is since you were young, like old wives tales meant to scare children into studying social sciences instead.  </p>
+
+<p>On the other, the &quot;Learn to Code&quot; movement has done a fantastic job of breaking down barriers and showing people that code is actually quite harmless.  Tools like <a href="http://www.codecademy.com/">Codecademy</a> and <a href="http://teamtreehouse.com/">Treehouse</a> and <a href="https://www.codeschool.com/">Code School</a> reach out with the gentlest of touches to assure you that you too (nay, anyone!) can not just learn to code but become a full-fledged developer as well.</p>
+
+<p>Suddenly the problem isn&#39;t fear, it&#39;s an overabundance of hopes and high expectations.</p>
+
+<p>And, for the most part, these introductory tools do a great job of guiding you like a child in a crosswalk past the big scary variables and conditional statements and through the early phases of programming syntax.  As you conquer one after another of their <a href="http://en.wikipedia.org/wiki/Gamification">gamified</a> challenges, your confidence rises.  Maybe you can do this after all!  How hard can it be?  <em>You&#39;re basically a developer already!</em></p>
+
+<p><img src="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_phase_i_conf_comp.png" alt="Learning to code sucks hand-holding honeymoon chart viking" width="70%">
+<figcaption>The Hand-Holding Honeymoon</figcaption></p>
+
+<p>Here&#39;s the problem -- you&#39;re in what I like to call the &quot;Hand Holding Honeymoon&quot; phase.  Though you may feel like the end is around the corner, you&#39;re only a fraction of the way there.  This is just the beginning...</p>
+
+<h3>Charting The Path Ahead</h3>
+
+<p>Before we dive into Phase II, let&#39;s look at the bigger picture. </p>
+
+<p>In this post, I&#39;ll walk you through the four phases of the typical journey into coding and what you&#39;ll need to do to survive each of them.  You&#39;ll also see how two key factors -- the density of resources and scope of required knowledge -- define this journey.</p>
+
+<p>The trek towards job-readiness can be plotted in terms of how your confidence level changes as your capability increases:</p>
+
+<p><a href="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_confidence_competence.png" alt="Learning to code sucks full journey chart viking">
+<img src="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_confidence_competence.png" alt="Learning to code sucks full journey chart viking" width="100%">
+</a>
+<figcaption>The Learn-to-Code Journey -- <a href="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_confidence_competence.png">Click to Enlarge</a></figcaption></p>
+
+<p>This is a relevant relationship because your confidence is highly correlated with your happiness and because the point where your confidence and capabilities match is the best proxy I have for the sweet spot when you&#39;re officially &quot;job ready&quot;.</p>
+
+<p>We&#39;ll look into the unique challenges of the remaining 3 phases in a moment, but this is what each of them essentially involves:</p>
+
+<ol>
+<li><strong>The Hand Holding Honeymoon</strong> is the joy-filled romp through highly polished resources teaching you things that seem tricky but are totally do-able with their intensive support.  You will primarily learn basic syntax but feel great about your accomplishments.</li>
+<li><strong>The Cliff of Confusion</strong> is the painful realization that it&#39;s a lot harder when the hand-holding ends and it feels like you can&#39;t actually do anything on your own yet.  Your primary challenges are constant debugging and not quite knowing how to ask the right questions as you fight your way towards any kind of momentum.</li>
+<li><strong>The Desert of Despair</strong> is the long and lonely journey through a pathless landscape where every new direction seems correct but you&#39;re frequently going in circles and you&#39;re starving for the resources to get you through it.  Beware the &quot;Mirages of Mania&quot;, like sirens of the desert, which will lead you astray.</li>
+<li><strong>The Upswing of Awesome</strong> is when you&#39;ve finally found a path through the desert and pulled together an understanding of how to build applications.  But your code is still siloed and brittle like a house of cards.  You gain confidence because your sites appear to run, you&#39;ve mastered a few useful patterns, and your friends think your interfaces are cool but you&#39;re terrified to look under the hood and you ultimately don&#39;t know how to get to &quot;production ready&quot; code.  How do you bridge the gap to a real job?</li>
+</ol>
+
+<p>I&#39;ve interviewed hundreds of aspiring developers over the past several years and heard echoes of the same story again and again.  My goal for this post is that you approach the learner&#39;s journey with both eyes open and enough of a plan that you can avoid the common pitfalls of those who have come before you.</p>
+
+<p>Let&#39;s get back into Phase II...</p>
+
+<h3>Phase II: The Cliff of Confusion</h3>
+
+<p>So, you&#39;re in Phase I -- the &quot;Hand-Holding Honeymoon&quot; -- checking off badges and completing coding challenges while your confidence and capabilities grow.  This isn&#39;t so bad... what&#39;s all the fuss about?  You&#39;ve arrived at the &quot;Peak of Irrational Exuberance&quot;...</p>
+
+<p>Be careful! You’re about to overstep a precipice that’s broken many strong aspiring learners and relegated them to the “coding is too hard” camp.  The precise moment this leap occurs is the first time you sit down at your keyboard, open up your text editor, and try to build a project from scratch without any of the fancy in-browser editors, scaffolded code or helpful hints.</p>
+
+<p>Crap.</p>
+
+<p>You might stretch this out a bit by following tutorials, but no one has ever reached the skies without leaving the ground, and, at some point, you&#39;re going to have to create magic from a blank text file.  You&#39;ve just entered the second phase of learning, where confidence comes crashing down to earth -- the &quot;Cliff of Confusion&quot;:</p>
+
+<p><img src="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_phase_ii_conf_comp.png" alt="Learning to code sucks cliff of Confusion chart viking" width="80%">
+<figcaption>The Cliff of Confusion</figcaption></p>
+
+<p>So you build.  You fight and scratch your way to a barely-functional solution but there&#39;s something missing.  You&#39;re at a war with bugs that makes <a href="http://en.wikipedia.org/wiki/Starship_Troopers">Starship Troopers</a> look benign.  It feels like each victory was gained only by a stroke of lucky Googling and your confidence that you can ever figure this stuff out plummets.</p>
+
+<p><img src="http://s3.amazonaws.com/viking_education/web_development/blog/starship_troopers.jpg" alt="Starship Troopers Bug Attack" width="80%">
+<figcaption>Buuuuuuuuuuuuuuuuuuuuug!!!</figcaption></p>
+
+<p>This is a particularly frustrating phase to see as an educator and to all participants in our industry.  Programming may not be perfect for everyone, but we <em>want</em> you to make progress because sometimes the unlikeliest of stories become the grandest successes.  </p>
+
+<p>When the hand-holding ends and students are pushed off the cliff and told to fly, too many potentially awesome people are spiraling onto the rocks of frustration without learning how to flap their wings.</p>
+
+<p>The scary part is that you haven&#39;t even gotten to the meaty stuff yet.  This second phase, the Cliff of Confusion, is still very early.  Once you&#39;ve finally squashed enough bugs to end the <a href="http://en.wikipedia.org/wiki/Plagues_of_Egypt#8._Locusts_.28.D7.90.D6.B7.D7.A8.D6.B0.D7.91.D6.B6.D6.BC.D7.94.29:_Ex._10:1.E2.80.9320">eighth plague of Egypt</a> and actually finished a couple of projects -- thus marking the end of Phase II -- you&#39;re still just getting started.  </p>
+
+<p>For those who are truly ready to make a career out of this, surviving the Cliff of Confusion is often the point where you decide to go all-in with your new life.  But too many are left behind.  And, unfortunately, you&#39;re just about to enter the &quot;Desert of Despair&quot;.</p>
+
+<h3>The Two Key Factors at Play</h3>
+
+<p>So what really marks the difference between one phase and the next?  Why was Phase II (the Cliff of Confusion) so awful compared to Phase I (the Hand-Holding Honeymoon)?  Understanding this will help you realize that it&#39;s not your fault at all if your journey looks like what we&#39;ve just described.</p>
+
+<p>Basically, there are two key forces at work in every phase -- <strong>Resource Density</strong> and <strong>Scope of Knowledge</strong>.  Let&#39;s see what these are before exploring how they define Phase III.</p>
+
+<h4>Factor 1: Resource Density</h4>
+
+<p>As I said above, when you first start out, it feels like there are a million resources out there trying to hold your hand and pull you into coding.  That&#39;s because there are! </p>
+
+<p>Search for <a href="https://www.google.com/webhp?sourceid=chrome-instant&amp;ion=1&amp;espv=2&amp;ie=UTF-8#safe=off&amp;q=learn+to+code">&quot;Learn to Code&quot;</a> and you&#39;ll be hit with a wall of helpful and useful tools, texts, videos and tutorials.  And, frankly, they&#39;re great!  Never before have there been so many ways to start learning to code.</p>
+
+<p><img src="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_resources_screenshot.png" alt="Learn to Code Google results 1 billion plus" width="65%"></p>
+
+<p>Unfortunately, in later phases the density of resources drops off fast.  Anyone who&#39;s made the jump from beginner to intermediate can attest that there is a BIG difference between the amount of resources available when you first start out versus when you&#39;re first looking for help building things on your own without too much hand-holding.  </p>
+
+<p>This problem exacerbates as the amount of knowledge increases rapidly entering Phase III, and is one reason why we call that phase the &quot;Desert of Despair&quot;.  Once you get past this and start to become comfortable with what exactly you need to search for, the resources return and you&#39;re able to work with more technical tools like industry blogs and screencasts.  Part of this is just understanding which questions to ask.</p>
+
+<p>Here&#39;s what the Resource Density looks like in each phase (greater line density indicates more resources):</p>
+
+<p><a href="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_resource_density.png" alt="Learning to code sucks resource density chart viking">
+<img src="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_resource_density.png" alt="Learning to code sucks resource density chart viking" width="100%">
+</a>
+<figcaption>Density of Resources in Each Phase -- <a href="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_resource_density.png">Click to Enlarge</a></figcaption></p>
+
+<h4>Factor 2: Scope of Knowledge</h4>
+
+<p>Now let&#39;s talk about a related issue -- the Scope of Knowledge.  This represents the total breadth of new topics you need to learn in each phase.  Here&#39;s what it looks like:</p>
+
+<p><a href="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_scope_of_knowledge.png" alt="Learning to code sucks scope of knowledge chart viking">
+<img src="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_scope_of_knowledge.png" alt="Learning to code sucks scope of knowledge chart viking" width="100%">
+</a>
+<figcaption>The Scope of Knowledge that&#39;s Required in Each Phase -- <a href="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_scope_of_knowledge.png">Click to Enlarge</a></figcaption></p>
+
+<p>When you first start learning, the set of things you need to understand is narrow.  Everyone, regardless of goals or language or background, needs to figure out what a <code>for</code> loop is, how to build conditional logic, and other basic structures of programming syntax.  There ultimately aren&#39;t even that many of these fundamental concepts so the Scope of Knowledge during that phase is very narrow.</p>
+
+<p>As soon as you get away from the basics, you see a rapid broadening of the Scope of Knowledge as you need to begin picking up things that are more difficult like understanding errors and <em>when</em> to use the code you know know <em>how</em> to use.  This is different because there is no &quot;correct&quot; answer to a clear question... things get fuzzy.</p>
+
+<p>When you progress into the third phase, the scope of knowledge balloons wider.  You now need to understand what tools to use, what languages to learn, underlying CS fundamentals, how to write modular code, object-orientation, good style, and how to ask for help (to name just a few).  Every trip to <a href="http://www.google.com/">Google</a> or <a href="https://news.ycombinator.com/">Hacker News</a> takes you down another set of rabbit holes and overwhelms you with more things you don&#39;t know but feel like you should.  </p>
+
+<p><em>You don&#39;t know what you don&#39;t know.</em></p>
+
+<p>Only when you&#39;ve finally found some traction and left the desert does the scope again begin to narrow.  By that point, you&#39;ve found your chosen technology and its place in the ecosystem.  You finally (pretty much) know what you don&#39;t know and can plot a path through it.  You will continue to increase focus as you push onward and into the beginning of your career.</p>
+
+<h3>Phase III: The Desert of Despair</h3>
+
+<p>With an understanding of these factors, you can see that the Cliff of Confusion is really just a turning point.  The pain caused by the toxic combination of a rapidly increasing Scope of Knowledge and a falling Resource Density results in what I call the &quot;Desert of Despair&quot;.  </p>
+
+<p>In essence, this desert is where you know there&#39;s an end <em>somewhere</em> but you don&#39;t know how to get there:</p>
+
+<p><img src="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_phase_iii_conf_comp.png" alt="Learning to code sucks desert of despair chart viking" width="100%">
+<figcaption>The Desert of Despair</figcaption></p>
+
+<p>The desert is long and fraught with dangers.  You&#39;ll find yourself drawn to  &quot;Mirages of Mania&quot; along the way -- dozens of tempting resources which appear to hold the solutions you&#39;re looking for but which will deposit you, once again, in a place where lonely sand extends to each horizon line.</p>
+
+<p>Maybe you sign up for a couple <a href="http://en.wikipedia.org/wiki/Massive_open_online_course">MOOC</a> courses from <a href="https://www.coursera.org/">Coursera</a> or <a href="https://www.udacity.com/">Udacity</a> or <a href="https://www.edx.org/">edX</a>.  Or you find a tutorial which purports to take you all the way.  You thought you learned the lessons of the Hand Holding Honeymoon -- that there are no easy answers -- but the temptation to seek salvation is too great and you fall for the promise that <em>this one</em> will get you to the finish where the others did not.</p>
+
+<p><em>You can&#39;t learn this stuff in a week or a month or a single college class no matter what anyone says so stop falling for that!</em></p>
+
+<p>There is a LOT more to learn than you probably expected.  Even if you&#39;re able to get some apps running, it&#39;s hard not to feel lost in the greater scheme of becoming a true professional.  It&#39;s difficult to measure your progress.  How do you know what you need to learn or if you&#39;re even learning the right things?</p>
+
+<p>Even if you&#39;re pointing the right direction, it&#39;s hard to measure your progress.  You might feel totally lost until the very moment when you&#39;re finally able to build something that looks and acts the way you expected it to.  But, with enough perseverance and a good compass, you&#39;ll eventually get your first few &quot;real&quot; projects launched and you&#39;ll realize that you&#39;re finally starting to <em>get it</em>.</p>
+
+<p>Sure it&#39;s been hard up until now, but maybe this web dev stuff isn&#39;t so bad after all... <a href="https://www.youtube.com/watch?v=M67E9mpwBpM">Everything&#39;s coming up Milhouse!</a></p>
+
+<p><img src="http://s3.amazonaws.com/viking_education/web_development/blog/coming_up_milhouse.gif" alt="Everything's Coming Up Milhouse!" width="50%"></p>
+
+<h3>Phase IV: The Upswing of Awesome</h3>
+
+<p>You&#39;ve made it through the desert and your confidence is growing.  Your <a href="http://english.stackexchange.com/questions/19967/what-does-google-fu-mean">Google-fu</a> is excellent and you&#39;re finally able to understand those detailed industry blog posts and screencasts.  Maybe you&#39;ve gone deep into a particular language or framework and you have confidence that you can build and launch a functioning application.  </p>
+
+<p>This is the &quot;Upswing of Awesome&quot;:</p>
+
+<p><img src="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_phase_iv_conf_comp.png" alt="Learning to code sucks upswing of awesome chart viking" width="100%">
+<figcaption>The Upswing of Awesome</figcaption></p>
+
+<p>All may seem well to the outside but you know deep down that you&#39;re not there yet.  </p>
+
+<p>You can make that application work but what&#39;s happening beneath the surface?  Your code is duct tape and string and, worst of all, you don’t even know which parts are terrible and which are actually just fine.  Your periodic flashes of brilliance are countered by noob mistakes and, worse, a creeping suspicion that you still don&#39;t have a damn clue what you&#39;re doing.  </p>
+
+<p>This is a bipolar phase.  You feel like half of you is a bulletproof developer and the other half is a thin veneer of effectiveness covering a wild-eyed newbie who is in way too deep.  The further you progress, the more a gnawing sense of uncertainty grows that someone is going to &quot;out&quot; you as a fraud.  </p>
+
+<p>You feel like you should be a developer already but the distance between the code you&#39;re writing and a &quot;professional&quot; work environment couldn&#39;t feel further away...</p>
+
+<p><strong>Eventually, though, you&#39;ll make it.</strong>  There&#39;s too much momentum not to!  The Desert of Despair is behind you and the Cliff of Confusion is a distant memory. You&#39;re finally, <em>truly</em>, on the upswing. You&#39;re learning faster and more intelligently than ever before and, eventually, you will have absorbed enough best practices that your swiss cheese knowledge coalesces into a production-grade skill set.</p>
+
+<p>The Upswing of Awesome always takes longer than you expect it to and it feels interminable because you&#39;re <em>so close</em>... but you will get there.  If you&#39;re persistent enough in the right ways (the topic of a future post for sure), you will convince someone to pay you to keep learning.  The job is yours.</p>
+
+<p><img src="http://s3.amazonaws.com/viking_education/web_development/blog/success_job.jpg" alt="Learn to code and get a programming job meme" width="50%"></p>
+
+<h3>What it All Looks Like</h3>
+
+<p>So now you&#39;ve seen the road ahead and the reasons why it can be difficult.  When you combine all four phases we just covered with the factors that define them, it looks something like the following chart:</p>
+
+<p><a href="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_combined_chart.png">
+<img src="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_combined_chart.png" alt="Learning to code sucks combined confidence competence with resource density and scope of knowledge chart viking" width="100%">
+</a>
+<figcaption>The Whole Shebang -- <a href="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_combined_chart.png">Click to Enlarge</a></figcaption></p>
+
+<p>It&#39;s one thing to know the path and another to walk it.  Let&#39;s get you started on the right foot.</p>
+
+<h3>How to Make it Through Alive</h3>
+
+<p>The journey seems intense and, frankly, it often is.  It&#39;s important that you understand what you&#39;re in for, particularly if you go it alone.  <em>But you don&#39;t have to.</em>  There are ways to short-circuit most of these problems.  Learning to code is rarely as easy as people make it out to be but it&#39;s also rarely as difficult as it seems in the depths of your despair.</p>
+
+<p>In this section, I&#39;ll introduce the key tactics you can use to keep yourself pointed in the right direction.</p>
+
+<p><a href="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_making_it_through.png" alt="Learning to coe sucks confidence vs competence phases progression chart viking">
+<img src="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_making_it_through.png" alt="Learning to code sucks confidence vs competence phases progression chart viking" width="100%">
+</a>
+<figcaption>Your Progression Through the Phases -- <a href="http://s3.amazonaws.com/viking_education/web_development/blog/coding_is_hard_making_it_through.png">Click to Enlarge</a></figcaption></p>
+
+<h4>I: Surviving the Hand-Holding Honeymoon</h4>
+
+<p>The plethora of available resources in the Hand-Holding Honeymoon make it a lot of fun.  They do a great job easing you into the kind of logical thinking you&#39;ll need to cultivate over the coming phases. It&#39;s a great time to start learning to code so try to enjoy it and keep these two tips in mind:</p>
+
+<ol>
+<li><strong>Start by trying out different resources</strong> to find how you learn best and what sorts of projects are the most interesting to you.  Maybe it&#39;s <a href="khanacademy.org">Khan Academy</a>&#39;s quick challenges, <a href="http://www.codecademy.com/">Codecademy</a>&#39;s in-browser exercises, Chris Pine&#39;s <a href="https://pine.fm/LearnToProgram/chap_00.html">Learn to Program</a> book or Code School&#39;s wacky <a href="http://tryruby.org/levels/1/challenges/0">try Ruby</a> experience.  Be open minded at the start and ignore anything about what you <em>should</em> learn... all code is the same at this phase.</li>
+<li><strong>Then pick one resource</strong> and stick with it once you&#39;ve found your fit.  Work through to the end of their introductory course arc, which should give you all the foundational knowledge you need to write basic scripts and apps.  Then get ready to start building on your own. </li>
+</ol>
+
+<h4>II: Surviving the Cliff of Confusion</h4>
+
+<p>Almost everyone will experience the Cliff of Confusion because the only way to become a developer is to, well, develop.  You can pretend to be building by signing up for tutorials (or tutorials which masquerade as &quot;complete&quot; courses), but you&#39;re just putting off the inevitable.  Tutorials are a good way to bridge from more high-touch introductory offerings but you&#39;ll need to wean yourself off the pacifier and face the real world at some point.  </p>
+
+<p>Three tips for making the transition to building on your own:</p>
+
+<ol>
+<li><strong>Work with someone else</strong>, even another beginner.  You&#39;ll be surprised how much easier it is to debug an impossible error when sharing two pairs of eyes.</li>
+<li><strong>Read other people&#39;s code</strong> to get comfortable with good patterns.  Try to understand why the author did what they did.  You wouldn&#39;t try to become a novelist without reading books as well, would you?  We&#39;ll focus on this in an upcoming post but, for now, keep your eyes open for any small problems or projects that other people have written solutions for.</li>
+<li><strong>Start small and build constantly</strong>.  You should have interesting big projects in mind for the future, but you&#39;ll need to get comfortable debugging and searching for resources with bite-sized challenges.  There&#39;s really no substitute for experience.<br></li>
+</ol>
+
+<h4>III: Surviving the Desert of Despair</h4>
+
+<p>Once you&#39;ve become comfortable debugging, your biggest problem becomes the fire hose of required knowledge and a total loss for how to learn it all... the Desert of Despair.  In this case, what you really need is a strong path forward.  The Mirages of Mania represent all the interesting side paths and rabbit holes and get-skilled-quick schemes which ultimately waste your time.</p>
+
+<p>So the keys to getting out of the Desert of Despair are:</p>
+
+<ol>
+<li><strong>Have a strong goal</strong> for what you want to accomplish because otherwise you will end up chasing your tail learning all kinds of interesting but ultimately unproductive things.  If you have the time to spare, by all means skip this...</li>
+<li><strong>Find a strong path</strong> which leads directly to the goal you&#39;ve set and verify that it will actually get you there.  This is where you need to dig deeper than the marketing slogans and smiling faces on course websites or book jackets to ask &quot;will this help me accomplish the goal I&#39;ve set or not?&quot;</li>
+<li><strong>Focus and avoid distractions</strong> because, if you&#39;re the kind of person who&#39;s interested in learning to code, you&#39;re also the kind of person who gets interested by learning <em>all kinds</em> of other awesome things.  When coding gets difficult, you need to be able to push forward instead of just trying out the next cool-looking thing.</li>
+</ol>
+
+<p>If you&#39;re able to identify a path and stick with it, you&#39;ll eventually push forward to the next phase instead of spending months or years chasing mirages across the shifting sands of the this desert.</p>
+
+<h4>IV: Surviving the Upswing of Awesome</h4>
+
+<p>The Upswing of Awesome is one of the trickiest transitions.  You can <em>develop applications</em> but you really want to <em>become a web developer</em>.  Getting past this phase and into a job requires you to do three things:</p>
+
+<ol>
+<li><strong>Seek and follow best practices</strong> for programming.  You need to understand the difference between <em>a solution</em> and <em>the best solution</em>.  Best practices are a major difference between hacking on your own and building production quality code in a real job setting.</li>
+<li><strong>Check your assumptions</strong> because you&#39;ve probably skated by with some gaping holes in your knowledge that you didn&#39;t even know you had.  You need to diagnose and fix these holes.</li>
+<li><strong>Tackle the unsexy skills</strong> that are rarely addressed but highly important for transitioning into a professional setting.  This includes things like testing, data modeling, architecture and deployment which are really easy to breeze past but which are totally fundamental to good development.</li>
+</ol>
+
+<p>The key to accomplishing these things and pushing through the Upswing of Awesome is to <strong>get feedback</strong>.  Students who have learned entirely on their own may be productive but rarely have the kind of legible, modular, and maintainable code that makes them attractive in a professional setting.  You need to work with other humans who will challenge your assumptions, ask piercing followup questions, and force you to fix the leaks in your bucket of knowledge.</p>
+
+<h3>So... Can it be Done?</h3>
+
+<p>This all may sound overwhelming but I promise that many others have persevered and survived this journey before you.  By understanding the road ahead, you&#39;re already in a good spot to take it on with a focused plan and access to the right kind of help.</p>
+
+<p>Obviously there isn&#39;t space in this particular post to dig as deeply into each phase of the journey as we&#39;d like or to provide the kind of granular how-to advice you deserve.  That said, this is a journey with which we&#39;re quite familiar and about which we&#39;re highly passionate so we want to help in any way we can.  </p>
+
+<p>Our <a href="../index.html">core program</a> is specifically designed to bridge this whole process but, if you&#39;re interested in following along on your own, we&#39;ll be addressing it publicly and in depth during future blog posts as well.</p>
+
+<p>Sign up below if you&#39;d like to come along for the ride as we dig deeper into everything here -- from finding a mentor to bridging the gap to a fulltime job in web development.  Because, though it&#39;s a challenging road ahead, you don&#39;t have to walk it alone.</p>
+
+<p><span class="large-words centered-block">Good luck!</span></p>
+
+<p><span class="blog-special-thanks">
+Special thanks to Peter DePaulo, Javier Noris, Michael Alexander, Andy Brown, Saul Costa, Phil Nachum and <a href="http://www.freecodecamp.com/">Quincy Larson</a> for sharing your experiences and for helping to debug these thoughts.
+</span></p>
+
+
+    
+<div class="row social-sharing">
+  <div class="col-sm-12 col-sm-offset-0 inner-box">
+
+    <p>
+      If this was helpful, spread the love :)
+    </p>
+
+    <div class="buttons-wrapper">
+
+      <div class="linkedin-share-button social-button" data-button-type="linkedin-share">
+
+        <script src="http://platform.linkedin.com/in.js" type="text/javascript">
+          lang: en_US
+        </script>
+        <script type="IN/Share" data-url="http://www.vikingcodeschool.com/posts/why-learning-to-code-is-so-damn-hard" data-onsuccess="linkedin_share" data-onerror="linkedin_share_error"></script>
+      </div>
+
+
+
+      <div class="fb-share-button social-button">
+        <img src="http://s3.amazonaws.com/viking_education/icons/fb_share_btn.png" alt="Facebook Share Button" width="100%">
+      </div>
+
+
+
+      <span class="social-button" data-button-type="twitter-share">
+        <a  href="https://twitter.com/share" 
+            class="twitter-share-button" 
+            data-via="vikingeducation" 
+            data-dnt="true" 
+            data-text="Why Learning to Code is So Damn Hard by @eriktrautman" 
+            data-count="none"  >
+              Tweet
+        </a>
+      </span>
+
+
+      <span class="google-plusone-button social-button" data-button-type="gplus-like">
+        <div class="g-plusone" data-annotation="none" data-callback="gplus_share"  data-href="http://www.vikingcodeschool.com/posts/why-learning-to-code-is-so-damn-hard"></div>
+      </span>
+
+    </div>
+
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-sm-10 col-sm-offset-1  col-md-8 col-md-offset-2 blog-cta-box">
+    <div class="cta">
+      From n00b to ninja, we'll help you to become a developer
+    </div>
+    <div class="sub-cta">
+      <!-- We learned the hard way so you don't have to...   -->
+      Subscribe to get expert guidance on learning, building, and getting hired delivered right to your inbox each week.
+
+    </div>
+
+    <div class="mailing-list-bar row">
+
+      <form accept-charset="UTF-8" action="http://www.vikingcodeschool.com/list_subscription" data-remote="true" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+
+        <div class="col-sm-8">
+          <input id="email" name="email" placeholder="you@example.com" required="required" type="text" />
+        </div>
+        <div class="col-sm-4">
+          <input class="newsletter-cta-signup-button" name="commit" type="submit" value="Subscribe" />
+        </div>
+
+</form>
+    </div>
+
+    <div class="trust">
+      We guarantee your privacy 100%.  Your information will not be shared.
+    </div>
+
+  </div>
+
+</div>
+
+
+
+<div class="byline full-byline row">
+  <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+    <div class="row">
+      
+      <div class="col-xs-3" style="min-width: 130px;">
+        <img alt="Erik Trautman" class="round-image" height="128px" src="http://s3.amazonaws.com/viking_education/users/avatars/000/000/001/small/sunny_portrait.jpg?1419844213" title="Erik Trautman" width="128px" />
+      </div>
+
+      <div class="col-xs-9">
+        <h3>About the Author</h3>
+        Erik Trautman is the Founder of the <a href="../index.html">Viking Code School</a>, the premier program for learning professional web development online.  He loves motorcycles, geek shenanigans and outdoor feats of extreme bacon.
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<nav class="post-nav row">
+  <div class="col-xs-4 prev-post">
+      <a href="welcome-to-the-viking-blog-the-adventure-begins.html">&#8592; Older Post</a>
+  </div>
+
+  <div class="col-xs-4 post-index-link">
+    <a href="../blog.html">View All Posts</a>
+  </div>
+
+  <div class="col-xs-4 next-post">
+    <a href="the-beginner-s-dilemma-your-first-100-hours-of-code.html">Newer Post &#8594;</a>
+  </div>
+</nav>
+
+
+<div class="recommendations">
+</div>
+
+
+
+  <div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'vikingcodeschool'; // required: replace example with your forum shortname
+    var disqus_identifier = 3;
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+  
+<div class="modal fade" id="email-modal" tabindex="-1" role="dialog" aria-labelledby="email-modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content email-newsletter-modal">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      </div>
+      <div class="modal-body">
+
+        <div class="cta">
+          <!-- HOW TO BECOME A DEVELOPER -->
+          BECOME A DEVELOPER WITH US
+          <!-- LET US HELP YOU LEARN -->
+          <!-- MAKE YOUR JOURNEY EASIER -->
+          <!-- WE'LL HELP YOU BECOME A DEVELOPER -->
+          <!-- LET US HELP YOU BECOME <br>A WEB DEVELOPER -->
+          <!-- Let us help you become a developer -->
+        </div>
+        <div class="sub-cta">
+          Subscribe to have in-depth guidance on learning, building, and getting hired delivered right to your inbox each week.
+        </div>
+
+        <div class="mailing-list-bar row">
+
+          <form accept-charset="UTF-8" action="http://www.vikingcodeschool.com/list_subscription" data-remote="true" method="post" onsubmit="Modals.submitForm()"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /></div>
+
+            <div class="col-sm-8">
+              <input autofocus="autofocus" class="funky" id="email" name="email" placeholder="you@example.com" required="required" type="text" />
+            </div>
+            <div class="col-sm-4">
+              <input class="newsletter-popup-signup-button" name="commit" type="submit" value="Subscribe" />
+            </div>
+
+</form>
+        </div>
+
+        <div class="trust">
+          We guarantee your privacy 100%.  Your information will not be shared.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#" data-dismiss="modal">close</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+      </article>
+
+      <div class="row">
+        <div class="col-sm-8 col-sm-offset-2 comments">
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+  <footer id="footer" class="activate-bootstrap">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-xs-12 slogan">
+        Viking: The premier program for learning professional web development online
+      </div>
+    </div>
+
+    <nav class="row">
+
+      <section class="col-xs-4 link-list"> 
+
+        <h3>
+          The Viking Program
+        </h3>
+
+        <ul>
+
+          <a href="../index.html#curriculum">
+            <li>
+              Curriculum
+            </li>
+</a>
+          <a href="../index.html#our-program">
+            <li>
+              Methodology
+            </li>
+</a>
+          <a href="../index.html#curriculum">
+            <li>
+              Instructors
+            </li>
+</a>
+          <a href="../index.html#our-program">
+            <li>
+              Schedule
+            </li>
+</a>
+          <a href="../index.html#faq">
+            <li>
+              After the Program
+            </li>
+</a>
+          <a href="../index.html#faq">
+            <li>
+              FAQ
+            </li>
+</a>
+          <a href="../apply.html">
+            <li>
+              Apply
+            </li>
+</a>
+        </ul>
+      </section>
+
+
+      <section class="col-xs-4 link-list">
+
+        <a href="../prep.html">
+          <h3>
+            Knowledge Base
+          </h3>
+</a>
+        <ul>
+
+          <a href="../blog.html">
+            <li>
+              The Viking Blog
+            </li>
+</a>
+          <a href="../web-development-basics.html">
+            <li>
+              Web Development Basics
+            </li>
+</a>
+          <a href="../web-design-basics.html">
+            <li>
+              Web Design Basics
+            </li>
+</a>
+          <a href="../software-engineering-basics.html">
+            <li>
+              Web Engineering Basics
+            </li>
+</a>
+          <a href="../web-markup-and-coding.html">
+            <li>
+              Web Markup and Coding
+            </li>
+</a>
+        </ul>
+
+      </section>
+
+
+      <section class="col-xs-4 link-list">
+
+        <h3>
+          Other Stuff
+        </h3>
+
+        <ul>
+
+          <a href="../growth-for-code.html">
+            <li>
+              Join Us: Growth
+            </li>
+</a>
+          <a href="../design-for-code.html">
+            <li>
+              Join Us: Design
+            </li>
+</a>
+          <a href="../sitemap">
+            <li>
+              Sitemap
+            </li>
+</a>
+          <a href="mailto:hello@vikingcodeschool.com">
+            <li>
+              Contact Us
+            </li>
+</a>
+            <a data-method="delete" href="../logout.html" rel="nofollow">
+              <li>
+                Logout
+              </li>
+</a>
+        </ul>
+
+      </section>  
+
+    </nav>
+
+  </div>
+    
+  <div class="copyright">
+     &#169; Viking Education Inc 2015
+  </div>
+
+</footer>
+
+  
+
+  <div id="fb-root"></div>
+  
+  <script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'vikingcodeschool'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+  
+</body>
+
+<!-- Mirrored from www.vikingcodeschool.com/posts/why-learning-to-code-is-so-damn-hard by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 15 Mar 2015 04:15:47 GMT -->
+</html>
+

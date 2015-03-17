@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from www.vikingcodeschool.com/software-engineering-basics/solid-design-principles by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 15 Mar 2015 04:16:41 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <title itemprop="name">
+    Become a Web Developer | Viking Code School
+  </title>
+
+  <!-- favicon -->
+  <link href="../assets/favicon-d5b8f8cd71b03d62073db56646af4fa8.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+  <!-- CSS -->
+  <link data-turbolinks-track="true" href="../assets/application-77eb9024ae8bb8b1eee08f052f43a619.css" media="all" rel="stylesheet" />
+  
+  <!-- scripts -->
+  <script data-turbolinks-track="true" src="../assets/application-7ed894c9eff5e2b9b37456de6bb3fdef.js"></script>
+
+  <!-- Analytics -->
+    
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-50753703-1', 'vikingcodeschool.com');
+    ga('send', 'pageview');
+
+  </script>
+
+
+
+  <!-- FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Bing Webmaster Verification  -->
+  <meta name="msvalidate.01" content="34B181612CA472DE47B9342855B65B01" />
+  
+  <!-- META -->
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="bxeTnuuiioH+K7FQTT4Fz6SCrbeFOZQds98AkCQfnpI=" name="csrf-token" />
+
+  <!-- Google Sites -->
+  <meta name="google-site-verification" content="NeYN2FsBCW5FN1dWdXdq_xAw2FTNLE1IoUPqpYweoK4" />
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"17c2e9d24a","applicationID":"3046207","transactionName":"JgkKERMNWQhQERwUUwANF0oSCloTag9WEEUKCA==","queueTime":7,"applicationTime":77,"agentToken":null,"agent":"js-agent.newrelic.com/nr-593.min.js"}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var o=e[t]={exports:{}};n[t][0].call(o.exports,function(e){var o=n[t][1][e];return r(o?o:e)},o,o.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({QJf3ax:[function(n,e){function t(n){function e(e,t,a){n&&n(e,t,a),a||(a={});for(var u=c(e),f=u.length,s=i(a,o,r),p=0;f>p;p++)u[p].apply(s,t);return s}function a(n,e){f[n]=c(n).concat(e)}function c(n){return f[n]||[]}function u(){return t(e)}var f={};return{on:a,emit:e,create:u,listeners:c,_events:f}}function r(){return{}}var o="nr@context",i=n("gos");e.exports=t()},{gos:"7eSDFh"}],ee:[function(n,e){e.exports=n("QJf3ax")},{}],3:[function(n,e){function t(n){return function(){r(n,[(new Date).getTime()].concat(i(arguments)))}}var r=n("handle"),o=n(1),i=n(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(n,e){window.NREUM[e]=t("api-"+e)}),e.exports=window.NREUM},{1:12,2:13,handle:"D5DuLP"}],gos:[function(n,e){e.exports=n("7eSDFh")},{}],"7eSDFh":[function(n,e){function t(n,e,t){if(r.call(n,e))return n[e];var o=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return n[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=t},{}],D5DuLP:[function(n,e){function t(n,e,t){return r.listeners(n).length?r.emit(n,e,t):(o[n]||(o[n]=[]),void o[n].push(e))}var r=n("ee").create(),o={};e.exports=t,t.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(n,e){e.exports=n("D5DuLP")},{}],XL7HBI:[function(n,e){function t(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:i(n,o,function(){return r++})}var r=1,o="nr@id",i=n("gos");e.exports=t},{gos:"7eSDFh"}],id:[function(n,e){e.exports=n("XL7HBI")},{}],loader:[function(n,e){e.exports=n("G9z0Bl")},{}],G9z0Bl:[function(n,e){function t(){var n=h.info=NREUM.info;if(n&&n.licenseKey&&n.applicationID&&f&&f.body){c(l,function(e,t){e in n||(n[e]=t)}),h.proto="https"===d.split(":")[0]||n.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=f.createElement("script");e.src=h.proto+n.agent,f.body.appendChild(e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=n("handle"),c=n(1),u=(n(2),window),f=u.document,s="addEventListener",p="attachEvent",d=(""+location).split("?")[0],l={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-593.min.js"},h=e.exports={offset:i(),origin:d,features:{}};f[s]?(f[s]("DOMContentLoaded",o,!1),u[s]("load",t,!1)):(f[p]("onreadystatechange",r),u[p]("onload",t)),a("mark",["firstbyte",i()])},{1:12,2:3,handle:"D5DuLP"}],12:[function(n,e){function t(n,e){var t=[],o="",i=0;for(o in n)r.call(n,o)&&(t[i]=e(o,n[o]),i+=1);return t}var r=Object.prototype.hasOwnProperty;e.exports=t},{}],13:[function(n,e){function t(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,o=t-e||0,i=Array(0>o?0:o);++r<o;)i[r]=n[e+r];return i}e.exports=t},{}]},{},["G9z0Bl"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
+  <meta itemprop="description" name="description" content="Viking Code School is the premier program for learning professional web development online.">
+  <link rel="publisher" href="https://plus.google.com/105284911993210538737"/>
+
+  <!-- Facebook Open Graph Sharing Defaults -->
+  <meta property="og:title" content="Become a Web Developer | Viking Code School"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.vikingcodeschool.com/assets/logos/vikinglogo512-9083ea9883dbcf6d5ad7ac958fbfc7f3.png"/>
+  <meta property="og:description" content= "Viking Code School is the premier program for learning professional web development online" />
+  <meta property="fb:app_id" content="1517547965192641"/>
+
+
+
+</head>
+
+<body class="language-bash" data-no-turbolink>
+  
+    <div class="activate-bootstrap" id="navbar">
+
+  <div class="student-nav-spacer">
+  </div>
+
+  <nav class="navbar navbar-default student-navbar">
+    <div class="container-fluid">
+
+      <div class="navbar-header">
+
+        
+        <div class="logo">
+  <a href="../index.html">
+      
+    <img alt="Viking Code School Logo| Become A Web Developer Online" height="32px" src="../assets/home_page/bluerfillshield-05388ccb7efb03c510a0768cffed08e5.png" width="32px" />
+
+    <h1 class="nav-text">
+      Viking Code School 
+    </h1>
+
+</a>
+    <a href="../prep.html">
+      <span class="title-addendum">Prep</span>
+</a>
+</div>
+
+
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsed-navbar">
+
+          <img alt="Missing" class="user-icon" height="40px" src="http://s3.amazonaws.com/viking_education/users/avatars/default_avatars/thumb_mini/missing.jpg" width="40px" />
+
+        </button>
+
+      </div>
+
+
+        <ul class="nav navbar-nav navbar-right hidden-xs">
+
+          <li>
+            <a class="" href="../prep.html" title="Prep Work">
+              <img alt="Icon blocks 2" class="prep-icon" height="25px" src="http://s3.amazonaws.com/viking_education/icons/icon_blocks_2.png" width="25px" />
+</a>          </li>
+
+          <li>
+            <a class="" href="../dashboard.html" title="Dashboard">
+              <img alt="Icon book" class="dashboard-icon" height="38px" src="http://s3.amazonaws.com/viking_education/icons/icon_book.png" width="38px" />
+</a>          </li>
+
+          <li>
+            <a href="https://plus.google.com/hangouts/_/calendar/ZXJpay50cmF1dG1hbkBnbWFpbC5jb20.3kfa86kd25m6to7c0t4cj5ln8g?authuser=0" target="_blank" title="Hangout">
+              <img alt="Icon hangout" class="hangout-icon" height="40px" src="http://s3.amazonaws.com/viking_education/icons/icon_hangout.png" width="40px" />
+</a>          </li>
+
+
+          <li class="dropdown hidden-xs">
+
+            <a href="#" class="dropdown-toggle user-avatar" data-toggle="dropdown" role="button" aria-expanded="false">
+
+              <img alt="Missing" class="user-icon" src="http://s3.amazonaws.com/viking_education/users/avatars/default_avatars/thumb_mini/missing.jpg" /><span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu dropdown-links" role="menu">
+
+
+              <!-- Link only exists for admins -->
+
+              
+
+              <a class="disabled" href="#" title="Not Available Yet">
+                <li>
+                  <img src="http://s3.amazonaws.com/viking_education/icons/icon_calendar.png" class="schedule-icon">
+                  <span class="menu-text">Schedule</span>
+                </li>
+</a>
+              <a class="" height="28px" href="../users/edit.html" title="Edit Account Settings" width="28px">
+                <li>
+                  <img src="http://s3.amazonaws.com/viking_education/icons/icon_settings.png" class="settings-icon">
+                  <span class="menu-text">Account</span>
+                </li>
+</a>
+
+
+
+              <li class="divider"></li>
+
+              <a data-method="delete" href="../logout.html" rel="nofollow" title="Logout">
+                <li>
+                  <img src="http://s3.amazonaws.com/viking_education/icons/logout.png" class="logout-icon">
+                  <span class="menu-text">Log Out</span>
+                </li>
+</a>                
+            </ul>
+
+          </li>
+        </ul>
+
+
+      <div class="links collapse navbar-collapse" id="collapsed-navbar">
+
+
+        <ul class="dropdown-links nav navbar-nav mobile-nav hidden-sm hidden-md hidden-lg" role="menu">
+
+
+          <li>
+            <a class="" href="../prep.html" title="Prep Work">
+              <img alt="Icon blocks 2" class="prep-icon" height="25px" src="http://s3.amazonaws.com/viking_education/icons/icon_blocks_2.png" width="25px" />
+              <span class="menu-text">Prep Work</span>
+</a>          </li>
+
+          <li>
+            <a class="" href="../dashboard.html" title="Dashboard">
+              <img alt="Icon book" class="dashboard-icon" height="38px" src="http://s3.amazonaws.com/viking_education/icons/icon_book.png" width="38px" />
+              <span class="menu-text">Dashboard</span>
+</a>          </li>
+
+          <li>
+            <a href="https://plus.google.com/hangouts/_/calendar/ZXJpay50cmF1dG1hbkBnbWFpbC5jb20.3kfa86kd25m6to7c0t4cj5ln8g?authuser=0" target="_blank" title="Hangout">
+              <img alt="Icon hangout" class="hangout-icon" height="40px" src="http://s3.amazonaws.com/viking_education/icons/icon_hangout.png" width="40px" />
+              <span class="menu-text">Group Hangout</span>
+</a>          </li>
+
+          <a class="disabled" href="#" title="Not Available Yet">
+            <li>
+              <img src="http://s3.amazonaws.com/viking_education/icons/icon_calendar.png" class="schedule-icon">
+              <span class="menu-text">Schedule</span>
+            </li>
+</a>
+          <a class="" height="28px" href="../users/edit.html" title="Edit Account Settings" width="28px">
+            <li>
+              <img src="http://s3.amazonaws.com/viking_education/icons/icon_settings.png" class="settings-icon">
+              <span class="menu-text">Account</span>
+            </li>
+</a>
+          <li class="divider"></li>
+
+          <a data-method="delete" href="../logout.html" rel="nofollow" title="Logout">
+            <li>
+              <img src="http://s3.amazonaws.com/viking_education/icons/logout.png" class="logout-icon">
+              <span class="menu-text">Log Out</span>
+            </li>
+</a>            
+        </ul>
+
+      </div>
+
+
+
+
+
+
+    </div>
+  </nav>
+
+
+</div>
+
+  <div class="flash-wrapper">
+    
+ 
+  </div> 
+
+  <div class="week-page">
+
+  
+  
+  <div class="hero hero-engineering">
+    <div id="breadcrumb-nav">
+  <div class="container-wide">
+
+      <a href="../software-engineering-basics.html" title="Software Engineering Basics">
+        <div class="breadcrumb-item breadcrumb-week week-engineering">
+          Engineering
+        </div>
+</a>    <div class="breadcrumb-item breadcrumb-lesson">
+      21. SOLID Design Principles
+    </div>
+  </div>
+</div>
+    <div class="container-narrow headlines lesson-page parallax-fade ">
+      <div id="nav-arrows">
+    <a href="characteristics-of-good-systems.html" title="Go to Previous Lesson">
+    <div class="prev-arrow nav-arrow" data-lesson-uid="LN00109">
+      &#9001;
+    </div>
+</a>
+    <a href="pseudocoding-modular-design.html" title="Go to Next Lesson">
+      <div class="next-arrow nav-arrow"  data-lesson-uid="LN00079">
+        &#9002;
+      </div>
+</a></div>
+      <h1>
+        
+        
+        SOLID Design Principles
+      </h1>
+      <h2>
+        A look at the core SOLID principles through the lens of modularity
+      </h2>
+      <p class="scroll-prompt">
+        Scroll down...
+      </p>
+    </div>
+  </div>
+
+  <div id="lesson-tab-nav">
+  <div id="tab">
+  </div>
+
+  <div class="tab tab-active" data-target="lesson-content">
+    <h3>
+      Content
+    </h3>
+  </div>
+
+  <div class="tab tab-middle" data-target="lesson-resources">
+    <h3>Resources <span class = "resource-count" data-resource-count></span></h3>
+  </div>
+
+
+  <div class="tab" data-target="lesson-comments">
+    <h3>Comments</h3>
+  </div>
+
+</div>
+
+  <div id="content-tab-container">
+    <div id="lesson-content" class="lesson-content-panel ">
+      <div class="container-medium">
+        <h2>SOLID Software Engineering Principles</h2>
+
+<p>In the previous lesson, you learned that successful systems contain modules which have the following three characteristics:</p>
+
+<ol>
+<li><strong>Low Coupling</strong> -- modules should be minimally dependent on each other and communicate using specified interfaces</li>
+<li><strong>High Cohesion</strong> -- modules should be focused completely on achieving the overall goal</li>
+<li><strong>High Encapsulation</strong> -- modules shouldn&#39;t reveal their implementation details to anyone else (and shouldn&#39;t need to)</li>
+</ol>
+
+<p>While these characteristics guide our overall thinking, specifically implementing them in software modules has led to 5 key engineering principles.  These principles, originally compiled by Robert C Martin in the 1990&#39;s, are best known by their acronym SOLID.  </p>
+
+<p>They are:</p>
+
+<ol>
+<li><strong>Single Responsibility Principle (SRP)</strong> -- modules should only exist to serve one purpose and may only change if that purpose is modified</li>
+<li><strong>Open/Closed Principle (OCP)</strong> -- modules should be open for extension but closed to modification</li>
+<li><strong>Liskov Substitution Principle (LSP)</strong> -- modules that inherit from a parent should not alter any of that parent&#39;s functionality</li>
+<li><strong>Interface Segregation Principle (ISP)</strong> -- each different user of a module should get to access it via a specialized interface that only requires them to supply the minimal amount of information.</li>
+<li><strong>Dependency Inversion Principle (DIP)</strong> -- Higher level modules should dictate the implementation details of lower level modules, not the other way around.</li>
+</ol>
+
+<p>In this lesson, we&#39;ll show you through the use of examples how each of these principles is applied to modular software design.</p>
+
+<h3>Our Examples</h3>
+
+<p>We haven&#39;t gotten into code yet so some of the specific terminology wouldn&#39;t make much sense to you (for instance, the official definitions talk about &quot;classes&quot; not modules).  Because of that, we&#39;ll explain each of the principles using real-world examples based on the idea of modularity we covered in the previous lessons.</p>
+
+<p>The first is a concrete example of a power drill.  It&#39;s the kind of thing that typically lends itself well to illustrating the ideas behind the principles but it isn&#39;t always as easy to see how that analogy relates to software.  </p>
+
+<p>The other example we&#39;ll use extends the birthday party from before. Specifically, we&#39;ll think about the bakery that produces the cakes.  The reason this is particularly helpful is because software more closely resembles the kinds of interactions you see around performing services than the use of power tools.  As we&#39;ve said before, the components of a software system can really be thought of as individual services interacting with each other, just like when people interact in the real world.</p>
+
+<h3>1. Single Responsibility Principle, aka &quot;Do Just One Thing Well&quot;</h3>
+
+<p><img src="http://s3.amazonaws.com/viking_education/web_development/prep_engineering/srp_knife.jpg" alt="SRP Swiss Army Knife" width="100%"></p>
+
+<p><em>Source: <a href="http://zeroturnaround.com/rebellabs/object-oriented-design-principles-and-the-5-ways-of-creating-solid-applications/">Zero Turnaround</a></em></p>
+
+<p>The Single Responsibility Principle states that:</p>
+
+<blockquote>
+<p>There should never be more than one reason for a [module] to change</p>
+</blockquote>
+
+<p>That means that each of your modules should only serve one greater purpose and the only reason for them to change is if that greater purpose changes.  It doesn&#39;t mean they need to stick to just one task or contain only one component, but these tasks or components all need to cohesively relate to the greater purpose of the module.</p>
+
+<p>This is very helpful in software because it prevents your system components from becoming all-knowing all-powerful god modules which are way too big to fully understand or fix if broken or ever do without.  Stick to the Single Responsibility Principle and you&#39;ll have a maintainable, fixable, extendable and cleaner code.  The same applies to the &quot;real world&quot;...</p>
+
+<h4>SRP with the Drill</h4>
+
+<p>A power drill can be thought of as a system made up of modular components or as the module itself.  In either case, the module(s) should have just a single responsibility.</p>
+
+<p>If the user of the drill was a drill mechanic, it would make sense to treat the drill as a larger system where each separate part was a different module. You&#39;d want to know that the components each performed only a single task so you could easily identify which part was broken and replace it.  If you had to replace the gearbox and battery in order to fix a simple broken trigger, there&#39;s something wrong with the design.</p>
+
+<p>If the user of the drill is your average homeowner, there&#39;s no reason to know anything specific about the sub-components of the drill so the drill itself becomes the module.  You only care if the drill does its drilling well.  It&#39;s probably a waste of cost and effort if the drill also tells time and has a flashlight on the end.</p>
+
+<h4>SRP with the Bakery</h4>
+
+<p>We&#39;ll treat the bakery as a module.  When you go down to the bakery to order your birthday cake, you want to make sure your baker is specialized at making cakes.  It&#39;s okay if he&#39;s taking night classes, but if he&#39;s also a lawyer and construction worker on the side then you should probably find someone who&#39;s got more time to devote to the act of baking cakes to make sure the job is done right.</p>
+
+<h3>Open/Closed Principle, aka &quot;Allow for Interchangeable Parts&quot;</h3>
+
+<p><img src="http://s3.amazonaws.com/viking_education/web_development/prep_engineering/ocp_brain.jpg" alt="Open-closed principle brain surgery" width="100%"></p>
+
+<p><em>Source: <a href="http://deviq.com/open-closed-principle">DevIQ</a></em></p>
+
+<p>The Open/Closed principle means that you should be able to extend the functionality of the module without having to go digging into its guts.  Formally said:</p>
+
+<blockquote>
+<p>The [module] is open for extension but closed to modification.</p>
+</blockquote>
+
+<p>Because you&#39;ll constantly get new requirements added onto existing code, you&#39;ll want to make sure your systems can be extended to meet the new requirements but without forcing you to go in and rework the details of the existing system.</p>
+
+<h4>OCP with the Drill</h4>
+
+<p>A typical drill has a series of interchangeable drill bits. To put on a new bit as the end user, you just need to plug it into the drill head and you&#39;re good to go.  Thus it is open to extension.  Because you don&#39;t need to take apart the drill to do so (and can&#39;t without much effort), it is also closed to modification.  </p>
+
+<h4>OCP with the Bakery</h4>
+
+<p>The bakery example more closely resembles software systems.  The bakery normally just produces birthday cakes by employing a single BirthdayCakeChef using a standard kitchen.</p>
+
+<p>Let&#39;s say you also need to buy a wedding cake.  The bakery owner decides to hire a WeddingCakeChef who can make wedding cakes using his existing infrastructure.  The bakery just extended its capabilities!  Because the owner uses a standard kitchen that doesn&#39;t need to be modified to handle the new chef, the bakery is also &quot;closed to modification&quot;.</p>
+
+<p>If the bakery had to add a new production line and machinery to their kitchen in order to handle the WeddingCakeChef, it would be open to extension but not closed to modification because the new client-facing service would require them to change their core infrastructure.  As the bakery owner (and any clients waiting for new cakes), you would prefer to be able to extend your bakery&#39;s functionality without needing to rebuild the kitchen each time!</p>
+
+<h3>Liskov Substitution Principle, aka &quot;Be What They Expect You to Be&quot;</h3>
+
+<p><img src="http://s3.amazonaws.com/viking_education/web_development/prep_engineering/lsp_duck.jpg" alt="Liskov ducks" width="100%"></p>
+
+<p><em>Source: <a href="http://zeroturnaround.com/rebellabs/object-oriented-design-principles-and-the-5-ways-of-creating-solid-applications/">Zero Turnaround</a></em></p>
+
+<p>Liskov Substitution states that a module which inherits the characteristics of a parent module should not only display all the behavior of its parent but also stay true to the parent&#39;s intended purpose.  </p>
+
+<p>In software, LSP violations can be difficult to debug so it&#39;s always good to make sure children who inherit from their parents don&#39;t lose or alter any of the functionality of those parents.  Practically speaking, this means you really need to understand all the functionality of a particular module before making it the parent of another module.</p>
+
+<h4>LSP with the Drill</h4>
+
+<p>Let&#39;s say you buy a high end drill from the same manufacturer as your previous drill.  This new drill has a higher torque setting so you can use it with a sanding attachment.  You would expect the drill to otherwise operate with at least the same level of functionality as the base model, right?  </p>
+
+<p>If you took your fancy new drill and tried to use it to make a hole in the wall but it only spun in the reverse direction with the high torque setting enabled, that would be a Liskov Substitution violation.  It walked like a drill, talked like a drill, but turned out not to be a drill when you needed it!  </p>
+
+<p>The engineers may have reasonably assumed that you wouldn&#39;t try to use it like a drill with the high torque setting enabled but that&#39;s not a safe assumption.</p>
+
+<h4>LSP with the Bakery</h4>
+
+<p>Let&#39;s say Joe, the owner of &quot;Joe&#39;s Cake Shop&quot; opened up a giant &quot;Joe&#39;s Cakes-and-More Shop&quot; in the next town over.  </p>
+
+<p>Let&#39;s also say that your child wanted a chocolate cake with vanilla frosting that he saw on the menu of the original Joe&#39;s Cake Shop.  You are busy one day and come home from work a different way, passing by the new &quot;Joe&#39;s Cake and More Shop&quot;.  You walk in and ask to order a chocolate cake with vanilla frosting but the manager tells you they don&#39;t allow you to specify the frosting flavor.  Huh!?</p>
+
+<p>Because you expect that the bakery with more functionality will at least have the same characteristics as the old one, that is a Liskov Substitution violation.</p>
+
+<p>In this case, it may have seemed reasonable for Joe to test out a slightly different menu at the new location but it resulted in a very unhappy customer.</p>
+
+<h3>Interface Segregation Principle, aka &quot;Don&#39;t Make Me Specify Things I Don&#39;t Care About&quot;</h3>
+
+<p><img src="http://s3.amazonaws.com/viking_education/web_development/prep_engineering/isp_cords.jpg" alt="ISP cords" width="100%"></p>
+
+<p><em>Source: <a href="http://deviq.com/interface-segregation-principle">DevIQ</a></em></p>
+
+<p>The Interface Segregation Principle states that you shouldn&#39;t force the user to depend on interface members that she doesn&#39;t need to use.  This is a very similar idea to the Single Responsibility Principle but instead of applying to the module itself, it applies to the interface of the module.  A more casual way to put it might be &quot;Don&#39;t make me specify options that have nothing to do with what I care about&quot;.</p>
+
+<p>In a practical sense, it means that, even if your module is capable of producing different results for different users based on lots of potential inputs, each user should receive a separate interface that removes all the extra crap they don&#39;t need.  This creates a much more cohesive interface and also minimizes coupling between modules based on completely irrelevant items.</p>
+
+<h4>ISP with the Drill</h4>
+
+<p>What if the drill had a switch for determining whether you were using the American 120v or European 230v outlet power?  You might accidentally set it to the wrong thing and blow up your drill!  Hairdryers frequently had this feature and it resulted in plenty of meltdowns.  </p>
+
+<p>This violates the Interface Segregation Principle -- even though the internals of the drill might contain both the option for 120v or 230v based on some little internal widget, consumers really shouldn&#39;t have to access that interface to use the drill.  The drills sold in the USA should already have the 120v mode set by default and the European drills should have the 230v mode in action so you don&#39;t need to make a choice.</p>
+
+<h4>ISP with the Bakery</h4>
+
+<p>If you go to Joe&#39;s Cake Shop to order your birthday cake and Joe asks you at the counter how many layers you want, whether you would like the little bride and groom figurine on top, and what color of flowers to put around the outside, you&#39;d probably be annoyed at the waste of time.  When you order off the birthday cake menu, you don&#39;t want to have to specify the wedding cake options even though the bakery needs to make some assumptions about those options to produce your birthday cake.</p>
+
+<p>This may seem impractical in person but happens all the time with online ordering systems -- developers put every possible option in the form whether or not it has anything to do with what you&#39;re trying to order.  Instead, customers going through the wedding cake ordering process should be shown just the options that matter.</p>
+
+<p>This is good user-centered design and also good software design.</p>
+
+<h3>Dependency Inversion Principle, aka &quot;I Don&#39;t Care How, Just Give Me What I Want&quot;</h3>
+
+<p><img src="http://s3.amazonaws.com/viking_education/web_development/prep_engineering/dip_socket.jpg" alt="DIP outlet" width="100%"></p>
+
+<p><em>Source: <a href="http://deviq.com/dependency-inversion-principle">DevIQ</a></em></p>
+
+<p>The Dependency Inversion Principle is all about reversing how you think about the way your modules interact with each other.  It states that the implementation details of your system should depend on the system&#39;s interface with the outside and not the other way around.  </p>
+
+<p>If you&#39;ve been following user-centered design principles when designing websites, this idea should make sense -- it&#39;s basically &quot;I don&#39;t care how you work, just give me what I want&quot;. </p>
+
+<p>More generally:</p>
+
+<blockquote>
+<p>High level modules should not depend upon low-level modules, they should depend upon abstractions.  Also, abstractions should not depend on details -- details should depend on abstractions.</p>
+</blockquote>
+
+<p>Practically speaking, it means we should isolate our module behind an interface and let other modules communicate only with that interface instead of directly with our module.  That way, the other modules wouldn&#39;t know the difference if we completely change the details of how one of them works.</p>
+
+<p>A common real-world example is with light sockets -- you use the interface of the socket to plug a lamp into the electrical system of your house.  The lamp doesn&#39;t care how the wiring is done or if you&#39;re going to rebuild the system, and that&#39;s precisely because it uses the interface instead of plugging directly into the wiring in the walls.  </p>
+
+<p>This should further illustrate the power of thinking in terms of interfaces between modules to abstract away the implementation details of those modules.</p>
+
+<p>In software, this means that your code will be much safer to change and less tightly coupled together.</p>
+
+<h4>DIP and the Drill</h4>
+
+<p>Drills already use this principle well -- the drill bit interface is typically standardized.  Even if the manufacturer replaces the drill guts, you don&#39;t care because it will still use all the same bits it always did.  </p>
+
+<p>The reverse is also true -- if users were trying to constantly drill through very difficult materials, the company might be forced to send more torque to the bit through a motor upgrade.  The user drives changes in the implementation details, not the other way around.</p>
+
+<h4>DIP and the Bakery</h4>
+
+<p>If Joe the bakery owner decides to rebuild his kitchen, it might make sense from his perspective to change around the menu, including perhaps removing some items.  He really shouldn&#39;t do that because it violates the Dependency Inversion Principle -- his interface with you shouldn&#39;t change just because his implementation (the kitchen) is different.  You should still be able to order the same birthday cake.</p>
+
+<p>From the opposite perspective, though, if you wanted to pay for gluten-free cakes, he might need to change his production process to accommodate you.  In baking and in software, the customer is always right.</p>
+
+<h3>Wrapping Up</h3>
+
+<p>In this lesson, we learned how to apply the 3 characteristics of good system modules through the use of the 5 SOLID design principles.  It was a lot to chew on so it&#39;s fine if you didn&#39;t absorb the details of it.  The main takeaways are simply:</p>
+
+<ul>
+<li>You <strong>don&#39;t</strong> want your modules to be tightly coupled together or it defeats the purpose of having them.</li>
+<li>You <strong>do</strong> want your modules to be highly cohesive so they are all working efficiently towards the same goal.</li>
+<li>You <strong>do</strong> want to keep your modules as encapsulated as possible so no one else knows (or needs to know) about their implementation details.</li>
+<li>The SOLID design principles essentially represent tests as to whether you are properly implementing those 3 characteristics.</li>
+</ul>
+
+<p>If you&#39;ve absorbed that much, then you&#39;ve got enough to chew on.  By the time we get deeper into this during our Object-Oriented Design lessons in the Ruby section of the Intensive Program, you&#39;ll be ready for more.  For now, this represents the end of your formal engineering training!  We&#39;ll wrap things up over the next few lessons and then get into some coding.</p>
+
+        <div class = 'resource-teaser'>
+          <p>
+            <hr>
+            There are <span class = 'resource-count' data-resource-count>( )</span> additional resources for this lesson.     <a data-switch-tab="lesson-resources" href="#tab">Check them out!</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="lesson-resources" class="lesson-content-panel">
+      <div class="container-medium">
+          <h2>Additional Resources</h2>
+
+<ul>
+<li><a href="http://www.codemag.com/article/1001061">S.O.L.I.D Principles, One Step At A Time</a> by Derick Bailey via Codemag</li>
+<li><a href="http://zeroturnaround.com/rebellabs/object-oriented-design-principles-and-the-5-ways-of-creating-solid-applications/">The 5 Ways of Creating SOLID Applications</a> from Kaur Mätas at Zero Turnaround</li>
+<li><a href="http://confreaks.net/videos/240-goruco2009-solid-object-oriented-design">SOLID Design Principles in Ruby</a> from Sandi Metz at Golden Gate Ruby Conference </li>
+<li><a href="http://www.blackwasp.co.uk/SOLIDPrinciples.aspx">SOLID principles</a> from BlackWasp</li>
+<li><a href="http://williamdurand.fr/2013/07/30/from-stupid-to-solid-code/">From STUPID to SOLID code</a> from William Durand</li>
+<li><a href="http://blog.rubybestpractices.com/posts/gregory/055-issue-23-solid-design.html">SOLID Design Principles (in Ruby)</a> by Gregory Brown via Ruby Best Practices</li>
+<li><a href="http://robots.thoughtbot.com/back-to-basics-solid">Back to Basics: SOLID Principles</a> from Thoughbot</li>
+</ul>
+
+      </div>
+    </div>
+
+    <div id="lesson-comments" class="lesson-content-panel">
+      <div class="container-medium">
+        <h2>
+          Sorry, comments aren't active just yet!
+        </h2>
+      </div>
+    </div>
+  </div>
+
+    <div class="cta engineering">
+  <div class="container-wide">
+    <h3 class="cta-text ">
+      Next Lesson:  Pseudocoding Modular Design
+    </h3>
+    <div class="cta-button-wrapper">
+      <a href="pseudocoding-modular-design.html">
+        <div class="cta-button cta-button-lesson" title="Pseudocoding Modular Design" data-lesson-uid="LN00079">
+          Onward!
+        </div>
+</a>        <a href="characteristics-of-good-systems.html">
+  <div class="cta-back" title="Characteristics of Good Systems" data-lesson-uid="LN00109">
+    or go to previous lesson...
+  </div>
+</a>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+
+  <footer id="footer" class="activate-bootstrap">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-xs-12 slogan">
+        Viking: The premier program for learning professional web development online
+      </div>
+    </div>
+
+    <nav class="row">
+
+      <section class="col-xs-4 link-list"> 
+
+        <h3>
+          The Viking Program
+        </h3>
+
+        <ul>
+
+          <a href="../index.html#curriculum">
+            <li>
+              Curriculum
+            </li>
+</a>
+          <a href="../index.html#our-program">
+            <li>
+              Methodology
+            </li>
+</a>
+          <a href="../index.html#curriculum">
+            <li>
+              Instructors
+            </li>
+</a>
+          <a href="../index.html#our-program">
+            <li>
+              Schedule
+            </li>
+</a>
+          <a href="../index.html#faq">
+            <li>
+              After the Program
+            </li>
+</a>
+          <a href="../index.html#faq">
+            <li>
+              FAQ
+            </li>
+</a>
+          <a href="../apply.html">
+            <li>
+              Apply
+            </li>
+</a>
+        </ul>
+      </section>
+
+
+      <section class="col-xs-4 link-list">
+
+        <a href="../prep.html">
+          <h3>
+            Knowledge Base
+          </h3>
+</a>
+        <ul>
+
+          <a href="../blog.html">
+            <li>
+              The Viking Blog
+            </li>
+</a>
+          <a href="../web-development-basics.html">
+            <li>
+              Web Development Basics
+            </li>
+</a>
+          <a href="../web-design-basics.html">
+            <li>
+              Web Design Basics
+            </li>
+</a>
+          <a href="../software-engineering-basics.html">
+            <li>
+              Web Engineering Basics
+            </li>
+</a>
+          <a href="../web-markup-and-coding.html">
+            <li>
+              Web Markup and Coding
+            </li>
+</a>
+        </ul>
+
+      </section>
+
+
+      <section class="col-xs-4 link-list">
+
+        <h3>
+          Other Stuff
+        </h3>
+
+        <ul>
+
+          <a href="../growth-for-code.html">
+            <li>
+              Join Us: Growth
+            </li>
+</a>
+          <a href="../design-for-code.html">
+            <li>
+              Join Us: Design
+            </li>
+</a>
+          <a href="../sitemap">
+            <li>
+              Sitemap
+            </li>
+</a>
+          <a href="mailto:hello@vikingcodeschool.com">
+            <li>
+              Contact Us
+            </li>
+</a>
+            <a data-method="delete" href="../logout.html" rel="nofollow">
+              <li>
+                Logout
+              </li>
+</a>
+        </ul>
+
+      </section>  
+
+    </nav>
+
+  </div>
+    
+  <div class="copyright">
+     &#169; Viking Education Inc 2015
+  </div>
+
+</footer>
+
+  
+
+  <div id="fb-root"></div>
+  
+  <script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'vikingcodeschool'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+  
+</body>
+
+<!-- Mirrored from www.vikingcodeschool.com/software-engineering-basics/solid-design-principles by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 15 Mar 2015 04:16:41 GMT -->
+</html>
+

@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Mirrored from www.vikingcodeschool.com/unit-0-getting-ready/iteration by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 15 Mar 2015 04:16:05 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+
+  <title itemprop="name">
+    Become a Web Developer | Viking Code School
+  </title>
+
+  <!-- favicon -->
+  <link href="../assets/favicon-d5b8f8cd71b03d62073db56646af4fa8.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+
+  <!-- CSS -->
+  <link data-turbolinks-track="true" href="../assets/application-77eb9024ae8bb8b1eee08f052f43a619.css" media="all" rel="stylesheet" />
+  
+  <!-- scripts -->
+  <script data-turbolinks-track="true" src="../assets/application-7ed894c9eff5e2b9b37456de6bb3fdef.js"></script>
+
+  <!-- Analytics -->
+    
+
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','http://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-50753703-1', 'vikingcodeschool.com');
+    ga('send', 'pageview');
+
+  </script>
+
+
+
+  <!-- FONTS -->
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,600|Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+
+  <!-- Bing Webmaster Verification  -->
+  <meta name="msvalidate.01" content="34B181612CA472DE47B9342855B65B01" />
+  
+  <!-- META -->
+  <meta content="authenticity_token" name="csrf-param" />
+<meta content="bxeTnuuiioH+K7FQTT4Fz6SCrbeFOZQds98AkCQfnpI=" name="csrf-token" />
+
+  <!-- Google Sites -->
+  <meta name="google-site-verification" content="NeYN2FsBCW5FN1dWdXdq_xAw2FTNLE1IoUPqpYweoK4" />
+
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","errorBeacon":"bam.nr-data.net","licenseKey":"17c2e9d24a","applicationID":"3046207","transactionName":"JgkKERMNWQhQERwUUwANF0oSCloTag9WEEUKCA==","queueTime":10,"applicationTime":158,"agentToken":null,"agent":"js-agent.newrelic.com/nr-593.min.js"}</script>
+<script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(n,e,t){function r(t){if(!e[t]){var o=e[t]={exports:{}};n[t][0].call(o.exports,function(e){var o=n[t][1][e];return r(o?o:e)},o,o.exports)}return e[t].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<t.length;o++)r(t[o]);return r}({QJf3ax:[function(n,e){function t(n){function e(e,t,a){n&&n(e,t,a),a||(a={});for(var u=c(e),f=u.length,s=i(a,o,r),p=0;f>p;p++)u[p].apply(s,t);return s}function a(n,e){f[n]=c(n).concat(e)}function c(n){return f[n]||[]}function u(){return t(e)}var f={};return{on:a,emit:e,create:u,listeners:c,_events:f}}function r(){return{}}var o="nr@context",i=n("gos");e.exports=t()},{gos:"7eSDFh"}],ee:[function(n,e){e.exports=n("QJf3ax")},{}],3:[function(n,e){function t(n){return function(){r(n,[(new Date).getTime()].concat(i(arguments)))}}var r=n("handle"),o=n(1),i=n(2);"undefined"==typeof window.newrelic&&(newrelic=window.NREUM);var a=["setPageViewName","addPageAction","setCustomAttribute","finished","addToTrace","inlineHit","noticeError"];o(a,function(n,e){window.NREUM[e]=t("api-"+e)}),e.exports=window.NREUM},{1:12,2:13,handle:"D5DuLP"}],gos:[function(n,e){e.exports=n("7eSDFh")},{}],"7eSDFh":[function(n,e){function t(n,e,t){if(r.call(n,e))return n[e];var o=t();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(n,e,{value:o,writable:!0,enumerable:!1}),o}catch(i){}return n[e]=o,o}var r=Object.prototype.hasOwnProperty;e.exports=t},{}],D5DuLP:[function(n,e){function t(n,e,t){return r.listeners(n).length?r.emit(n,e,t):(o[n]||(o[n]=[]),void o[n].push(e))}var r=n("ee").create(),o={};e.exports=t,t.ee=r,r.q=o},{ee:"QJf3ax"}],handle:[function(n,e){e.exports=n("D5DuLP")},{}],XL7HBI:[function(n,e){function t(n){var e=typeof n;return!n||"object"!==e&&"function"!==e?-1:n===window?0:i(n,o,function(){return r++})}var r=1,o="nr@id",i=n("gos");e.exports=t},{gos:"7eSDFh"}],id:[function(n,e){e.exports=n("XL7HBI")},{}],loader:[function(n,e){e.exports=n("G9z0Bl")},{}],G9z0Bl:[function(n,e){function t(){var n=h.info=NREUM.info;if(n&&n.licenseKey&&n.applicationID&&f&&f.body){c(l,function(e,t){e in n||(n[e]=t)}),h.proto="https"===d.split(":")[0]||n.sslForHttp?"https://":"http://",a("mark",["onload",i()]);var e=f.createElement("script");e.src=h.proto+n.agent,f.body.appendChild(e)}}function r(){"complete"===f.readyState&&o()}function o(){a("mark",["domContent",i()])}function i(){return(new Date).getTime()}var a=n("handle"),c=n(1),u=(n(2),window),f=u.document,s="addEventListener",p="attachEvent",d=(""+location).split("?")[0],l={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-593.min.js"},h=e.exports={offset:i(),origin:d,features:{}};f[s]?(f[s]("DOMContentLoaded",o,!1),u[s]("load",t,!1)):(f[p]("onreadystatechange",r),u[p]("onload",t)),a("mark",["firstbyte",i()])},{1:12,2:3,handle:"D5DuLP"}],12:[function(n,e){function t(n,e){var t=[],o="",i=0;for(o in n)r.call(n,o)&&(t[i]=e(o,n[o]),i+=1);return t}var r=Object.prototype.hasOwnProperty;e.exports=t},{}],13:[function(n,e){function t(n,e,t){e||(e=0),"undefined"==typeof t&&(t=n?n.length:0);for(var r=-1,o=t-e||0,i=Array(0>o?0:o);++r<o;)i[r]=n[e+r];return i}e.exports=t},{}]},{},["G9z0Bl"]);</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
+  <meta itemprop="description" name="description" content="Viking Code School is the premier program for learning professional web development online.">
+  <link rel="publisher" href="https://plus.google.com/105284911993210538737"/>
+
+  <!-- Facebook Open Graph Sharing Defaults -->
+  <meta property="og:title" content="Become a Web Developer | Viking Code School"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://www.vikingcodeschool.com/assets/logos/vikinglogo512-9083ea9883dbcf6d5ad7ac958fbfc7f3.png"/>
+  <meta property="og:description" content= "Viking Code School is the premier program for learning professional web development online" />
+  <meta property="fb:app_id" content="1517547965192641"/>
+
+
+
+</head>
+
+<body class="language-bash" data-no-turbolink>
+  
+    <div class="activate-bootstrap" id="navbar">
+
+  <div class="student-nav-spacer">
+  </div>
+
+  <nav class="navbar navbar-default student-navbar">
+    <div class="container-fluid">
+
+      <div class="navbar-header">
+
+        
+        <div class="logo">
+  <a href="../index.html">
+      
+    <img alt="Viking Code School Logo| Become A Web Developer Online" height="32px" src="../assets/home_page/bluerfillshield-05388ccb7efb03c510a0768cffed08e5.png" width="32px" />
+
+    <h1 class="nav-text">
+      Viking Code School 
+    </h1>
+
+</a>
+
+</div>
+
+
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsed-navbar">
+
+          <img alt="Missing" class="user-icon" height="40px" src="http://s3.amazonaws.com/viking_education/users/avatars/default_avatars/thumb_mini/missing.jpg" width="40px" />
+
+        </button>
+
+      </div>
+
+
+        <ul class="nav navbar-nav navbar-right hidden-xs">
+
+          <li>
+            <a class="" href="../prep.html" title="Prep Work">
+              <img alt="Icon blocks 2" class="prep-icon" height="25px" src="http://s3.amazonaws.com/viking_education/icons/icon_blocks_2.png" width="25px" />
+</a>          </li>
+
+          <li>
+            <a class="" href="../dashboard.html" title="Dashboard">
+              <img alt="Icon book" class="dashboard-icon" height="38px" src="http://s3.amazonaws.com/viking_education/icons/icon_book.png" width="38px" />
+</a>          </li>
+
+          <li>
+            <a href="https://plus.google.com/hangouts/_/calendar/ZXJpay50cmF1dG1hbkBnbWFpbC5jb20.3kfa86kd25m6to7c0t4cj5ln8g?authuser=0" target="_blank" title="Hangout">
+              <img alt="Icon hangout" class="hangout-icon" height="40px" src="http://s3.amazonaws.com/viking_education/icons/icon_hangout.png" width="40px" />
+</a>          </li>
+
+
+          <li class="dropdown hidden-xs">
+
+            <a href="#" class="dropdown-toggle user-avatar" data-toggle="dropdown" role="button" aria-expanded="false">
+
+              <img alt="Missing" class="user-icon" src="http://s3.amazonaws.com/viking_education/users/avatars/default_avatars/thumb_mini/missing.jpg" /><span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu dropdown-links" role="menu">
+
+
+              <!-- Link only exists for admins -->
+
+              
+
+              <a class="disabled" href="#" title="Not Available Yet">
+                <li>
+                  <img src="http://s3.amazonaws.com/viking_education/icons/icon_calendar.png" class="schedule-icon">
+                  <span class="menu-text">Schedule</span>
+                </li>
+</a>
+              <a class="" height="28px" href="../users/edit.html" title="Edit Account Settings" width="28px">
+                <li>
+                  <img src="http://s3.amazonaws.com/viking_education/icons/icon_settings.png" class="settings-icon">
+                  <span class="menu-text">Account</span>
+                </li>
+</a>
+
+
+
+              <li class="divider"></li>
+
+              <a data-method="delete" href="../logout.html" rel="nofollow" title="Logout">
+                <li>
+                  <img src="http://s3.amazonaws.com/viking_education/icons/logout.png" class="logout-icon">
+                  <span class="menu-text">Log Out</span>
+                </li>
+</a>                
+            </ul>
+
+          </li>
+        </ul>
+
+
+      <div class="links collapse navbar-collapse" id="collapsed-navbar">
+
+
+        <ul class="dropdown-links nav navbar-nav mobile-nav hidden-sm hidden-md hidden-lg" role="menu">
+
+
+          <li>
+            <a class="" href="../prep.html" title="Prep Work">
+              <img alt="Icon blocks 2" class="prep-icon" height="25px" src="http://s3.amazonaws.com/viking_education/icons/icon_blocks_2.png" width="25px" />
+              <span class="menu-text">Prep Work</span>
+</a>          </li>
+
+          <li>
+            <a class="" href="../dashboard.html" title="Dashboard">
+              <img alt="Icon book" class="dashboard-icon" height="38px" src="http://s3.amazonaws.com/viking_education/icons/icon_book.png" width="38px" />
+              <span class="menu-text">Dashboard</span>
+</a>          </li>
+
+          <li>
+            <a href="https://plus.google.com/hangouts/_/calendar/ZXJpay50cmF1dG1hbkBnbWFpbC5jb20.3kfa86kd25m6to7c0t4cj5ln8g?authuser=0" target="_blank" title="Hangout">
+              <img alt="Icon hangout" class="hangout-icon" height="40px" src="http://s3.amazonaws.com/viking_education/icons/icon_hangout.png" width="40px" />
+              <span class="menu-text">Group Hangout</span>
+</a>          </li>
+
+          <a class="disabled" href="#" title="Not Available Yet">
+            <li>
+              <img src="http://s3.amazonaws.com/viking_education/icons/icon_calendar.png" class="schedule-icon">
+              <span class="menu-text">Schedule</span>
+            </li>
+</a>
+          <a class="" height="28px" href="../users/edit.html" title="Edit Account Settings" width="28px">
+            <li>
+              <img src="http://s3.amazonaws.com/viking_education/icons/icon_settings.png" class="settings-icon">
+              <span class="menu-text">Account</span>
+            </li>
+</a>
+          <li class="divider"></li>
+
+          <a data-method="delete" href="../logout.html" rel="nofollow" title="Logout">
+            <li>
+              <img src="http://s3.amazonaws.com/viking_education/icons/logout.png" class="logout-icon">
+              <span class="menu-text">Log Out</span>
+            </li>
+</a>            
+        </ul>
+
+      </div>
+
+
+
+
+
+
+    </div>
+  </nav>
+
+
+</div>
+
+  <div class="flash-wrapper">
+    
+ 
+  </div> 
+
+  <div class="week-page">
+
+  
+  
+  <div class="hero hero-dashboard">
+    <div id="breadcrumb-nav">
+  <div class="container-wide">
+
+      <a href="../dashboard.html#unit-0-getting-ready" title="Back to Dashboard">
+        <div class="breadcrumb-item breadcrumb-week week-dashboard">
+          Preparation
+        </div>
+</a>    <div class="breadcrumb-item breadcrumb-lesson">
+      15. Iteration
+    </div>
+  </div>
+</div>
+    <div class="container-narrow headlines lesson-page parallax-fade ">
+      <div id="nav-arrows">
+    <a href="conditionals-and-flow-control.html" title="Go to Previous Lesson">
+    <div class="prev-arrow nav-arrow" data-lesson-uid="LN00141">
+      &#9001;
+    </div>
+</a>
+    <a href="dates-and-times.html" title="Go to Next Lesson">
+      <div class="next-arrow nav-arrow"  data-lesson-uid="LN00143">
+        &#9002;
+      </div>
+</a></div>
+      <h1>
+        
+        
+        Iteration
+      </h1>
+      <h2>
+        Making it happen again.  Making it happen again. Making it happen again...
+      </h2>
+      <p class="scroll-prompt">
+        Scroll down...
+      </p>
+    </div>
+  </div>
+
+  <div id="lesson-tab-nav">
+  <div id="tab">
+  </div>
+
+  <div class="tab tab-active" data-target="lesson-content">
+    <h3>
+      Content
+    </h3>
+  </div>
+
+  <div class="tab tab-middle" data-target="lesson-resources">
+    <h3>Resources <span class = "resource-count" data-resource-count></span></h3>
+  </div>
+
+
+  <div class="tab" data-target="lesson-comments">
+    <h3>Comments</h3>
+  </div>
+
+</div>
+
+  <div id="content-tab-container">
+    <div id="lesson-content" class="lesson-content-panel ">
+      <div class="container-medium">
+        <h2>Iteration</h2>
+
+<p>You can now assemble code, tell the program which parts of it to execute, and wrap it all up in methods.  There&#39;s still something missing... what if you want to make something happen a whole bunch of times?  </p>
+
+<p>You certainly don&#39;t just run the method again and again manually.  Luckily we&#39;ve got several standard ways of iterating through a piece of code until we tell the program to stop.</p>
+
+<p>In this lesson, we&#39;ll cover loops and flow control.  You should understand the basic iterators like <code>loop</code> and <code>while</code> and also how to use <code>each</code> and <code>times</code>.  We&#39;ll talk more about blocks and the other Ruby iterators like <code>map</code> and <code>select</code> in upcoming lessons.</p>
+
+<h3>Loops and Index Variables</h3>
+
+<p>A loop is really just code that will run a number of times until some condition is met.  A variable is typically used to keep track of which iteration you are on or to otherwise increment until the condition is reached.  This is called the <strong>index variable</strong>.</p>
+
+<h3>Loop</h3>
+
+<p><code>loop</code> is the most basic way to loop in Ruby and it&#39;s not used all that much because the other ways to loop are much sexier.  <code>loop</code> takes a block of code, denoted by either <code>{ ... }</code> or <code>do ... end</code> (if it&#39;s over multiple lines).  It will keep looping until you tell it to stop using a <code>break</code> statement:</p>
+
+<pre><code class="language-ruby"># Single-line infinite loop
+&gt; loop { puts &quot;this won&#39;t stop until you press CTRL+c&quot; }
+this won&#39;t stop until you press CTRL+c
+this won&#39;t stop until you press CTRL+c
+# ... and so on
+
+# multi-line loop
+&gt; i=0             # Our index variable
+&gt; loop do         # Note that i is a bad variable name
+&gt;   i+=1
+&gt;   print &quot;#{i} &quot;
+&gt;   break if i==10
+&gt; end
+1 2 3 4 5 6 7 8 9 10 #=&gt; nil
+</code></pre>
+
+<h3>While</h3>
+
+<p><code>while</code> performs a similar function but in a much more compact way.  It allows you to specify the condition that must be true to keep looping.  You&#39;ll find yourself using it much more in your own code.  It doesn&#39;t actually take a formal block of code, just runs everything until it reaches its <code>end</code>.  </p>
+
+<p>Just remember to initially declare the variable(s) you&#39;ll be using OUTSIDE the loop (or they&#39;ll get reset with each iteration) and to increment at some point (or you&#39;ll get stuck in an infinite loop... use ctrl+c to break in Terminal):</p>
+
+<pre><code class="language-ruby">&gt; i=1
+&gt; while i &lt; 5
+&gt;   print &quot;#{i} &quot;
+&gt;   i+=1
+&gt; end
+1 2 3 4 #=&gt; nil
+</code></pre>
+
+<h3>Until</h3>
+
+<p><code>until</code> is almost identical to <code>while</code> but, instead of running as long as the specified condition is <code>true</code>, it runs as long as the condition is <code>false</code>.  It&#39;s the same logic as using <code>unless</code> versus <code>if</code> for conditionals.</p>
+
+<h3>Each</h3>
+
+<p>Things get more interesting when you realize that most of your loops will probably involve looping over each element in either an array or a hash of items.  Ruby knows this and made it super easy for you by specifying the <code>each</code> method that you call directly on the array or hash.  </p>
+
+<p><code>each</code> will automatically pass the &quot;current&quot; item into your code block.  That item will be named whatever name you specify inside the pipes, e.g. (for an array) <code>| variable_name_goes_here |</code>:</p>
+
+<pre><code class="language-ruby">&gt; guys = [&quot;Bob&quot;, &quot;Billy&quot;, &quot;Joe&quot;]
+&gt; guys.each do |name|  
+&gt;   print &quot;#{name}! &quot;
+&gt; end
+Bob! Billy! Joe! #=&gt; [&quot;Bob&quot;, &quot;Billy&quot;, &quot;Joe&quot;]  
+# Note that each returns original array!!!
+</code></pre>
+
+<p><code>each</code> always returns the original array. Remember this!</p>
+
+<p><code>each</code> for hashes inputs two arguments, one for the key and another for the value:</p>
+
+<pre><code class="language-ruby">&gt; guy_fav_colors = {  &quot;Bob&quot; =&gt; &quot;yellow&quot;, 
+                      &quot;Billy&quot; =&gt; &quot;red&quot;, 
+                      &quot;Joe&quot; =&gt; &quot;green&quot; }
+&gt; guy_fav_colors.each do |name, color|  
+&gt;   puts &quot;#{name} likes #{color}! &quot;
+&gt; end
+Bob likes yellow! 
+Billy likes red! 
+Joe likes green! 
+#=&gt; {&quot;Bob&quot;=&gt;&quot;yellow&quot;, &quot;Billy&quot;=&gt;&quot;red&quot;, &quot;Joe&quot;=&gt;&quot;green&quot;} 
+</code></pre>
+
+<h3>Times</h3>
+
+<p>You often loop when you&#39;re trying to do something a certain number of times (which was the case in our <code>for</code> loop example).  In that case, Ruby has the simplest possible method for you: <code>times</code>.  </p>
+
+<p>If you pipe in an argument, that argument will take the index of the current iteration (starting from zero):</p>
+
+<pre><code class="language-ruby">&gt; 5.times do |jump_num|
+&gt;     print &quot;Jump #{jump_num}!&quot;
+&gt; end
+Jump 0!Jump 1!Jump 2!Jump 3!Jump 4!#=&gt; 5
+</code></pre>
+
+<p><code>times</code> returns the FixNum that you called it on (5 in the example above).</p>
+
+<h3>Looping with an Array Index Value</h3>
+
+<p>Sometimes you want to loop through every item in an array but also know where you are in that array.  You can actually do this with both <code>while</code> and <code>times</code> but the <code>each_with_index</code> method is specially designed for it since it passes the block not just the current item but the item&#39;s index.</p>
+
+<p>Several ways to loop through an array while preserving access to its index value:</p>
+
+<pre><code class="language-ruby">&gt; nums = [5,2,7,9]
+
+# while
+i = 0
+while i &lt; nums.length
+    puts &quot;num at #{i} is #{nums[i]}&quot;
+    i+=1
+end
+num at 0 is 5
+num at 1 is 2
+num at 2 is 7
+num at 3 is 9
+#=&gt; nil
+
+# times
+&gt; nums.length.times do |i|
+&gt;   puts &quot;num at #{i} is #{nums[i]}&quot;
+&gt; end
+num at 0 is 5
+num at 1 is 2
+num at 2 is 7
+num at 3 is 9
+#=&gt; 4
+
+# each_with_index
+&gt; nums.each_with_index do |num, i|
+&gt;   puts &quot;num at #{i} is #{num}&quot;
+&gt; end
+num at 0 is 5
+num at 1 is 2
+num at 2 is 7
+num at 3 is 9
+#=&gt; [5, 2, 7, 9] 
+</code></pre>
+
+<h3>For</h3>
+
+<p><strong><code>for</code></strong> is a looping mechanism present in lots of other languages but it gets de-emphasized in Ruby and <strong>you don&#39;t see it used much</strong>.  A common use is to loop over every number in a range.  You name the variable that holds the current number at the top and can then access it from inside the loop:</p>
+
+<pre><code class="language-ruby">&gt; for a_number in (1..3)
+&gt;   print &quot;#{a_number} &quot;
+&gt; end
+1 2 3 #=&gt; 1..3
+</code></pre>
+
+<h3>Less Common But Helpful Methods</h3>
+
+<p>A couple other methods with similar purposes to <code>times</code> that you see less frequently:</p>
+
+<ul>
+<li><code>upto</code> is just like <code>times</code> but you choose the starting and ending point instead of always starting at zero.</li>
+<li><code>downto</code>, similar to <code>upto</code> but... down... to....</li>
+</ul>
+
+<pre><code class="language-ruby">&gt; 1.upto(4) { |num| puts &quot;#{num}&quot; }
+1
+2
+3
+4
+#=&gt; 1
+&gt; 4.downto(1) { |num| puts &quot;#{num}&quot; }
+&gt; 4
+&gt; 3
+&gt; 2
+&gt; 1
+#=&gt; 4
+</code></pre>
+
+<h3>Looping Best Practices</h3>
+
+<p>As we&#39;ve said before, just use the simplest possible loop to get the job done.  Usually there are only three reasonable candidates:</p>
+
+<ol>
+<li>Use <code>loop</code> for deliberate infinite loops (yes, sometimes you will).</li>
+<li>Use <code>while</code> for anything that needs to run until a certain condition is reached (like winning the game)</li>
+<li>Use <code>each</code> for any time you want to do stuff with every single item in an array or hash</li>
+<li>Use <code>times</code> for the simple cases when you just want to do something a fixed number of times.</li>
+<li>Use <code>for</code> never.<br></li>
+</ol>
+
+<h3>Controlling Your Loops</h3>
+
+<p>Because you may want some additional control over your loops, use these statements to jump in and out of them for certain abnormal conditions:</p>
+
+<ul>
+<li><code>break</code> will <strong>stop the current loop</strong>.  Often used with an <code>if</code> to specify under what conditions to do that.</li>
+<li><code>next</code> will <strong>jump to the next iteration</strong>.  Also usually used with an <code>if</code> statement.</li>
+<li><code>redo</code> will let you restart the loop (without evaluating the condition on the first go-through), again usually with some condition.  This is rare.</li>
+<li><code>retry</code> works on most loops (not <code>while</code> or <code>until</code>) similarly to <code>redo</code> but it <em>will</em> re-evaluate the condition before running through the loop again (hence <em>try</em> instead of <em>do</em>). Rare.</li>
+</ul>
+
+<h3>Returning From A Loop</h3>
+
+<p>Loops aren&#39;t methods that take a <code>return</code> statement!  Do NOT use <code>return</code> to exit a loop, since that will exit the whole method that contains it as well!</p>
+
+<pre><code class="language-ruby">def say_items(items)
+    item_i = 0
+    while item_i &lt; items.length
+        puts items[item_i]
+        return &quot;Too big!&quot; if item_i &gt;= 3
+        item_i+=1
+    end
+    puts &quot;There were less than 4 items&quot;
+end
+
+# IRB
+&gt; say_items([1,2,3])
+1
+2
+3
+There were less than 4 items
+#=&gt; nil
+&gt; say_items([1,2,3,4,5,6,7,8,9])
+1
+2
+3
+4  # puts didn&#39;t run because we returned from the method
+#=&gt; &quot;Too big!&quot;
+</code></pre>
+
+<h3>Nesting Loops</h3>
+
+<p><strong>Nesting</strong> loops occurs when one goes inside another, so you execute the entire inner loop for each iteration of the outer loop.  You&#39;ll see those for &quot;two-dimensional&quot; problems, like searching through arrays within arrays, but if you find yourself nesting too often or too deeply, you probably need to reexamine how you&#39;ve structured your solution overall.  </p>
+
+<p>Here&#39;s an example that goes through the comments in a hypothetical blog and captures a preview from each of them.  It uses some Rails methods to get the posts and comments then loops to tease out the previews:</p>
+
+<pre><code class="language-ruby">def comment_previews
+  comment_previews = []
+  posts = Post.all              # array of all blog posts
+  posts.each do |post|
+    comments = post.comments    # array of that post&#39;s comments
+    comments.each do |comment|
+      comment_previews &lt;&lt; comment[0..80] 
+    end
+  end
+  comment_previews
+end
+</code></pre>
+
+        <div class = 'resource-teaser'>
+          <p>
+            <hr>
+            There are <span class = 'resource-count' data-resource-count>( )</span> additional resources for this lesson.     <a data-switch-tab="lesson-resources" href="#tab">Check them out!</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="lesson-resources" class="lesson-content-panel">
+      <div class="container-medium">
+                    <h2>There are no additional resources for this lesson just yet!</h2>
+      </div>
+    </div>
+
+    <div id="lesson-comments" class="lesson-content-panel">
+      <div class="container-medium">
+        <h2>
+          Sorry, comments aren't active just yet!
+        </h2>
+      </div>
+    </div>
+  </div>
+
+    <div class="cta dashboard">
+  <div class="container-wide">
+    <h3 class="cta-text ">
+      Next Lesson:  Dates and Times
+    </h3>
+    <div class="cta-button-wrapper">
+      <a href="dates-and-times.html">
+        <div class="cta-button cta-button-lesson" title="Dates and Times" data-lesson-uid="LN00143">
+          Onward!
+        </div>
+</a>        <a href="conditionals-and-flow-control.html">
+  <div class="cta-back" title="Conditionals and Flow Control" data-lesson-uid="LN00141">
+    or go to previous lesson...
+  </div>
+</a>
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+
+
+
+  <footer id="footer" class="activate-bootstrap">
+  <div class="container">
+
+    <div class="row">
+      <div class="col-xs-12 slogan">
+        Viking: The premier program for learning professional web development online
+      </div>
+    </div>
+
+    <nav class="row">
+
+      <section class="col-xs-4 link-list"> 
+
+        <h3>
+          The Viking Program
+        </h3>
+
+        <ul>
+
+          <a href="../index.html#curriculum">
+            <li>
+              Curriculum
+            </li>
+</a>
+          <a href="../index.html#our-program">
+            <li>
+              Methodology
+            </li>
+</a>
+          <a href="../index.html#curriculum">
+            <li>
+              Instructors
+            </li>
+</a>
+          <a href="../index.html#our-program">
+            <li>
+              Schedule
+            </li>
+</a>
+          <a href="../index.html#faq">
+            <li>
+              After the Program
+            </li>
+</a>
+          <a href="../index.html#faq">
+            <li>
+              FAQ
+            </li>
+</a>
+          <a href="../apply.html">
+            <li>
+              Apply
+            </li>
+</a>
+        </ul>
+      </section>
+
+
+      <section class="col-xs-4 link-list">
+
+        <a href="../prep.html">
+          <h3>
+            Knowledge Base
+          </h3>
+</a>
+        <ul>
+
+          <a href="../blog.html">
+            <li>
+              The Viking Blog
+            </li>
+</a>
+          <a href="../web-development-basics.html">
+            <li>
+              Web Development Basics
+            </li>
+</a>
+          <a href="../web-design-basics.html">
+            <li>
+              Web Design Basics
+            </li>
+</a>
+          <a href="../software-engineering-basics.html">
+            <li>
+              Web Engineering Basics
+            </li>
+</a>
+          <a href="../web-markup-and-coding.html">
+            <li>
+              Web Markup and Coding
+            </li>
+</a>
+        </ul>
+
+      </section>
+
+
+      <section class="col-xs-4 link-list">
+
+        <h3>
+          Other Stuff
+        </h3>
+
+        <ul>
+
+          <a href="../growth-for-code.html">
+            <li>
+              Join Us: Growth
+            </li>
+</a>
+          <a href="../design-for-code.html">
+            <li>
+              Join Us: Design
+            </li>
+</a>
+          <a href="../sitemap">
+            <li>
+              Sitemap
+            </li>
+</a>
+          <a href="mailto:hello@vikingcodeschool.com">
+            <li>
+              Contact Us
+            </li>
+</a>
+            <a data-method="delete" href="../logout.html" rel="nofollow">
+              <li>
+                Logout
+              </li>
+</a>
+        </ul>
+
+      </section>  
+
+    </nav>
+
+  </div>
+    
+  <div class="copyright">
+     &#169; Viking Education Inc 2015
+  </div>
+
+</footer>
+
+  
+
+  <div id="fb-root"></div>
+  
+  <script type="text/javascript">
+/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+var disqus_shortname = 'vikingcodeschool'; // required: replace example with your forum shortname
+
+/* * * DON'T EDIT BELOW THIS LINE * * */
+(function () {
+    var s = document.createElement('script'); s.async = true;
+    s.type = 'text/javascript';
+    s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+}());
+</script>
+  
+</body>
+
+<!-- Mirrored from www.vikingcodeschool.com/unit-0-getting-ready/iteration by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 15 Mar 2015 04:16:05 GMT -->
+</html>
+
