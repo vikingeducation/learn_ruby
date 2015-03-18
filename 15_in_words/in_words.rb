@@ -29,6 +29,8 @@ class Fixnum
 			return_three_digit_number(number.join('').reverse.to_i,@@hundreds_array[hundreds_count-index])
 		end
 		
+		
+		@@words.delete_if{|word| word.nil? }
 		@@words.join(" ").chomp(" ")
 
 	end
