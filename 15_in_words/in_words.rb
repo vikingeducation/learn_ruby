@@ -1,6 +1,8 @@
+require 'pry'
+
 class Fixnum
 	@@words_to_19 = [nil,"one","two","three","four","five","six","seven","eight","nine","ten","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"]
-	@@tens_array = [nil,nil,"twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety","hundred","thousand"]
+	@@tens_array = [nil,nil,"twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"]
 	@@hundreds_array = [nil,nil,"thousand","million","billion","trillion"]
 
 	def in_words
@@ -49,15 +51,18 @@ class Fixnum
 
 	# return word version of a three digit number with proper suffix
 	def return_three_digit_number(num,suffix)
-		if num >= 100
+		if num >= 100 && num != 0
 			hundreds = num/100
 			num_less_hundreds = num - (hundreds * 100)
 			@@words << @@words_to_19[hundreds]
 			@@words << "hundred"
-			return_two_digit_number(num_less_hundreds,suffix)
+			if num%100 == 0
+				return_two_digit_number(num,suffix)
+			else
+				return_two_digit_number(num_less_hundreds,suffix)
+			end
 		else
 			return_two_digit_number(num,suffix)
 		end
 	end
-
 end
