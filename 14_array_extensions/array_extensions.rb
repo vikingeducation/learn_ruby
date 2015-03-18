@@ -1,10 +1,4 @@
 class Array
-	attr_reader :array
-
-	def initialize(array)
-		@array = array
-	end
-
 	def sum
 		sum = 0
 		self.each do |num|
