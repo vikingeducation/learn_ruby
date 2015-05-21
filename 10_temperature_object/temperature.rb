@@ -22,4 +22,12 @@ class Temperature
     @options[:c] = in_c
     @options[:f] = in_c * (9.to_f/5.to_f)
   end
+
+  def self.from_celsius(num)
+    self.new(:c => num)
+  end
+
+  def self.from_fahrenheit(num)
+    self.new(:f => num)
+  end
 end
