@@ -2,13 +2,40 @@ class Fixnum
 
   def in_words
 
-    if self == 0
-      "zero"
-    elsif self < 1000
-      self.in_words_group
-    else
-      (self/1000).in_words_group + " thousand " + (self%1000).in_words_group
+    a = (self%1_000) #hundreds
+    b = (self%1_000_000)/1_000 #thousands
+    c = (self%1_000_000_000)/1_000_000 #millions
+    d = (self%1_000_000_000_000)/1_000_000_000 #billions
+    e = (self%1_000_000_000_000_000)/1_000_000_000_000 #trillions
+
+    output = Array.new
+
+    unless e == 0
+      output << e.in_words_group
+      output << "trillion"
     end
+
+    unless d == 0
+      output << d.in_words_group
+      output << "billion"
+    end
+
+    unless c == 0
+      output << c.in_words_group
+      output << "million"
+    end
+
+    unless b == 0
+      output << b.in_words_group
+      output << "thousand"
+    end
+
+    unless a == 0 && self > 0
+      output << a.in_words_group
+    end
+
+    output.join(" ")
+
   end
 
 
@@ -64,23 +91,10 @@ class Fixnum
 ###################################################
 
 
-=begin
-
-
-  def in_words_thousands
-    first_3_digits = self % 1000
-    thousands_digits = self / 1000
-    if first_3_digits == 0
-      thousands_digits.in_words_3_digits + " thousand"
-    else
-      thousands_digits.in_words_3_digits + " thousand " + first_3_digits.in_words_3_digits
-    end
-  end
-
-=end
-
   def singles
     case self
+      when 0
+        "zero"
       when 1
         "one"
       when 2
