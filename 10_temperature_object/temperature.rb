@@ -1,13 +1,16 @@
 class Temperature
-  @options = {}
-
+  
   def initialize(options = {})
     if options[:f]
       options[:c] =  (options[:f] -32) * (5.to_f/9.to_f)
     elsif options[:c]
-      options[:f] = options[:c] * (9.to_f/5.to_f) + 32
+      
     end
     @options = options
+  end
+
+  def self.convert_to_f(temp_in_c)
+    temp_in_c * (9.to_f/5.to_f) + 32
   end
 
   def in_fahrenheit
