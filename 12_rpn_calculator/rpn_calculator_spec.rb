@@ -123,25 +123,25 @@ describe RPNCalculator do
     }.to raise_error("calculator is empty")
   end
 
-  # extra credit
-  it "tokenizes a string" do
-    calculator.tokens("1 2 3 * + 4 5 - /").should ==
-      [1, 2, 3, :*, :+, 4, 5, :-, :/]
-  end
+  # # extra credit
+  # it "tokenizes a string" do
+  #   calculator.tokens("1 2 3 * + 4 5 - /").should ==
+  #     [1, 2, 3, :*, :+, 4, 5, :-, :/]
+  # end
 
-  # extra credit
-  it "evaluates a string" do
-    calculator.evaluate("1 2 3 * +").should ==
-      ((2 * 3) + 1)
+  # # extra credit
+  # it "evaluates a string" do
+  #   calculator.evaluate("1 2 3 * +").should ==
+  #     ((2 * 3) + 1)
 
-    calculator.evaluate("4 5 -").should ==
-      (4 - 5)
+  #   calculator.evaluate("4 5 -").should ==
+  #     (4 - 5)
 
-    calculator.evaluate("2 3 /").should ==
-      (2.0 / 3.0)
+  #   calculator.evaluate("2 3 /").should ==
+  #     (2.0 / 3.0)
 
-    calculator.evaluate("1 2 3 * + 4 5 - /").should ==
-      (1.0 + (2 * 3)) / (4 - 5)
-  end
+  #   calculator.evaluate("1 2 3 * + 4 5 - /").should ==
+  #     (1.0 + (2 * 3)) / (4 - 5)
+  # end
 
 end
