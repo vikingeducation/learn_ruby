@@ -14,7 +14,7 @@
   end
 
   def keywords
-    @entries.keys
+    @entries.keys.sort!
   end
 
   def include?(keyword)
@@ -23,19 +23,30 @@
   end
 
   def find(word)
+    results = {}
     if @entries == {}
-      return {}
+      results
     else
       @entries.each do |key, value|
-        if word == key
-          return "Matched!"
-        else
-          return {}
+        if key =~ /^#{word}/  #copied line. Don't understand =~
+          results[key] = value
         end
       end
+      results
     end
     
-    binding.pry
+    # binding.pry
+  end
+
+  # looked at other code for help on this one.
+  def printable
+    printstring = ""
+    @entries.keys.sort.each do |keyword|
+      printstring << "[#{keyword}] \"#{@entries[keyword]}\"\n"
+    end
+    printstring.strip
   end
 
 end
+
+
