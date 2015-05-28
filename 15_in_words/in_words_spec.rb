@@ -80,7 +80,6 @@ describe Fixnum do
   end
 
   it "reads thousands" do
-    2000.in_words.should == 'two thousand'
     1000.in_words.should == 'one thousand'
     32767.in_words.should == 'thirty two thousand seven hundred sixty seven'
     32768.in_words.should == 'thirty two thousand seven hundred sixty eight'

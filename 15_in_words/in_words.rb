@@ -1,4 +1,4 @@
-class Fixnum
+class Numeric
   @@numbers_to_words = {0 => 'zero',
                         1 => 'one',
                         2 => 'two',
@@ -58,7 +58,7 @@ class Fixnum
     if ones != 0
     result = result + " " + @@numbers_to_words[ones]
     else
-      result
+      result.strip
     end
   end
 
@@ -74,19 +74,24 @@ class Fixnum
     if left_over != 0
       result + " " + tens(left_over)
     else
-      result
+      result.strip
     end
   
   end
 
   def thousand(num)
     num_string = num.to_s
-    thousands = num_string[0..-4].to_i
-    result = hundred(thousands).strip + " thousand" #send thousands count to hundreds method.
+    num_string = "000" + num_string # for slice method below??
+    result = ""
+    thousands = num_string.slice(-7..-4).to_i
+    if thousands != 0
+      result = hundred(thousands).strip + " thousand" #send thousands count to hundreds method.
+    end
 
-    left_over = num.to_s[-3..-1].to_i
+    left_over = num.to_s.slice(-4..-1).to_i
     if left_over != 0
-      result + " " + hundred(num)
+      result = result + " " + hundred(num)
+      result.strip
     else
       result.strip
     end
@@ -94,13 +99,61 @@ class Fixnum
   end
 
   def million(num)
-    thousand(num)
+    num_string = num.to_s
+    num_string = "000" + num_string # for slice method below??
+    result = ""
+    millions = num_string.slice(-10..-7).to_i
+
+    if millions != 0
+      result = hundred(millions).strip + " million" #send thousands count to hundreds method.
+    end
+
+    left_over = num.to_s.slice(-7..-1).to_i
+    if left_over != 0
+      result = result + " " + thousand(num)
+      result.strip
+    else
+      result.strip
+    end
+
   end
 
   def billion(num)
+    num_string = num.to_s
+    num_string = "000" + num_string # for slice method below??
+    result = ""
+    billions = num_string.slice(-12..-10).to_i
+
+    if billions != 0
+      result = hundred(billions).strip + " billion" #send thousands count to hundreds method.
+    end
+
+    left_over = num.to_s.slice(-10..-1).to_i
+    if left_over != 0
+      result = result + " " + million(num)
+      result.strip
+    else
+      result.strip
+    end
   end
 
   def trillion(num)
+    num_string = num.to_s
+    num_string = "000" + num_string # for slice method below??
+    result = ""
+    trillions = num_string.slice(-16..-13).to_i
+
+    if trillions != 0
+      result = hundred(trillions).strip + " trillion" #send thousands count to hundreds method.
+    end
+
+    left_over = num.to_s.slice(-13..-1).to_i
+    if left_over != 0
+      result = result + " " + billion(num)
+      result.strip
+    else
+      result.strip
+    end
   end
 
 
