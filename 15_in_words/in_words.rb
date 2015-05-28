@@ -57,6 +57,7 @@ class Numeric
     ones = num[1].to_i
     if ones != 0
     result = result + " " + @@numbers_to_words[ones]
+
     else
       result.strip
     end
@@ -72,7 +73,8 @@ class Numeric
 
     left_over = num_string.split(//).last(2).join("").to_i
     if left_over != 0
-      result + " " + tens(left_over)
+      result.strip + " " + tens(left_over)
+ 
     else
       result.strip
     end
@@ -83,7 +85,7 @@ class Numeric
     num_string = num.to_s
     num_string = "000" + num_string # for slice method below??
     result = ""
-    thousands = num_string.slice(-7..-4).to_i
+    thousands = num_string.slice(-6..-4).to_i
     if thousands != 0
       result = hundred(thousands).strip + " thousand" #send thousands count to hundreds method.
     end
@@ -102,7 +104,7 @@ class Numeric
     num_string = num.to_s
     num_string = "000" + num_string # for slice method below??
     result = ""
-    millions = num_string.slice(-10..-7).to_i
+    millions = num_string.slice(-9..-7).to_i
 
     if millions != 0
       result = hundred(millions).strip + " million" #send thousands count to hundreds method.
@@ -141,7 +143,7 @@ class Numeric
     num_string = num.to_s
     num_string = "000" + num_string # for slice method below??
     result = ""
-    trillions = num_string.slice(-16..-13).to_i
+    trillions = num_string.slice(-15..-13).to_i
 
     if trillions != 0
       result = hundred(trillions).strip + " trillion" #send thousands count to hundreds method.
