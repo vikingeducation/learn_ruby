@@ -97,6 +97,13 @@ describe Temperature do
   # run *all* the tests during your refactoring, to make sure you did it right
   #
   describe "utility class methods" do
+    it "correctly convert fahrenheit to celsius" do
+      Temperature.ftoc(50).should == 10
+    end
+
+    it "correctly convert celsius to fahrenheit" do
+      Temperature.ctof(50).should == 122
+    end
 
   end
 
