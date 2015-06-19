@@ -36,7 +36,7 @@ describe "Simon says" do
 
   describe "repeat" do
     it "should repeat" do
-      repeat("hello").should == "hello hello"
+      repeat("hello").should == " hello hello"
     end
 
     # Wait a second! How can you make the "repeat" method
@@ -44,7 +44,7 @@ describe "Simon says" do
     #
     # Hint: *default values*
     it "should repeat a number of times" do
-      repeat("hello", 3).should == "hello hello hello"
+      repeat("hello", 3).should == " hello hello hello"
     end
   end
 
