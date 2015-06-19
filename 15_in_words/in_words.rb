@@ -2,9 +2,15 @@ class Fixnum
 
   def in_words
     num = self
-    num.num_less_then_10 if num < 10
-  #  num.ten_to_twelve if (10..12) === num
-  #  num.teens if (13..19) === num
+    if num < 10
+      num.num_less_then_10
+    elsif (10..12) === num
+      num.ten_to_twelve
+    elsif (13..19) === num
+      num.teens
+    elsif (20..99) === num
+      num.tens
+    end
   end
 
 
@@ -37,6 +43,8 @@ class Fixnum
 
   def ten_to_twelve
     case self
+    when 10
+      'ten'
     when 11
       'eleven'
     when 12
@@ -60,6 +68,34 @@ class Fixnum
       'eighteen'
     when 19
       'nineteen'
+    end
+  end
+
+  def tens
+    case self
+    when 20
+      'twenty'
+    when 30
+      'thirty'
+    when 40
+      'forty'
+    when 50
+      'fifty'
+    when 60
+      'sixty'
+    when 70
+      'seventy'
+    when 80
+      'eighty'
+    when 90
+      'ninety'
+    end
+  end
+
+  def bigger_num
+    case self
+    when self >= 100
+      'hundred'
     end
   end
 
