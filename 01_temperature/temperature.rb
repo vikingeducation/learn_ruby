@@ -12,5 +12,5 @@ def ctof(temp)
   end
 end
 
-puts ctof(37)
+
 
