@@ -1,9 +1,22 @@
 def translate(text)
-  word = text.split("")
-  first_vowel_index = word.index do |letter|
-    letter == ("a" || "e" || "i" || "o" || "u") 
+  words = text.split(" ")
+  p words
+
+  modified_words = words.map do |word|
+    word = word.split("")
+
+    first_vowel_index = word.index do |letter|
+      letter == "a" || 
+      letter == "e" || 
+      letter == "i" || 
+      letter == "o" #|| 
+#      letter == "u"
+    end
+
+    word.rotate!(first_vowel_index)
+    word << "a" << "y"
+    word.join
   end
-  word.rotate(first_vowel_index)
-  word << "ay"
-  word.join("")
+
+  modified_words.join(" ")
 end
