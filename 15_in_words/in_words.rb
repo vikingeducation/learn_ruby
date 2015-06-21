@@ -1,22 +1,21 @@
+require 'pry'
+
 class Fixnum
 
   def in_words
     num = self
-    if num < 10
-      num.num_less_then_10
-    elsif (10..12) === num
-      num.ten_to_twelve
-    elsif (13..19) === num
-      num.teens
-    elsif (20..99) === num
-      num.tens
+    case num
+    when 0..19
+      num.num_less_than_20
+    when 20..99
+      num.num_less_than_100
+    when 100..999
+      num.bigger_num
     end
   end
 
 
-
-
-  def num_less_then_10
+  def num_less_than_20
     case self
     when 0
       'zero'
@@ -38,22 +37,12 @@ class Fixnum
       'eight'
     when 9
       'nine'
-    end
-  end
-
-  def ten_to_twelve
-    case self
     when 10
       'ten'
     when 11
       'eleven'
     when 12
       'twelve'
-    end
-  end
-
-  def teens
-    case self
     when 13
       'thirteen'
     when 14
@@ -92,13 +81,33 @@ class Fixnum
     end
   end
 
+  def num_less_than_100
+    num = self
+    if num % 10 == 0
+      num.tens
+    else
+     (num / 10 * 10).tens + " #{(num % 10).num_less_than_20}"
+   end
+  end
+
   def bigger_num
-    case self
-    when self >= 100
-      'hundred'
+#    binding.pry
+    words=[]
+    num = self
+    case num
+    when num < 1_000
+      words << (num / 100).num_less_than_100 + " hundred"
+      if num % 100 != 0
+#        puts num % 100
+        words << " #{(num%100).num_less_than_100}"
+      end
+      words.join (" ")
+    when num < 1_000_000
+      puts "what am I doing... there's an easier way"
     end
+    words
   end
 
 end
 
-puts 9.in_words
+puts 71.in_words
