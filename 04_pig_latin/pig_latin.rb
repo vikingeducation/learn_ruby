@@ -11,7 +11,7 @@ def translate (str)
       
     else
       
-       until vowel.any? { |letter| word[0]==letter }
+      until vowel.any? { |letter| word[0]==letter }
         if word[0]=="q" && word[1]=="u" 
           word<<word[0..1]
           word=word[2..word.length]
