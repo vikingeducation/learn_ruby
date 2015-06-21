@@ -13,58 +13,36 @@ class RPNCalculator
     @stack << val
   end
 
-  # Not sure how, but I bet there's a way to refactor this out.
-  # For all operations, r2 is more left than r1, so it's the left side of any operation.
+  # Pops from stack if there are values, otherwise raises execption.
+  def pop
+    @stack.length > 0 ? @stack.pop() : (raise "calculator is empty")
+  end
+
+  # Pops the two latest values off of the stack, does a calc, pushes on to stack and returns value.
+  # Converts r1 and r2 to floats to work with division.
+  def calc
+    r1 = pop
+    r2 = pop
+    val = yield r2.to_f, r1.to_f
+    @stack << val
+    return val
+  end
+
+  # I figured out how to refactor. Just passes the appropriate symbol to calc.
   def plus
-    if @stack.length > 1
-      r1 = @stack.pop()
-      r2 = @stack.pop()
-
-      @value = r2 + r1
-
-      @stack << @value
-    else
-      raise "calculator is empty"
-    end
+    @value = calc(&:+)
   end
 
   def minus
-    if @stack.length > 1
-      r1 = @stack.pop()
-      r2 = @stack.pop()
-
-      @value = r2 - r1
-
-      @stack << @value
-    else
-      raise "calculator is empty"
-    end
+    @value = calc(&:-)
   end
 
   def divide
-    if @stack.length > 1
-      r1 = @stack.pop()
-      r2 = @stack.pop()
-
-      @value = r2.to_f / r1
-
-      @stack << @value
-    else
-      raise "calculator is empty"
-    end
+    @value = calc(&:/)
   end
 
   def times
-    if @stack.length > 1
-      r1 = @stack.pop()
-      r2 = @stack.pop()
-
-      @value = r2 * r1
-
-      @stack << @value
-    else
-      raise "calculator is empty"
-    end
+    @value = calc(&:*)
   end
 
   # Only numbers will convert from string -> int -> string and stay the same.
@@ -73,28 +51,11 @@ class RPNCalculator
     str.split(" ").map{|t| t.to_i.to_s == t ? t.to_i : t.to_sym}
   end
 
+  # If the token is a symbol, calls calc with the symbol.
+  # Otherwise, pushes the value onto the stack.
   def evaluate(str)
-    # Clear the stack out first.
-    @stack = []
-
-    # Tokenize the input
-    eval_stack = tokens(str)
-
-    # Evaluate the input based on the tokens.
-    eval_stack.each do |val|
-
-      # If it's not a symbol we push, if it is we perform the corresponding action.
-      if !(val.is_a? Symbol)
-        push(val)
-      elsif val == :*
-        times
-      elsif val == :/
-        divide
-      elsif val == :-
-        minus
-      elsif val == :+
-        plus
-      end
+    tokens(str).each do |val|
+      (val.is_a? Symbol) ? @value = calc(&val) : push(val)
     end
 
     return @value
