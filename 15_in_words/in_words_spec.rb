@@ -64,6 +64,7 @@ describe Fixnum do
 
   it "reads various other numbers less than 100" do
     20.in_words.should == 'twenty'
+    41.in_words.should == 'forty one'
     77.in_words.should == 'seventy seven'
     99.in_words.should == 'ninety nine'
   end
