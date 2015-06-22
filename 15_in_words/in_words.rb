@@ -1,5 +1,3 @@
-require 'pry'
-
 class Fixnum
 
   @@basics = {0 => 'nil',
@@ -47,7 +45,7 @@ class Fixnum
     elsif num < 1_000
       words << hundreds_or_less(num)
 
-    elsif num >= 1_000
+    elsif num >= 1_000 #limitations: does not process #'s > trillions
 
       three_digit_chunks = increments(num)
       chunk_num = (three_digit_chunks.length) -1
