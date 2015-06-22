@@ -40,21 +40,14 @@ class Fixnum
 
   def in_words
     num = self
-
     words = []
-    chunk_num = 0
 
-  #  binding.pry
     if num == 0
       words << 'zero'
     elsif num < 1_000
       words << hundreds_or_less(num)
 
     elsif num >= 1_000
-#      words += [hundreds_or_less(num / 1000), "thousand"]
-#      if num % 1000 != 0
-#        words << hundreds_or_less(num % 1000)
-#      end
 
       three_digit_chunks = increments(num)
       chunk_num = (three_digit_chunks.length) -1
@@ -78,30 +71,28 @@ class Fixnum
 
 
   def increments(num) #split number into 3digit chunks
-   # binding.pry
     three_digits=[]
-    #num >= 1000 ? chunk_num = 1 : chunk_num = 0 #if this is initiated, already thousand
-    #chunk_num = 0
+
     while num >= 1000   #checks if more than 3 digits long
       three_digits << num % 1000  #adds last 3 digits of number
       num /= 1000
-    #  chunk_num += 1 #counts increments: thousands, millions ...
     end
 
     three_digits << num
 
-    three_digits.reverse #<< chunk_num
+    three_digits.reverse
   end
 
   def hundreds_or_less(num)
     if num < 10
       single_digits(num)
+
     elsif num < 100
       tens (num)
+
     elsif num % 100 == 0
       "#{single_digits(num/100)} hundred"
-    #  words << @@basics[num / 10 * 10]
-    #  words << @@basics [num % 10]
+
     else
       words = [single_digits(num/100), "hundred", tens(num % 100)].join(" ")
     end
