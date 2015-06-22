@@ -11,3 +11,22 @@ def sum (array)
   array.each {|num| total += num}
   total
 end
+
+def multiply (first, second, *third)
+  numbers = [first, second] + third
+  total = 1
+  numbers.each {|num| total *= num}
+  total
+end
+
+def power(base, exponent)
+  base ** exponent
+end
+
+def factorial (num)
+  result = 1
+  num.downto (1) do |n|
+    result *= n
+  end
+  result
+end
