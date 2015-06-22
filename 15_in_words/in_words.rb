@@ -2,7 +2,7 @@ require 'pry'
 
 class Fixnum
 
-  @@basics = {0 => 'zero',
+  @@basics = {0 => nil,
               1 => 'one',
               2 => 'two',
               3 => 'three',
@@ -43,14 +43,19 @@ class Fixnum
 
     words = []
 #    binding.pry
-    if num >= 1_000_000_000_000
+    if num == 0
+      words << 'zero'
+    elsif num >= 1_000_000_000_000
       #
     elsif num >= 1_000_000_000
       #
     elsif num >= 1_000_000
-      #
+      #words
     elsif num >= 1_000
-      #
+      words += [hundreds_or_less(num / 1000), "thousand"]
+      if num % 1000 != 0
+        words << hundreds_or_less(num % 1000)
+      end
     elsif num < 1_000
       words << hundreds_or_less(num)
     else
@@ -58,6 +63,7 @@ class Fixnum
     end
     words.join (" ")
   end
+
 
   def hundreds_or_less(num)
     if num < 10
