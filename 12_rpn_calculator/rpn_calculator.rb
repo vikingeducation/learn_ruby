@@ -1,3 +1,4 @@
+require 'pry'
 class RPNCalculator
 
   attr_accessor :calculator, :result
@@ -48,8 +49,34 @@ class RPNCalculator
   end
 
   def tokens(string)
-    @calculator=string.split(" ")
-    #incomplete
+    equation=string.split(" ")
+
+    equation.map do |item|
+      /\D/ === item ? item.to_sym : item.to_i
+    end
+  end
+
+  def evaluate(string)
+    equation = tokens(string)
+
+    equation.each do |token|
+      if token.class == Fixnum
+        push(token)
+      elsif :+ == token
+        plus
+      elsif :- == token
+        minus
+      elsif :* == token
+        times
+      elsif :/ == token
+        divide
+      end
+    end
+
+    value
   end
 
 end
+
+calculator = RPNCalculator.new
+calculator.evaluate("1 2 3 * +")
