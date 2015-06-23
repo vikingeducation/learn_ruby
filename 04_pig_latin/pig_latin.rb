@@ -1,11 +1,20 @@
-
+require 'pry'
 
 def translate (string)
+#  binding.pry
   vowel = ["a", "e", "i", "o", "u"]
   phoneme = ["qu"]
   translation = []
   words = string.split(" ")
   words.each do |word|
+    word.downcase == word ? capitalize = false : capitalize = true
+
+    punctuation = ""
+    if /[^a-zA-Z]/ === word[-1]
+      punctuation = word[-1]
+      word = word.chop
+    end
+
     if vowel.include? word[0]
       word = word + "ay"
     else
@@ -18,9 +27,11 @@ def translate (string)
       end
       word = word[letter_index..-1] + word[0..letter_index-1] + "ay"
     end
-    translation << word
+    word = word.downcase
+    word.capitalize! if capitalize
+    translation << word + punctuation
   end
   translation.join(" ")
 end
 
-translate("cherry")
+puts translate("Cherry!")
