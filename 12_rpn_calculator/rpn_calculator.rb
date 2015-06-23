@@ -62,14 +62,17 @@ class RPNCalculator
     equation.each do |token|
       if token.class == Fixnum
         push(token)
-      elsif :+ == token
-        plus
-      elsif :- == token
-        minus
-      elsif :* == token
-        times
-      elsif :/ == token
-        divide
+      else
+        case token
+        when :+
+          plus
+        when :-
+          minus
+        when :*
+          times
+        when :/
+          divide
+        end
       end
     end
 
@@ -77,6 +80,3 @@ class RPNCalculator
   end
 
 end
-
-calculator = RPNCalculator.new
-calculator.evaluate("1 2 3 * +")
