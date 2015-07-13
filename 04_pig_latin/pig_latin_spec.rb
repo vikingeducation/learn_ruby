@@ -67,6 +67,15 @@ describe "#translate" do
 
   # Test-driving bonus:
   # * write a test asserting that capitalized words are still capitalized (but with a different initial capital letter, of course)
-  # * retain the punctuation from the original phrase
+  it "retains capitalization of first letter of word if applicable" do
+    s = translate("Stop")
+    s.should == "Opstay"
+  end
+
+  it "retains the punctuation from the original phrase" do
+    s = translate("go!")
+    s.should == "ogay!"
+  end
+
 
 end
