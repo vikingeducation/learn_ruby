@@ -1,0 +1,16 @@
+/usr/local/opt/rbenv/versions/2.1.5/bin/ruby -r ./siteconf20150716-7533-149dvji.rb extconf.rb
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling breakpoint.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20150716-7533-y4zej1/byebug
+installing default byebug libraries

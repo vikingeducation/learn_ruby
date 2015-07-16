@@ -1,0 +1,14 @@
+Lint/Debugger:
+  Exclude:
+    - test/examples/*.rb
+
+Style/FileName:
+  Exclude:
+    - lib/pry-byebug.rb
+    - lib/pry-byebug/cli.rb
+    - test/test_helper.rb
+
+Style/ModuleFunction:
+  Enabled: false
+
+inherit_from: .rubocop_todo.yml
