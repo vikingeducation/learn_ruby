@@ -68,5 +68,9 @@ describe "#translate" do
   # Test-driving bonus:
   # * write a test asserting that capitalized words are still capitalized (but with a different initial capital letter, of course)
   # * retain the punctuation from the original phrase
+  it "translates capitalized words" do
+    s = translate("War and Peace")
+    s.should == "Arway anday Eacepay"
+  end
 
 end
