@@ -5,11 +5,11 @@ class Array
   end
 
   def square
-    self.map {|item| item**2}
+    self.map {|sqr| sqr**2}
   end
 
   def square!
-    self.map! {|item| item**2}
+    self.map! {|sqr| sqr**2}
   end
 
 end
