@@ -97,7 +97,19 @@ describe Temperature do
   # run *all* the tests during your refactoring, to make sure you did it right
   #
   describe "utility class methods" do
+    describe "ftoc class method" do
+      it "is not an instance method" do
 
+        # instance_methods(false) ignores parent instance methods.
+        expect(Temperature.instance_methods(false)).not_to include(:ftoc)
+      end
+    end
+
+    describe "ctof class method" do
+      it "is not an instance method" do
+        expect(Temperature.instance_methods(false)).not_to include(:ctof)
+      end
+    end
   end
 
   # Here's another way to solve the problem!
