@@ -1,4 +1,4 @@
-Test First Ruby
+Test First Ruby - Josh Masland's Fork
 ==========
 
 See [testfirst.org/learn_ruby](http://testfirst.org/learn_ruby#install) for more information about how this will work.
