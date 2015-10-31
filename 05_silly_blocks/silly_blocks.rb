@@ -13,6 +13,6 @@ def adder(amount_to_add=1)
   return new_number
 end
 
-def repeater
-
+def repeater(times_to_repeat=1)
+  times_to_repeat.times {yield}
 end
