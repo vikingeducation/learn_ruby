@@ -57,35 +57,40 @@ class Fixnum
 
   def three_digit_name number
     result = ""
-    if number < 1
+    if number < 1 and self < 1000
       result = "zero"
     elsif number < 20
       result << low_numbers(number)
     elsif number < 100
       result << tens(number.to_s[0].to_i)
       result << low_numbers(number.to_s[1].to_i)
-    elsif number >= 100
+    else 
       result << hundreds(number.to_s[0].to_i)
-      result << tens(number.to_s[1].to_i)
-      result << low_numbers(number.to_s[2].to_i)
+      low_number = number.to_s[1..2].to_i
+      if low_number < 20
+        result << low_numbers(low_number)
+      else
+        result << tens(number.to_s[1].to_i)
+        result << low_numbers(number.to_s[2].to_i)
+      end
     end
     return result
   end
 
   def thousands number
-    return "#{three_digit_name(number)} thousand "
+    return "#{three_digit_name(number)}thousand "
   end
 
   def millions number
-    return "#{three_digit_name(number)} million "
+    return "#{three_digit_name(number)}million "
   end
 
   def billions number
-    return "#{three_digit_name(number)} billion "
+    return "#{three_digit_name(number)}billion "
   end
 
   def trillions number
-    return "#{three_digit_name(number)} trillion "
+    return "#{three_digit_name(number)}trillion "
   end
 
   def in_words
@@ -97,22 +102,40 @@ class Fixnum
 
     if number > 999999999999
       trillions_place = reverse_number_string.slice(12..14).reverse.to_i
-      result << trillions(trillions_place)
+      if millions_place != 0
+        result << trillions(trillions_place)
+      else 
+        result << ""
+      end
     end
 
     if number > 999999999
       billions_place = reverse_number_string.slice(9..11).reverse.to_i
-      result << billions(billions_place)
+      if millions_place != 0
+        result << billions(billions_place)
+      else 
+        result << ""
+      end
     end
 
     if number > 999999
       millions_place = reverse_number_string.slice(6..8).reverse.to_i
-      result << millions(millions_place)
+      
+      if millions_place != 0
+        result << millions(millions_place)
+      else 
+        result << ""
+      end
     end
 
     if number > 999
       thousands_place = reverse_number_string.slice(3..5).reverse.to_i
-      result << thousands(thousands_place)
+      
+      if thousands_place != 0
+        result << thousands(thousands_place)
+      else 
+        result << ""
+      end
     end
 
     hundreds_place = reverse_number_string.slice(0..2).reverse.to_i
