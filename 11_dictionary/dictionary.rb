@@ -9,7 +9,7 @@ class Dictionary
   end
 
   def keywords
-    @keywords
+    @keywords.sort
   end
 
   def add(entry)
@@ -35,5 +35,13 @@ class Dictionary
       end
     end
     return terms_found
+  end
+
+  def printable
+    text = ""
+    keywords.each do |keyword|
+      text << "[#{keyword}] \"#{@entries[keyword]}\"\n"
+    end
+    return text.chomp
   end
 end
