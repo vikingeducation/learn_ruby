@@ -27,7 +27,7 @@ class Fixnum
     "ten",
     "twenty",
     "thirty",
-    "fourty",
+    "forty",
     "fifty",
     "sixty",
     "seventy",
@@ -95,18 +95,29 @@ class Fixnum
     number_string = number.to_s
     reverse_number_string = number_string.reverse
 
+    if number > 999999999999
+      trillions_place = reverse_number_string.slice(12..14).reverse.to_i
+      result << trillions(trillions_place)
+    end
+
+    if number > 999999999
+      billions_place = reverse_number_string.slice(9..11).reverse.to_i
+      result << billions(billions_place)
+    end
+
+    if number > 999999
+      millions_place = reverse_number_string.slice(6..8).reverse.to_i
+      result << millions(millions_place)
+    end
+
+    if number > 999
+      thousands_place = reverse_number_string.slice(3..5).reverse.to_i
+      result << thousands(thousands_place)
+    end
+
     hundreds_place = reverse_number_string.slice(0..2).reverse.to_i
-    thousands_place = reverse_number_string.slice(3..5).reverse.to_i
-    millions_place = reverse_number_string.slice(6..8).reverse.to_i
-    billions_place = reverse_number_string.slice(9..11).reverse.to_i
-    trillions_place = reverse_number_string.slice(12..14).reverse.to_i
-
-    result << trillions(trillions_place)
-    result << billions(billions_place)
-    result << millions(millions_place)
-    result << thousands(thousands_place)
     result << three_digit_name(hundreds_place)
-
+    
     return result.strip
   end
 end
