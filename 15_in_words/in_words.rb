@@ -57,7 +57,9 @@ class Fixnum
 
   def three_digit_name number
     result = ""
-    if number < 20
+    if number < 1
+      result = "zero"
+    elsif number < 20
       result << low_numbers(number)
     elsif number < 100
       result << tens(number.to_s[0].to_i)
@@ -87,18 +89,24 @@ class Fixnum
   end
 
   def in_words
-    # Use to parse place value
-    number_string = self.to_s
-
     # Start with a blank string
     result = ""
+    number = self
+    number_string = number.to_s
+    reverse_number_string = number_string.reverse
 
-    if self < 20
-      
-    elsif self < 100
-      
-    end
+    hundreds_place = reverse_number_string.slice(0..2).reverse.to_i
+    thousands_place = reverse_number_string.slice(3..5).reverse.to_i
+    millions_place = reverse_number_string.slice(6..8).reverse.to_i
+    billions_place = reverse_number_string.slice(9..11).reverse.to_i
+    trillions_place = reverse_number_string.slice(12..14).reverse.to_i
 
+    result << trillions(trillions_place)
+    result << billions(billions_place)
+    result << millions(millions_place)
+    result << thousands(thousands_place)
+    result << three_digit_name(hundreds_place)
 
+    return result.strip
   end
 end
