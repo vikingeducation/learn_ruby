@@ -42,55 +42,61 @@ class Fixnum
     "billion",
     "trillion"
   ]
+
+  def space
+    return " "
+  end
   
   def low_numbers number
-    return "#{@@number_names[number]} "
+    return "#{@@number_names[number]}"
   end
 
   def tens number
-    return "#{@@tens_names[number]} "
+    return "#{@@tens_names[number]}"
   end
 
   def hundreds number
-    return "#{@@number_names[number]} hundred "
+    return "#{@@number_names[number]} hundred"
   end
 
   def three_digit_name number
-    result = ""
+    result = []
     if number < 1 and self < 1000
-      result = "zero"
+      result << "zero"
     elsif number < 20
-      result << low_numbers(number)
+      result << space << low_numbers(number) << space
     elsif number < 100
-      result << tens(number.to_s[0].to_i)
-      result << low_numbers(number.to_s[1].to_i)
+      result << space << tens(number.to_s[0].to_i) << space
+      if number.to_s[1].to_i > 0
+        result << low_numbers(number.to_s[1].to_i) << space
+      end
     else 
-      result << hundreds(number.to_s[0].to_i)
+      result << space << hundreds(number.to_s[0].to_i) << space
       low_number = number.to_s[1..2].to_i
       if low_number < 20
-        result << low_numbers(low_number)
+        result << low_numbers(low_number) << space
       else
-        result << tens(number.to_s[1].to_i)
-        result << low_numbers(number.to_s[2].to_i)
+        result << tens(number.to_s[1].to_i) << space
+        result << low_numbers(number.to_s[2].to_i) << space
       end
     end
-    return result
+    return result.join
   end
 
   def thousands number
-    return "#{three_digit_name(number)}thousand "
+    return "#{three_digit_name(number)}thousand"
   end
 
   def millions number
-    return "#{three_digit_name(number)}million "
+    return "#{three_digit_name(number)}million"
   end
 
   def billions number
-    return "#{three_digit_name(number)}billion "
+    return "#{three_digit_name(number)}billion"
   end
 
   def trillions number
-    return "#{three_digit_name(number)}trillion "
+    return "#{three_digit_name(number)}trillion"
   end
 
   def in_words
@@ -102,7 +108,7 @@ class Fixnum
 
     if number > 999999999999
       trillions_place = reverse_number_string.slice(12..14).reverse.to_i
-      if millions_place != 0
+      if trillions_place != 0
         result << trillions(trillions_place)
       else 
         result << ""
@@ -111,7 +117,7 @@ class Fixnum
 
     if number > 999999999
       billions_place = reverse_number_string.slice(9..11).reverse.to_i
-      if millions_place != 0
+      if billions_place != 0
         result << billions(billions_place)
       else 
         result << ""
