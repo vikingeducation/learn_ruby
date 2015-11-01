@@ -22,4 +22,18 @@ class Dictionary
       @keywords << entry_hash.keys[0]
     end
   end
+
+  def include?(keyword)
+    @keywords.include?(keyword)
+  end
+
+  def find(find_term)
+    terms_found = {}
+    @keywords.each do |keyword|
+      if keyword.include?(find_term)
+        terms_found.merge!({keyword => @entries[keyword]})
+      end
+    end
+    return terms_found
+  end
 end
