@@ -1,4 +1,4 @@
-class Array
+module ArrayExtension
 
   def sum
     result = 0
@@ -16,4 +16,8 @@ class Array
     self.map! { |number| number ** 2 }
   end
 
+end
+
+class Array
+  include ArrayExtension
 end
