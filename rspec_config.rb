@@ -2,6 +2,6 @@
 require 'pry-byebug'
 
 RSpec.configure do |c|
-  c.fail_fast = true
+  c.fail_fast = 1
   c.color = true
 end
