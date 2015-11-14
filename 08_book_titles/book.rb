@@ -14,3 +14,4 @@ class Book
 		@title = result.join(' ')
 	end
 end
+
