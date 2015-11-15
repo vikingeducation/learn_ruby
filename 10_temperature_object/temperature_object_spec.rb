@@ -19,6 +19,7 @@
 
 require "temperature"
 
+
 describe Temperature do
 
   describe "can be constructed with an options hash" do
