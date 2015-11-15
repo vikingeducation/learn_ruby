@@ -35,4 +35,5 @@ class Dictionary
 		@keywords.sort.each {|key| result << "[#{key}] \"#{@entries[key]}\"\n"}
 		result.chomp
 	end
+	
 end
