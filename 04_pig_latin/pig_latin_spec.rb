@@ -31,38 +31,43 @@ describe "#translate" do
     expect(s).to eq("ananabay")
   end
 
-  it "translates a word beginning with two consonants" do # DONE`
+  it "translates a word beginning with two consonants" do # DONE
     s = translate("cherry")
     expect(s).to eq("errychay")
   end
 
-  it "translates two words" do
+  it "translates two words" do # Done
     s = translate("eat pie")
     expect(s).to eq("eatay iepay")
   end
 
-  it "translates a word beginning with three consonants" do
+  it "translates a word beginning with three consonants" do # Done
     expect(translate("three")).to eq("eethray")
   end
 
-  it "counts 'sch' as a single phoneme" do
+  it "counts 'sch' as a single phoneme" do # Done
     s = translate("school")
     expect(s).to eq("oolschay")
   end
 
-  it "counts 'qu' as a single phoneme" do
+  it "counts 'qu' as a single phoneme" do # Done
     s = translate("quiet")
     expect(s).to eq("ietquay")
   end
 
-  it "counts 'qu' as a consonant even when it's preceded by a consonant" do
+  it "counts 'qu' as a consonant even when it's preceded by a consonant" do # Done
     s = translate("square")
     expect(s).to eq("aresquay")
   end
 
-  it "translates many words" do
+  it "translates many words" do # Done
     s = translate("the quick brown fox")
     expect(s).to eq("ethay ickquay ownbray oxfay")
+  end
+
+  it "makes a capitalized word, stay capitalized when changed to pig latin" do # Done
+    s = translate("Chang")
+    expect(s).to eq("Angchay")
   end
 
   # Test-driving bonus:
