@@ -71,8 +71,8 @@ describe "#translate" do
   end
 
   it "retains the punctuation from the original phrase" do
-    s = translate("Die! Die! Die!")
-    expect(s).to eq("Ieday! Ieday! Ieday!")
+    s = translate("Die! Die! Don't!")
+    expect(s).to eq("Ieday! Ieday! On'tday!")
   end
 
   # Test-driving bonus:

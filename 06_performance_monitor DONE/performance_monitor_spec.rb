@@ -17,27 +17,27 @@ describe "Performance Monitor" do
     @eleven_am = Time.parse("2011-1-2 11:00:00")
   end
 
-  it "takes about 0 seconds to run an empty block" do
+  it "takes about 0 seconds to run an empty block" do # DONE
     elapsed_time = measure do
     end
     expect(elapsed_time).to be_within(0.1).of(0)
   end
 
-  it "takes exactly 0 seconds to run an empty block (with stubs)" do
+  it "takes exactly 0 seconds to run an empty block (with stubs)" do # DONE
     allow(Time).to receive(:now) { @eleven_am }
     elapsed_time = measure do
     end
     expect(elapsed_time).to eq(0)
   end
 
-  it "takes about 1 second to run a block that sleeps for 1 second" do
+  it "takes about 1 second to run a block that sleeps for 1 second" do # DONE
     elapsed_time = measure do
       sleep 1
     end
     expect(elapsed_time).to be_within(0.1).of(1)
   end
 
-  it "takes exactly 1 second to run a block that sleeps for 1 second (with stubs)" do
+  it "takes exactly 1 second to run a block that sleeps for 1 second (with stubs)" do # DONE
     fake_time = @eleven_am
     allow(Time).to receive(:now) { fake_time }
     elapsed_time = measure do
@@ -46,7 +46,7 @@ describe "Performance Monitor" do
     expect(elapsed_time).to eq(60)
   end
 
-  it "runs a block N times" do
+  it "runs a block N times" do # DONE
     n = 0
     measure(4) do
       n += 1
@@ -54,7 +54,7 @@ describe "Performance Monitor" do
     expect(n).to eq(4)
   end
 
-  it "returns the average time, not the total time, when running multiple times" do
+  it "returns the average time, not the total time, when running multiple times" do # DONE
     run_times = [8,6,5,7]
     fake_time = @eleven_am
     allow(Time).to receive(:now) { fake_time }
@@ -64,7 +64,7 @@ describe "Performance Monitor" do
     expect(average_time).to eq(6.5)
   end
 
-  it "returns the average time when running a random number of times for random lengths of time" do
+  it "returns the average time when running a random number of times for random lengths of time" do # DONE
     fake_time = @eleven_am
     allow(Time).to receive(:now) { fake_time }
     number_of_times = rand(10) + 2
