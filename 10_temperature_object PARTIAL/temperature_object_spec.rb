@@ -23,24 +23,24 @@ describe Temperature do
 
   describe "can be constructed with an options hash" do
     describe "in degrees fahrenheit" do
-      it "at 50 degrees" do
+      it "at 50 degrees" do # DONE
         expect(Temperature.new(:f => 50).in_fahrenheit).to eq(50)
       end
 
       describe "and correctly convert to celsius" do
-        it "at freezing" do
+        it "at freezing" do # DONE
           expect(Temperature.new(:f => 32).in_celsius).to eq(0)
         end
 
-        it "at boiling" do
+        it "at boiling" do # DONE
           expect(Temperature.new(:f => 212).in_celsius).to eq(100)
         end
 
-        it "at body temperature" do
+        it "at body temperature" do # DONE
           expect(Temperature.new(:f => 98.6).in_celsius).to eq(37)
         end
 
-        it "at an arbitrary temperature" do
+        it "at an arbitrary temperature" do # DONE
           expect(Temperature.new(:f => 68).in_celsius).to eq(20)
         end
       end
@@ -48,16 +48,16 @@ describe Temperature do
 
     describe "in degrees celsius" do
       it "at 50 degrees" do
-        expect(Temperature.new(:c => 50).in_celsius).to eq(50)
+        expect(Temperature.new(:c => 50).in_celsius).to eq(50) # DONE
       end
 
       describe "and correctly convert to fahrenheit" do
         it "at freezing" do
-          expect(Temperature.new(:c => 0).in_fahrenheit).to eq(32)
+          expect(Temperature.new(:c => 0).in_fahrenheit).to eq(32) # DONE
         end
 
         it "at boiling" do
-          expect(Temperature.new(:c => 100).in_fahrenheit).to eq(212)
+          expect(Temperature.new(:c => 100).in_fahrenheit).to eq(212) # DONE
         end
 
         it "at body temperature" do
