@@ -21,26 +21,26 @@ describe XmlDocument do
     @xml = XmlDocument.new
   end
 
-  it "renders an empty tag" do
+  it "renders an empty tag" do # DONE
     expect(@xml.hello).to eq("<hello/>")
   end
 
-  it "renders a tag with attributes" do
+  it "renders a tag with attributes" do # DONE
     expect(@xml.hello(:name => 'dolly')).to eq("<hello name='dolly'/>")
   end
 
-  it "renders a randomly named tag" do
+  it "renders a randomly named tag" do # DONE
     tag_name = (1..8).map{|i| ('a'..'z').to_a[rand(26)]}.join
     expect(@xml.send(tag_name)).to eq("<#{tag_name}/>")
   end
 
-  it "renders block with text inside" do
+  it "renders block with text inside" do # DONE
     expect(@xml.hello do
       "dolly"
     end).to eq("<hello>dolly</hello>")
   end
 
-  it "nests one level" do
+  it "nests one level" do # DONE
     expect(@xml.hello do
       @xml.goodbye
     end).to eq("<hello><goodbye/></hello>")
