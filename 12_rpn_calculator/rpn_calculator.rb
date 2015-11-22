@@ -3,6 +3,24 @@ class RPNCalculator
     @order_stack =[]
   end
 
+  def evaluate(string)
+    full_stack = tokens(string)
+    full_stack.each { |character|
+      if (0..9).include? character
+        @order_stack << character
+      elsif character == :+
+        plus
+      elsif character == :/
+        divide
+      elsif character == :*
+        times
+      elsif character == :-
+        minus
+      end
+    }
+    value
+  end
+
   def push(number)
     @order_stack << number
     @order_stack
@@ -48,18 +66,20 @@ class RPNCalculator
     @order_stack.push(total)
   end
 
+  def tokens(string)
+    numbers_symbols = []
+    string.split.each do |character|
+      if ("0".."9").include? character[-1]
+        numbers_symbols << character.to_i
+      else
+        numbers_symbols << character.to_sym
+      end
+    end
+    numbers_symbols
+  end
+
   def value
     @order_stack[-1]
   end
 
 end
-
-calculator = RPNCalculator.new
-calculator.push(4)
-calculator.push(4)
-calculator.push(4)
-calculator.plus
-calculator.plus
-puts calculator.value
-
-

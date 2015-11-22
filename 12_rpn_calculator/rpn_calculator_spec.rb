@@ -105,7 +105,7 @@ describe RPNCalculator do
     expect(calculator.value).to eq(1+(2*3))
   end
 
-  it "fails informatively when there's not enough values stacked away" do
+  it "fails informatively when there's not enough values stacked away" do # DONE
     expect {
       calculator.plus
     }.to raise_error("calculator is empty")
@@ -124,12 +124,12 @@ describe RPNCalculator do
   end
 
   # extra credit
-  it "tokenizes a string" do
+  it "tokenizes a string" do # DONE
     expect(calculator.tokens("1 2 3 * + 4 5 - /")).to eq([1, 2, 3, :*, :+, 4, 5, :-, :/])
   end
 
   # extra credit
-  it "evaluates a string" do
+  it "evaluates a string" do # DONE
     expect(calculator.evaluate("1 2 3 * +")).to eq((2 * 3) + 1)
 
     expect(calculator.evaluate("4 5 -")).to eq(4 - 5)
