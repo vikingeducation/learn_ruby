@@ -77,12 +77,12 @@ describe Temperature do
   # on individual instances of the class.
   describe "can be constructed via factory methods" do
 
-    it "in degrees celsius" do
+    it "in degrees celsius" do # DONE
       expect(Temperature.from_celsius(50).in_celsius).to eq(50)
       expect(Temperature.from_celsius(50).in_fahrenheit).to eq(122)
     end
 
-    it "in degrees fahrenheit" do
+    it "in degrees fahrenheit" do # DONE
       expect(Temperature.from_fahrenheit(50).in_fahrenheit).to eq(50)
       expect(Temperature.from_fahrenheit(50).in_celsius).to eq(10)
     end
@@ -101,25 +101,25 @@ describe Temperature do
   end
 
   # Here's another way to solve the problem!
-  describe "Temperature subclasses" do
+  describe "Temperature subclasses" do # DONE
     describe "Celsius subclass" do
       it "is constructed in degrees celsius" do
         expect(Celsius.new(50).in_celsius).to eq(50)
         expect(Celsius.new(50).in_fahrenheit).to eq(122)
       end
 
-      it "is a Temperature subclass" do
+      it "is a Temperature subclass" do # DONE
         expect(Celsius.new(0)).to be_a(Temperature)
       end
     end
 
-    describe "Fahrenheit subclass" do
+    describe "Fahrenheit subclass" do # DONE
       it "is constructed in degrees fahrenheit" do
         expect(Fahrenheit.new(50).in_fahrenheit).to eq(50)
         expect(Fahrenheit.new(50).in_celsius).to eq(10)
       end
 
-      it "is a Temperature subclass" do
+      it "is a Temperature subclass" do # DONE
         expect(Fahrenheit.new(0)).to be_a(Temperature)
       end
     end

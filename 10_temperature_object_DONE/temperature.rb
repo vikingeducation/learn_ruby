@@ -1,5 +1,6 @@
 class Temperature
 
+  #FACTORY METHODS - I THINK THIS EXISTS SO IT'S NICER FOR USER COMMANDS.
   class << self
     def from_celsius(celsius)
       new(:c => celsius)
@@ -34,6 +35,15 @@ class Temperature
 
 end
 
-whatever = Temperature.new(:f => 50)
-puts whatever.in_fahrenheit
-puts whatever.in_celsius
+#SUBCLASS
+class Celsius < Temperature
+  def initialize(celsius)
+    @options = {:c => celsius}
+  end
+end
+
+class Fahrenheit < Temperature
+  def initialize(fahrenheit)
+    @options = {:f => fahrenheit}
+  end
+end
