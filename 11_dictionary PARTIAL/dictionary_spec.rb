@@ -13,39 +13,39 @@ describe Dictionary do
     @d = Dictionary.new
   end
 
-  it 'is empty when created' do
+  it 'is empty when created' do # DONE
     expect(@d.entries).to eq({})
   end
 
-  it 'can add whole entries with keyword and definition' do
+  it 'can add whole entries with keyword and definition' do # DONE
     @d.add('fish' => 'aquatic animal')
     expect(@d.entries).to eq({'fish' => 'aquatic animal'})
     expect(@d.keywords).to eq(['fish'])
   end
 
-  it 'add keywords (without definition)' do
+  it 'add keywords (without definition)' do # DONE
     @d.add('fish')
     expect(@d.entries).to eq({'fish' => nil})
     expect(@d.keywords).to  eq(['fish'])
   end
 
-  it 'can check whether a given keyword exists' do
+  it 'can check whether a given keyword exists' do # DONE
     expect(@d.include?('fish')).to be false
   end
 
-  it "doesn't cheat when checking whether a given keyword exists" do
+  it "doesn't cheat when checking whether a given keyword exists" do # DONE
     expect(@d.include?('fish')).to be false # if the method is empty, this test passes with nil returned
     @d.add('fish')
     expect(@d.include?('fish')).to be true # confirms that it actually checks
     expect(@d.include?('bird')).to be false # confirms not always returning true after add
   end
 
-  it "doesn't include a prefix that wasn't added as a word in and of itself" do
+  it "doesn't include a prefix that wasn't added as a word in and of itself" do # DONE
     @d.add('fish')
     expect(@d.include?('fi')).to be false
   end
 
-  it "doesn't find a word in empty dictionary" do
+  it "doesn't find a word in empty dictionary" do # DONE
     expect(@d.find('fi')).to be_empty # {}
   end
 

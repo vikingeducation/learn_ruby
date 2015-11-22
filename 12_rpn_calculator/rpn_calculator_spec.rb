@@ -43,14 +43,14 @@ describe RPNCalculator do
     @calculator = RPNCalculator.new
   end
 
-  it "adds two numbers" do
+  it "adds two numbers" do # DONE
     calculator.push(2)
     calculator.push(3)
     calculator.plus
     expect(calculator.value).to eq(5)
   end
 
-  it "adds three numbers" do
+  it "adds three numbers" do # DONE
     calculator.push(2)
     calculator.push(3)
     calculator.push(4)
@@ -60,14 +60,14 @@ describe RPNCalculator do
     expect(calculator.value).to eq(9)
   end
 
-  it "subtracts the second number from the first number" do
+  it "subtracts the second number from the first number" do # DONE
     calculator.push(2)
     calculator.push(3)
     calculator.minus
     expect(calculator.value).to eq(-1)
   end
 
-  it "adds and subtracts" do
+  it "adds and subtracts" do # DONE
     calculator.push(2)
     calculator.push(3)
     calculator.push(4)
@@ -77,7 +77,7 @@ describe RPNCalculator do
     expect(calculator.value).to eq(1)
   end
 
-  it "multiplies and divides" do
+  it "multiplies and divides" do # DONE
     calculator.push(2)
     calculator.push(3)
     calculator.push(4)
@@ -87,7 +87,7 @@ describe RPNCalculator do
     expect(calculator.value).to eq(2.0 * (3.0 / 4.0))
   end
 
-  it "resolves operator precedence unambiguously" do
+  it "resolves operator precedence unambiguously" do # DONE
     # 1 2 + 3 * => (1 + 2) * 3
     calculator.push(1)
     calculator.push(2)
