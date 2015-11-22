@@ -70,6 +70,8 @@ describe "#translate" do
     expect(s).to eq("Angchay")
   end
 
+
+  # ALL I NEED TO DO IS FUCKING SAVE THE LAST PUNCTUATION AND POP IT ON. \
   it "retains the punctuation from the original phrase" do
     s = translate("Die! Die! Don't!")
     expect(s).to eq("Ieday! Ieday! On'tday!")
