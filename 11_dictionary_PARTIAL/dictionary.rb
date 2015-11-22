@@ -32,6 +32,7 @@ class Dictionary
       puts "it does have that key"
     else
       puts "that key doesn't exist"
+      nil
     end
   end
 

@@ -1,4 +1,15 @@
 class Temperature
+
+  class << self
+    def from_celsius(celsius)
+      new(:c => celsius)
+    end
+
+    def from_fahrenheit(fahrenheit)
+      new(:f => fahrenheit)
+    end
+  end
+
   def initialize(opts = {})
     @options = opts
   end

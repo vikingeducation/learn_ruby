@@ -61,7 +61,7 @@ describe Temperature do
         end
 
         it "at body temperature" do
-          expect(Temperature.new(:c => 37).in_fahrenheit).to be_within(0.1).of(98.6)
+          expect(Temperature.new(:c => 37).in_fahrenheit).to be_within(0.1).of(98.6) # DONE
           # Why do we need to use be_within here?
           # See http://www.ruby-forum.com/topic/169330
           # and http://groups.google.com/group/rspec/browse_thread/thread/f3ebbe3c313202bb
