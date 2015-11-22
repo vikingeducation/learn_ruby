@@ -49,32 +49,32 @@ describe Dictionary do
     expect(@d.find('fi')).to be_empty # {}
   end
 
-  it 'finds nothing if the prefix matches nothing' do
+  it 'finds nothing if the prefix matches nothing' do # DONE
     @d.add('fiend')
     @d.add('great')
     expect(@d.find('nothing')).to be_empty
   end
 
-  it "finds an entry" do
+  it "finds an entry" do # DONE
     @d.add('fish' => 'aquatic animal')
     expect(@d.find('fish')).to eq({'fish' => 'aquatic animal'})
   end
 
-  it 'finds multiple matches from a prefix and returns the entire entry (keyword + definition)' do
+  it 'finds multiple matches from a prefix and returns the entire entry (keyword + definition)' do # DONE
     @d.add('fish' => 'aquatic animal')
     @d.add('fiend' => 'wicked person')
     @d.add('great' => 'remarkable')
     expect(@d.find('fi')).to eq({'fish' => 'aquatic animal', 'fiend' => 'wicked person'})
   end
 
-  it 'lists keywords alphabetically' do
+  it 'lists keywords alphabetically' do # DONE
     @d.add('zebra' => 'African land animal with stripes')
     @d.add('fish' => 'aquatic animal')
     @d.add('apple' => 'fruit')
     expect(@d.keywords).to eq(%w(apple fish zebra))
   end
 
-  it 'can produce printable output like so: [keyword] "definition"' do
+  it 'can produce printable output like so: [keyword] "definition"' do # DONE
     @d.add('zebra' => 'African land animal with stripes')
     @d.add('fish' => 'aquatic animal')
     @d.add('apple' => 'fruit')
