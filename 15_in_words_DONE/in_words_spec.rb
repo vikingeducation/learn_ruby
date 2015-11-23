@@ -35,13 +35,13 @@ describe Fixnum do
     expect(9.in_words).to eq('nine')
   end
 
-  it "reads 10 to 12" do
+  it "reads 10 to 12" do # DONE
     expect(10.in_words).to eq('ten')
     expect(11.in_words).to eq('eleven')
     expect(12.in_words).to eq ('twelve')
   end
 
-  it "reads teens" do
+  it "reads teens" do # DONE
     expect(13.in_words).to eq('thirteen')
     expect(14.in_words).to eq('fourteen')
     expect(15.in_words).to eq('fifteen')
@@ -51,7 +51,7 @@ describe Fixnum do
     expect(19.in_words).to eq('nineteen')
   end
 
-  it "reads tens" do
+  it "reads tens" do # DONE
     expect(20.in_words).to eq('twenty')
     expect(30.in_words).to eq('thirty')
     expect(40.in_words).to eq('forty')
