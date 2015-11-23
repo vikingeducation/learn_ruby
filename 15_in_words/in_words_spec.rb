@@ -22,7 +22,7 @@ require "in_words"
 
 describe Fixnum do
 
-  it "reads 0 to 9" do
+  it "reads 0 to 9" do # DONE
     expect(0.in_words).to eq('zero')
     expect(1.in_words).to eq('one')
     expect(2.in_words).to eq('two')
