@@ -46,7 +46,7 @@ describe XmlDocument do
     end).to eq("<hello><goodbye/></hello>")
   end
 
-  it "nests several levels" do
+  it "nests several levels" do # DONE
     xml = XmlDocument.new
     expect(xml.hello do
       xml.goodbye do
@@ -57,7 +57,7 @@ describe XmlDocument do
     end).to eq("<hello><goodbye><come_back><ok_fine be='that_way'/></come_back></goodbye></hello>")
   end
 
-  it "indents" do
+  it "indents" do # DONE
     @xml = XmlDocument.new(true)
     expect(@xml.hello do
       @xml.goodbye do
