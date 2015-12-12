@@ -32,7 +32,7 @@ describe Book do
     end
 
     describe 'should capitalize every word except...' do
-      describe 'articles' do
+      #describe 'articles' do
         specify 'the' do
           @book.title = "alexander the great"
           expect(@book.title).to eq("Alexander the Great")
@@ -47,7 +47,7 @@ describe Book do
           @book.title = "to eat an apple a day"
           expect(@book.title).to eq("To Eat an Apple a Day")
         end
-      end
+      #end
 
       specify 'conjunctions' do
         @book.title = "war and peace"
