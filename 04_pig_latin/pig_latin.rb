@@ -6,7 +6,7 @@ def find_consonants(word)
   letters = word.split(//)
   letters.each_with_index do |letter, index|
     # handle qu, treat it as a consonant
-    if $vowels.include? letter and letters[index-1] == "q"
+    if $vowels.include?(letter) and letters[index-1] == "q"
       cons = letters[0, index+1]
       rest = letters[index+1, word.length]
     elsif $vowels.include? letter
