@@ -7,6 +7,8 @@ class Temperature
 
 
   def in_fahrenheit
+    # ternary operator:
+    # condition ? do_this_if_true : do_this_if_false
     @fahrenheit ? @fahrenheit : ctof(@celsius)
   end
 
@@ -25,6 +27,8 @@ class Temperature
   end
 
 
+  # FACTORY METHOD
+  # each instance of Temperature class that calls these methods will create :c or :f that takes the value passed into the method
   def self.from_celsius deg
     Temperature.new c: deg
   end
@@ -38,8 +42,9 @@ end
 
 
 
-# subclasses
+# SUBCLASSES
 
+# Celsius inherits all methods from Temperature class
 class Celsius < Temperature
 
   def initialize deg
