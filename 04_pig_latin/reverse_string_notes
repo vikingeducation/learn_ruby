@@ -1,0 +1,66 @@
+REVERSE STRING
+my reverse notes
+convert string to array using split
+pop last elemnt off array and add to new
+be sure to do pop x times for x is the number of elements in the array (aka length times) input.length.times*
+join the new array
+
+def my_reverse(string)
+  string.char
+
+FIB
+def fib(num)
+  if num == 1
+    return 1
+  elsif num == 2
+    return 1
+  else
+    solution = fib(num-1) + fib(num-2)
+  return solution
+  end
+end
+
+BENCHMAKER
+def my_benchmark(num)
+  start_time = Time.now
+  num.times yield     
+  end_time = Time.new
+
+time= end-start
+
+Read procs/blocks etc. section
+
+My_end
+extend a class--adding some additional methods
+proc is a general case--
+block is a special case of proc--anonomous
+
+class Array--right now only accepts blocks. Want to accept blocks/procs
+
+  def my_each( &now_it_is_a_proc )
+
+    self.length.times do |i|
+      now_it_is_a_proc.call( self[i] )
+    end
+
+  end
+end
+# Note that we only use the `&` in the method signature
+      # and now we can call our new Proc like normal
+
+An example of using my_each
+[1,2,3].each { |i| puts i*2 }
+
+-->This is equivalent to the example above, just with a fully written Proc instead of a bloc 
+my_each_fn = Proc.new { |i| puts i*2 }
+[1,2,3].each(my_each_fn)
+
+--->Taking either a block or proc
+
+def block_proc( proc_argument = nil )
+  if block_given?
+    yield
+  else
+    proc_argument.call
+  end
+end
