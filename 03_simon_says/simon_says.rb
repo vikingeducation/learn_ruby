@@ -21,5 +21,15 @@ def first_word(string)
 end
 
 def titleize(string)
-   return string.split.map{|w| w.capitalize}.join(" ")
+    un_titled = ["the", "and", "or", "over"]
+    title = string.split
+    proper_case = []
+    title.each_with_index do |word, index|
+        word = word.capitalize
+        if(un_titled.include?(word.downcase) && index != 0)
+            word = word.downcase
+        end
+        proper_case.push(word)
+    end
+   return proper_case.join(" ")
 end
