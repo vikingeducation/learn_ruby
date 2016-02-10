@@ -1,16 +1,16 @@
-def translate_word(string)
+def translate_word(word)
 
-    word = string.split(//)
+    characters = word.split(//)
     vowels = ["a", "e", "i", "o", "u"]
     consonant = ""
-    while(!vowels.include?(word[0]))
-        word.each_with_index do |letter, index|
+    while(!vowels.include?(characters[0]))
+        characters.each_with_index do |letter, index|
                 if(!vowels.include?(letter) && index == 0)
-                    consonant = word.shift
-                    word.push(consonant)
-                    if(letter == "q" && word[0] == "u")
-                        consonant = word.shift
-                        word.push(consonant)
+                    consonant = characters.shift
+                    characters.push(consonant)
+                    if(letter == "q" && characters[0] == "u")
+                        consonant = characters.shift
+                        characters.push(consonant)
                     end
                 else
                     break
@@ -18,7 +18,7 @@ def translate_word(string)
 
         end
     end
-    return word.join("") + "ay"
+    return characters.join("") + "ay"
 end
 
 def translate(string)
