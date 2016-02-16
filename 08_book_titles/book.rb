@@ -12,12 +12,12 @@ class Book
 
 # gets the variable and changes it (not typical "getter" use)
 # --Allows you to read the variable and change it
+
     def title
 
 # I reused all this code from the 03_simon_says code, so if you passed those tests,
 # you can reuse the formula for these, adding cases for specific words,
 # like prepositions/conjunctions and so forth.
-
 
         @title_words = @title.split
         @conjunctions = ["for", "and", "nor", "but", "or", "yet", "so"]
