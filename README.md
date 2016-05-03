@@ -1,7 +1,18 @@
 Test First Ruby
-==========
+===============
 
-# Bideo Wego was here
+## Quick Run
+
+`cd` to the project directory and run:
+
+```bash
+$ rake all
+```
+
+This will run all the RSpec tests for each challenge directory.
+
+
+
 
 See [testfirst.org/learn_ruby](http://testfirst.org/learn_ruby#install) for more information about how this will work.
 
