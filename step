@@ -1,0 +1,22 @@
+
+[1mFrom:[0m /home/morgan/workspace/projects/learn_ruby/12_rpn_calculator/rpn_calculator.rb @ line 40 RPNCalculator#evaluate:
+
+    [1;34m38[0m: [32mdef[0m [1;34mevaluate[0m string
+    [1;34m39[0m:   binding.pry
+ => [1;34m40[0m:   tokens(string).each [32mdo[0m |token|
+    [1;34m41[0m:     [32mcase[0m token
+    [1;34m42[0m:     [32mwhen[0m [33m:+[0m
+    [1;34m43[0m:       plus
+    [1;34m44[0m:     [32mwhen[0m [33m:-[0m
+    [1;34m45[0m:       minus
+    [1;34m46[0m:     [32mwhen[0m [33m:*[0m
+    [1;34m47[0m:       times
+    [1;34m48[0m:     [32mwhen[0m [33m:/[0m
+    [1;34m49[0m:       divide
+    [1;34m50[0m:     [32melse[0m
+    [1;34m51[0m:       push(token)
+    [1;34m52[0m:     [32mend[0m
+    [1;34m53[0m:   [32mend[0m
+    [1;34m54[0m:   @value
+    [1;34m55[0m: [32mend[0m
+
