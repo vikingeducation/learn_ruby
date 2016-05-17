@@ -30,3 +30,21 @@ class Temperature
   end
 
 end
+
+class Celsius < Temperature
+
+  def initialize(temperature)
+    @celsius = temperature
+    @fahrenheit = (temperature * (9/5.0)) + 32
+  end
+
+end
+
+class Fahrenheit < Temperature
+
+  def initialize(temperature)
+    @fahrenheit = temperature
+    @celsius =  5/9.0 * (temperature - 32)
+  end
+
+end
