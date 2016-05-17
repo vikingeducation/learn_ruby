@@ -98,6 +98,34 @@ describe Temperature do
   #
   describe "utility class methods" do
 
+    describe "ftoc class method" do
+      describe "converts f to c" do
+
+        it "at freezing" do
+          expect(Temperature.ftoc(32)).to eq(0)
+        end
+        
+        it "at body temperature" do
+          expect(Temperature.ftoc(98.6)).to be_within(0.1).of(37)
+        end
+
+      end
+    end
+
+    describe "ctof class method" do
+      describe "converts c to f" do
+
+        it "at freezing" do
+          expect(Temperature.ctof(0)).to eq(32)
+        end
+        
+        it "at body temperature" do
+          expect(Temperature.ctof(37)).to be_within(0.1).of(98.6)
+        end
+
+      end
+    end
+
   end
 
   # Here's another way to solve the problem!
