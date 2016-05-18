@@ -6,7 +6,7 @@
 # * regular expressions
 #
 
-require 'dictionary'
+require_relative 'dictionary'
 
 describe Dictionary do
   before do
