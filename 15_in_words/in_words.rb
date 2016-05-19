@@ -152,4 +152,24 @@ class Fixnum
     return number_word.strip
   end
 
+  def wordify_billions(number)
+    numbers = number.split_by_decimal
+
+    number_word = ""
+
+    billions = number / 1_000_000_000
+
+    number_word << billions.in_words + " billion "
+
+    remainder = number % 1_000_000_000
+
+    if remainder > 0
+
+      number_word << remainder.in_words
+
+    end
+
+    return number_word.strip
+  end
+
 end
