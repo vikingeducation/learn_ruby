@@ -110,4 +110,25 @@ class Fixnum
     return number_word.strip
   end
 
+  def wordify_thousands(number)
+
+    numbers = number.split_by_decimal
+
+    number_word = ""
+
+    thousands = number / 1000
+
+    number_word << thousands.in_words + " thousand "
+
+    remainder = number % 1000
+
+    if remainder > 0
+
+      number_word << remainder.in_words
+
+    end
+
+    return number_word.strip
+  end
+
 end
