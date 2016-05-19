@@ -172,4 +172,24 @@ class Fixnum
     return number_word.strip
   end
 
+  def wordify_trillions(number)
+    numbers = number.split_by_decimal
+
+    number_word = ""
+
+    trillions = number / 1_000_000_000_000
+
+    number_word << trillions.in_words + " trillion "
+
+    remainder = number % 1_000_000_000_000
+
+    if remainder > 0
+
+      number_word << remainder.in_words
+
+    end
+
+    return number_word.strip
+  end
+
 end
