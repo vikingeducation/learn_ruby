@@ -52,4 +52,31 @@ class Fixnum
     return number_word
   end
 
+  def wordify_tens(number)
+
+    numbers = number.split_by_decimal
+
+    number_word = ""
+
+    sum = numbers.reduce { |sum, number| sum += number }
+
+    if sum.between?(11, 19)
+
+      number_word << lookup_number(sum)
+
+    else
+
+        number_word << lookup_number(numbers[0]) + " "
+
+        unless numbers[1] == 0
+
+          number_word << numbers[1].in_words
+
+        end
+
+    end
+
+    return number_word.strip
+  end
+
 end
