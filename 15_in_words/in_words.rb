@@ -15,7 +15,17 @@ class Fixnum
   end
 
   def in_words
-    if self > 20
+    if self >= 1_000_000_000_000
+      wordify_trillions(self)
+    elsif self >= 1_000_000_000
+      wordify_billions(self)
+    elsif self >= 1_000_000
+      wordify_millions(self)
+    elsif self >= 1000
+      wordify_thousands(self)
+    elsif self >= 100
+      wordify_hundreds(self)
+    elsif self > 20
       wordify_tens(self)
     else
       wordify_ones(self)
@@ -73,6 +83,27 @@ class Fixnum
           number_word << numbers[1].in_words
 
         end
+
+    end
+
+    return number_word.strip
+  end
+
+  def wordify_hundreds(number)
+
+    numbers = number.split_by_decimal
+
+    number_word = ""
+
+    hundreds = number / 100
+
+    number_word << hundreds.in_words + " hundred "
+
+    remainder = number % 100
+
+    if remainder > 0
+
+      number_word << remainder.in_words
 
     end
 
