@@ -32,27 +32,6 @@ class Fixnum
     end
   end
 
-  def split_by_decimal
-
-    digits = self.to_s.split("")
-
-    component_numbers = []
-
-    total_decimal_places = digits.length
-
-    digits.each_with_index do |number, current_decimal_place|
-
-      current_decimal_place += 1
-
-      following_decimal_places = total_decimal_places - current_decimal_place
-
-      component_numbers << "#{number + ("0" * following_decimal_places)}".to_i
-
-    end
-
-    return component_numbers
-  end
-
   def wordify_ones(number)
 
     number_word = ""
@@ -64,23 +43,23 @@ class Fixnum
 
   def wordify_tens(number)
 
-    numbers = number.split_by_decimal
-
     number_word = ""
 
-    sum = numbers.reduce { |sum, number| sum += number }
+    if number.between?(11, 19)
 
-    if sum.between?(11, 19)
-
-      number_word << lookup_number(sum)
+      number_word << lookup_number(number)
 
     else
 
-        number_word << lookup_number(numbers[0]) + " "
+        tens = (number / 10) * 10
 
-        unless numbers[1] == 0
+        remainder = number % 10
 
-          number_word << numbers[1].in_words
+        number_word << lookup_number(tens) + " "
+
+        unless remainder == 0
+
+          number_word << remainder.in_words
 
         end
 
@@ -90,8 +69,6 @@ class Fixnum
   end
 
   def wordify_hundreds(number)
-
-    numbers = number.split_by_decimal
 
     number_word = ""
 
@@ -112,8 +89,6 @@ class Fixnum
 
   def wordify_thousands(number)
 
-    numbers = number.split_by_decimal
-
     number_word = ""
 
     thousands = number / 1000
@@ -133,8 +108,6 @@ class Fixnum
 
   def wordify_millions(number)
 
-    numbers = number.split_by_decimal
-
     number_word = ""
 
     millions = number / 1_000_000
@@ -153,7 +126,6 @@ class Fixnum
   end
 
   def wordify_billions(number)
-    numbers = number.split_by_decimal
 
     number_word = ""
 
@@ -173,7 +145,6 @@ class Fixnum
   end
 
   def wordify_trillions(number)
-    numbers = number.split_by_decimal
 
     number_word = ""
 
