@@ -5,6 +5,7 @@ def echo( word )
 end
 
 
+
 def shout( word )
 
 	word.upcase
@@ -12,8 +13,9 @@ def shout( word )
 end
 
 
-def repeat( word , num = nil )
 
+
+def repeat( word , num = nil )
 
 	if num == nil
 
@@ -26,6 +28,8 @@ def repeat( word , num = nil )
 	end
 
 end
+
+
 
 
 def start_of_word( word, char )
@@ -46,9 +50,9 @@ def titleize( word )
 
 	array = word.split(" ")
 
-	array.each_with_index.map { |w, i|
+	array.each_with_index.map { | w , i |
 
-			if (w == "and" || w == "or" || w == "the" || w == "over") && i != 0
+			if ( w == "and" || w == "or" || w == "the" || w == "over" ) && i != 0
 				w
 			else
 				w.capitalize
