@@ -44,9 +44,15 @@ end
 
 def titleize( word )
 
-	array = [word]
+	array = word.split(" ")
 
-	array.map { |w| w.capitalize }.join
+	array.each_with_index.map { |w, i|
+
+			if (w == "and" || w == "or" || w == "the" || w == "over") && i != 0
+				w
+			else
+				w.capitalize
+			end }.join(" ")
 
 
 end
