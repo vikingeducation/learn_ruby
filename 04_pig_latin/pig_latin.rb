@@ -1,13 +1,64 @@
 # /pig_latin.rb
 # traslate a word beginning with a vowel - all one method
+require 'pry'
+
+
 
 def translate(s)
 
 
 
-	def one_vowel( word )
+	def one_vowel?( word )
 
-				word.start_with?( "a", "e", "i", "o", "u" ) ? true : false
+		word.start_with?( "a", "e", "i", "o", "u" )
+
+
+	end
+
+	def translate_one_vowel( word )
+
+				word + "ay"
+
+	end
+
+
+
+	def one_consonant(s)
+
+		# store the letters in an array
+		ch_array = s.chars
+
+		# then grab the first letter from the array
+		first_letter = ch_array.shift
+
+		# put that letter at the back with push and add 'ay'
+		ch_array << first_letter + "ay"
+
+		# bring it back together
+		ch_array.join
+
+	end
+
+
+
+
+	def two_consonants(s)
+
+				# store the letters in an array
+				ch_array = s.chars
+
+				# then grab the first letter from the array
+				first_letter = ch_array.shift
+
+				# then grab the second letter from the array
+				second_letter = ch_array.shift
+
+				# put both letters at the back with push and add 'ay'
+				ch_array << first_letter + second_letter + "ay"
+
+				# bring it back together
+			  ch_array.join
+
 
 	end
 
@@ -24,54 +75,26 @@ def translate(s)
 
 
 			# check for aeiou at the start and append 'ay'
-			if one_vowel(s) == true
+			if one_vowel?(s) == true
 
 				# translating any vowel
-				s + "ay"
-
+				translate_one_vowel( s )
 
 
 
 			# check if the second letter is a vowel then translate
 			elsif s.chars[1].start_with?( "a", "e", "i", "o", "u" )
 
-				# store the letters in an array
-				ch_array = s.chars
-
-				# then grab the first letter from the array
-				first_letter = ch_array.shift
-
-				# put that letter at the back with push and add 'ay'
-				ch_array << first_letter + "ay"
-
-				# bring it back together
-				ch_array.join
-
+				one_consonant(s)
 
 
 
 			# runs if there are two consonants in the array
-			elsif
+			else
 
-				# store the letters in an array
-				ch_array = s.chars
-
-				# then grab the first letter from the array
-				first_letter = ch_array.shift
-
-				# then grab the second letter from the array
-				second_letter = ch_array.shift
-
-				# put both letters at the back with push and add 'ay'
-				ch_array << first_letter + second_letter + "ay"
-
-				# bring it back together
-				ch_array.join
+				two_consonants(s)
 
 			end
-
-
-
 
 
 
