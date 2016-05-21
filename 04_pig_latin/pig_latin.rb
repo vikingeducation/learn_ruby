@@ -94,7 +94,6 @@ def translate(s)
 		# if words.count == 1
 	words.map { | w |
 
-
 			# check for aeiou at the start and append 'ay'
 			if one_vowel?( w )
 
@@ -104,20 +103,20 @@ def translate(s)
 
 
 			# check if the second letter is a vowel then translate
-			elsif s.chars[1].start_with?( "a", "e", "i", "o", "u" ) && s.chars[0] != "q"
+			elsif w.chars[1].start_with?( "a", "e", "i", "o", "u" ) && w.chars[0] != "q"
 
 				translate_one_consonant( w )
 
-			elsif s.chars[0].start_with?("q") && s.chars[1].start_with?("u")
+			elsif w.chars[0].start_with?("q") && w.chars[1].start_with?("u")
 
 				translate_two_consonants( w )
 
-			elsif  s.chars[1].start_with?("q")
+			elsif  w.chars[1].start_with?("q")
 
 				translate_three_consonants( w )
 
 			# runs if there are two consonants in the array
-			elsif s.chars[2].start_with?( "a", "e", "i", "o", "u" )
+			elsif w.chars[2].start_with?( "a", "e", "i", "o", "u" )
 
 				translate_two_consonants( w )
 
