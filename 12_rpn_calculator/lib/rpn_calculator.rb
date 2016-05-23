@@ -49,7 +49,7 @@ class RPNCalculator
 
   def evaluate(str)
     tokens = tokens(str)    
-    
+  
     i = 0
     while tokens.length > 1
       if tokens[i].is_a?(Symbol)
