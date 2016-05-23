@@ -60,7 +60,7 @@
 #     Failures:
 #
 #       1) the hello function says hello
-#          Failure/Error: expect(hello).to eq("Hello!")
+#          Failure/Error: exsubect(hello).to eq("Hello!")
 #            expected: "Hello!"
 #                 got: nil (compared using ==)
 #          # ./hello/hello_spec.rb:5:in `block (2 levels) in <top (required)>'
@@ -113,6 +113,7 @@
 #       "Hello, #{who}!"
 #     end
 #
+
 require "hello"
 
 describe "the hello function" do
