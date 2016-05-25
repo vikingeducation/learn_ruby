@@ -4,25 +4,25 @@ require 'pry'
 class Array
 
 
-	attr_accessor :array
+	def sum
 
-	def initialize
-
-		@array = array
+			self.reduce(0) { | r, e | r + e }
 
 	end
 
-def sum( *array )
 
-	binding.pry
-	if array.empty?
-		0
-	else
-		array.reduce(0) { | r, e | r + e }
+	def square
+
+		self.map { | num | num*num }
+
 	end
 
-end
 
+	def square!
+
+		self.map! { | num | num*num }
+
+	end
 
 
 end
