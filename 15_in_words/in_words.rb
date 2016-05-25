@@ -113,7 +113,13 @@ class Fixnum
 			elsif self.to_s.chars.count == 2
 				num_array << self.to_s.chars[0] + "0"
 				num_array << self.to_s.chars[1]
-				num_array.map { | i | i.to_i.tens }
+				num_array.map { | i | 
+					if i.size == 2
+						i.to_i.tens
+					else
+						i.to_i.zero_to_nine
+					end
+					}.join(" ")
 
 			end
 
