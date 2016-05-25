@@ -108,20 +108,21 @@ module SingleDigits
 
 
 	def two_digit_array
+
 				array = self
 				new_array = []
 
 
-				if (10..12) === array
+				if ( 10..12 ) === array
 					return array.ten_to_twelve
-				elsif (13..19) === array
+				elsif ( 13..19 ) === array
 					return array.teens
-				elsif array.to_s.chars[1] == "0"
+				elsif array.to_s.chars[ 1 ] == "0"
 					return array.tens
 				else
 
-					new_array << array.to_s.chars[0] + "0"
-					new_array << array.to_s.chars[1]
+					new_array << array.to_s.chars[ 0 ] + "0"
+					new_array << array.to_s.chars[ 1 ]
 
 
 					new_array.map { | i |
@@ -135,8 +136,23 @@ module SingleDigits
 						}.join(" ")
 				end
 
+	end #/.two_digit_array
+
+
+	def three_digit_array
+
+
 	end
-end
+
+
+	def thousands
+
+		" thousand"
+
+	end
+
+
+end #/.SingleDigits Module
 
 
 
@@ -151,6 +167,7 @@ class Fixnum
 		def in_words
 
 				num_array = []
+				digits_in_number = self.to_s.chars
 
 
 			if (0..9) === self
@@ -161,15 +178,15 @@ class Fixnum
 
 			elsif (13..19) === self
 				self.teens
-			elsif self.to_s.chars.count == 2 && self.to_s.chars[1].to_i == 0
+			elsif digits_in_number.count == 2 && digits_in_number[1].to_i == 0
 				self.tens
-			elsif self.to_s.chars.count == 2
+			elsif digits_in_number.count == 2
 
 				self.two_digit_array
 
-			elsif self.to_s.chars.count == 3
-				num_array << self.to_s.chars[0] + "00"
-				num_array << self.to_s.chars[1] + self.to_s.chars[2]
+			elsif digits_in_number.count == 3
+				num_array << digits_in_number[0] + "00"
+				num_array << digits_in_number[1] + digits_in_number[2]
 				num_array.map { | i |
 
 					if i.size == 3
@@ -178,6 +195,29 @@ class Fixnum
 						i.to_i.two_digit_array
 					end
 					}.join(" ").strip
+
+			# checking for thousands but less than 1 million
+			elsif digits_in_number.count > 3 && digits_in_number.count < 7
+
+				if digits_in_number.count == 4
+					num_array << digits_in_number[0]
+					num_array << digits_in_number[1] + digits_in_number[2] + digits_in_number[3]
+
+
+
+					num_array.map { | i |
+
+						if i.size == 1
+							i.to_i.zero_to_nine + thousands
+						end
+						}.join(" ").strip
+				elsif digits_in_number.count == 5
+
+					num_array << digits_in_number[0] + digits_in_number[1]
+					num_array << digits_in_number[2] + digits_in_number[3] + digits_in_number[4]
+
+
+				end
 			end
 
 
