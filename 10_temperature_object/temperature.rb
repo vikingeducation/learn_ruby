@@ -1,33 +1,42 @@
 class Temperature
 
+	attr_accessor :in_fahrenheit, :in_celsius
 
+	def initialize args
 
-	def initialize( options)
-
-		@temp = options
-		@fahren = @temp.map { | k, v | v }.join.to_i
-		@celsius = @temp.map { | k, v | v }.join.to_i
-
+		if args[:f]
+			@f = args[:f]
+		elsif args[:c]
+			@c = args[:c]
+		end
 
 	end
 
 
 	def in_fahrenheit
 
-		@fahren
+		if @f
+			@f
+		elsif @c.in_celsius
+			ctof(@f)
+		end
 
 	end
 
 
 	def in_celsius
 
-		@celsius = @temp.map { | k, v | ( v - 32 ) * ( 5.0 / 9.0 ) }.join.to_i
+		if @c
+			@c
+		else
+			ftoc(@c)
+		end
 
 	end
 
 end
 
-=begin
+
 def ftoc(faren)
 	( faren - 32 ) * ( 5.0 / 9.0 )
 end
@@ -35,4 +44,3 @@ end
 def ctof(cel)
 	( cel * ( 9.0 / 5.0 )) + 32
 end
-=end
