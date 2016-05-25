@@ -1,35 +1,37 @@
+require 'pry'
+
 class Temperature
 
 	attr_accessor :in_fahrenheit, :in_celsius
 
 	def initialize args
 
-		if args[:f]
-			@f = args[:f]
-		elsif args[:c]
-			@c = args[:c]
+		@f = args[ :f ]
+		@c = args[ :c ]
+
+	end
+
+
+
+
+	class Fahrenheit < Temperature
+
+		def in_fahrenheit
+
+			if @f::in_fahrenheit
+				@f
+			end
+
 		end
 
 	end
 
 
-	def in_fahrenheit
+	class Celsius < Temperature
 
-		if @f
-			@f
-		elsif @c.in_celsius
-			ctof(@f)
-		end
-
-	end
+		def in_celsius
 
 
-	def in_celsius
-
-		if @c
-			@c
-		else
-			ftoc(@c)
 		end
 
 	end
