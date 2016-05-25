@@ -1,6 +1,14 @@
 Test First Ruby -- RSpec 3 Edition
 ==========
 
+
+This repo has been forked from VikingEducation as part of the Odin Project Full Stack Ruby-on-Rails developer course.
+
+I will update with my own code and solutions in this repo.
+
+See the original README below
+==========
+
 See [testfirst.org/learn_ruby](http://testfirst.org/learn_ruby#install) for more information about how this will work.  These test-first Ruby challenges have been forked from [https://github.com/alexch/learn_ruby](https://github.com/alexch/learn_ruby) and updated to use RSpec 3 instead of RSpec 2.
 
 
