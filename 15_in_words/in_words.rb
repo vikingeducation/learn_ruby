@@ -142,17 +142,18 @@ module SingleDigits
 				array = self.to_s.chars
 				new_array = []
 
-				new_array << array[0] + "00"
-				new_array << array[1] + array[2]
-				new_array.map { | i |
+				if array != "000"
+					new_array << array[0] + "00"
+					new_array << array[1] + array[2]
+					new_array.map { | i |
 
-					if i.size == 3
-						i.to_i.hundreds
-					elsif i.size == 2 && i != "00"
-						i.to_i.two_digit_array
-					end
-					}.join(" ").strip
-
+						if i.size == 3
+							i.to_i.hundreds
+						elsif i.size == 2 && i != "00"
+							i.to_i.two_digit_array
+						end
+						}.join(" ").strip
+				end
 	end
 
 
@@ -171,10 +172,16 @@ module SingleDigits
 
 			self.teens
 
-		elsif (20..99) == self && self.to_s.chars[1] == "0"
+		elsif (20..99) === self && self.to_s.chars[1] == "0"
 
 			self.tens
 
+		elsif (21..99) === self && self.to_s.chars[1] != "0"
+
+			self.two_digit_array
+
+		elsif (100..999) === self
+			self.three_digit_array
 		end
 
 	end
@@ -204,7 +211,7 @@ module SingleDigits
 
 	def trillions
 
-		" trillion"
+		" trillion "
 
 	end
 
@@ -295,7 +302,7 @@ class Fixnum
 
 				end#/.millions
 
-			elsif digits_in_number.count > 9 && digits_in_number.count < 14
+			elsif digits_in_number.count > 9 && digits_in_number.count < 12
 
 				if digits_in_number.count == 10
 
@@ -326,36 +333,41 @@ class Fixnum
 				end
 
 			# read trillions
-			elsif digits_in_number.count > 14
+			elsif digits_in_number.count > 12
 
-				if digits_in_number.count == 15
+
+				if digits_in_number.count == 13
 
 					# populate # trillion
 					num_array << digits_in_number[0]
 
-					# populate # billion
-					num_array << digits_in_number[0]
 
-					# populate ### million
+					# populate ### billion
 					num_array << digits_in_number[1] + digits_in_number[2] + digits_in_number[3]
 
-					# populate ### thousand
+					# populate ### million
 					num_array << digits_in_number[4] + digits_in_number[5] + digits_in_number[6]
 
-					# populate ### hundred
+					# populate ### thousand
 					num_array << digits_in_number[7] + digits_in_number[8] + digits_in_number[9]
+
+					# populate ### hundred
+					num_array << digits_in_number[10] + digits_in_number[11] + digits_in_number[12]
+
 
 					# read the numbers in the array
 					num_array.each_with_index.map { | i , index |
 						if index == 0
-							i.to_i.check_0_thru_tens + billions
-						elsif index == 1
-							i.to_i.three_digit_array + " " + millions
-						elsif index == 2
-							i.to_i.three_digit_array + thousands
-						elsif index == 3
-							i.to_i.three_digit_array
-						end}.join(" ")
+							i.to_i.check_0_thru_tens + trillions
+						elsif index == 1 && i != "000"
+							i.to_i.check_0_thru_tens + billions + " "
+						elsif index == 2 && i != "000"
+							i.to_i.check_0_thru_tens + " " + millions + " "
+						elsif index == 3 && i != "000"
+							i.to_i.check_0_thru_tens + thousands + " "
+						elsif index == 4 && i != "000"
+							i.to_i.check_0_thru_tens
+						end}.join("").strip
 
 				end
 			end #/first if
