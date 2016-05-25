@@ -91,15 +91,14 @@ class Fixnum
 
 	include SingleDigits
 
-	def initialize
-
-		@word_array = word_array
 
 
-	end
-
+		#num_array.map { |i| i.to_i }
 
 		def in_words
+
+				num_array = []
+				word_array = []
 
 			if (0..9) === self
 				self.zero_to_nine
@@ -111,8 +110,11 @@ class Fixnum
 				self.teens
 			elsif self.to_s.chars.count == 2 && self.to_s.chars[1].to_i == 0
 				self.tens
-			elsif self.to_s.chars.count == 2 && self.to_s.chars[1] != 0 && self.to_s.chars[0].to_i > 1
-				self.to_s.chars.each { | num | @word_array << num.to_i }
+			elsif self.to_s.chars.count == 2
+				num_array << self.to_s.chars[0] + "0"
+				num_array << self.to_s.chars[1]
+				num_array.map { | i | i.to_i.tens }
+
 			end
 
 
