@@ -163,9 +163,11 @@ module SingleDigits
 	def check_0_thru_tens
 
 		if (0..9) === self
+
 			self.zero_to_nine
 
 		elsif (10..12) === self
+
 			self.ten_to_twelve
 
 		elsif (13..19) === self
@@ -181,7 +183,9 @@ module SingleDigits
 			self.two_digit_array
 
 		elsif (100..999) === self
+
 			self.three_digit_array
+
 		end
 
 	end
@@ -233,17 +237,9 @@ class Fixnum
 				digits_in_number = self.to_s.chars
 
 
-			if (0..19) === self
+			if (0..999) === self
 
 				self.check_0_thru_tens
-
-			elsif digits_in_number.count == 2
-
-				self.two_digit_array
-
-			elsif digits_in_number.count == 3
-
-				self.three_digit_array
 
 			# checking for thousands but less than 1 million
 			elsif digits_in_number.count > 3 && digits_in_number.count < 7
@@ -260,6 +256,9 @@ class Fixnum
 							i.to_i.zero_to_nine + thousands
 						end
 						}.join(" ").strip
+
+
+
 				elsif digits_in_number.count == 5
 
 					num_array << digits_in_number[0] + digits_in_number[1]
@@ -267,14 +266,16 @@ class Fixnum
 
 					num_array.map { | i |
 						if i.size == 2
-							i.to_i.two_digit_array + thousands
+							i.to_i.check_0_thru_tens + thousands
 						else
-							i.to_i.three_digit_array
+							i.to_i.check_0_thru_tens
 						end
 					}.join(" ")
 
+				end #/.count == 4 and 5
 
-				end #/.count == 5
+
+
 
 			elsif digits_in_number.count > 7 && digits_in_number.count < 9
 
@@ -323,11 +324,11 @@ class Fixnum
 						if index == 0
 							i.to_i.check_0_thru_tens + billions
 						elsif index == 1
-							i.to_i.three_digit_array + " " + millions
+							i.to_i.check_0_thru_tens + " " + millions
 						elsif index == 2
-							i.to_i.three_digit_array + thousands
+							i.to_i.check_0_thru_tens + thousands
 						elsif index == 3
-							i.to_i.three_digit_array
+							i.to_i.check_0_thru_tens
 						end}.join(" ")
 
 				end
@@ -357,16 +358,27 @@ class Fixnum
 
 					# read the numbers in the array
 					num_array.each_with_index.map { | i , index |
+
 						if index == 0
+
 							i.to_i.check_0_thru_tens + trillions
+
 						elsif index == 1 && i != "000"
+
 							i.to_i.check_0_thru_tens + billions + " "
+
 						elsif index == 2 && i != "000"
+
 							i.to_i.check_0_thru_tens + " " + millions + " "
+
 						elsif index == 3 && i != "000"
+
 							i.to_i.check_0_thru_tens + thousands + " "
+
 						elsif index == 4 && i != "000"
+
 							i.to_i.check_0_thru_tens
+
 						end}.join("").strip
 
 				end
