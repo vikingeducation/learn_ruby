@@ -128,10 +128,8 @@ module SingleDigits
 					new_array.map { | i |
 						if i.size == 2
 							i.to_i.tens
-						elsif (10..12) === i.to_i
-							i.to_i.ten_to_twelve
-						elsif (0..9) === i.to_i
-							i.to_i.zero_to_nine
+						elsif (0..19) === i.to_i
+							i.to_i.check_0_thru_tens
 						end
 						}.join(" ")
 				end
@@ -158,6 +156,33 @@ module SingleDigits
 	end
 
 
+
+
+
+	def check_0_thru_tens
+
+		if (0..9) === self
+			self.zero_to_nine
+
+		elsif (10..12) === self
+			self.ten_to_twelve
+
+		elsif (13..19) === self
+
+			self.teens
+
+		elsif (20..99) == self && self.to_s.chars[1] == "0"
+
+			self.tens
+
+		end
+
+	end
+
+
+
+
+
 	def thousands
 
 		" thousand"
@@ -166,14 +191,14 @@ module SingleDigits
 
 	def millions
 
-		" million"
+		"million"
 
 	end
 
 
 	def billions
 
-		" billion"
+		"billion"
 
 	end
 
@@ -195,16 +220,10 @@ class Fixnum
 				digits_in_number = self.to_s.chars
 
 
-			if (0..9) === self
-				self.zero_to_nine
+			if (0..19) === self
 
-			elsif (10..12) === self
-				self.ten_to_twelve
+				self.check_0_thru_tens
 
-			elsif (13..19) === self
-				self.teens
-			elsif digits_in_number.count == 2 && digits_in_number[1].to_i == 0
-				self.tens
 			elsif digits_in_number.count == 2
 
 				self.two_digit_array
@@ -248,8 +267,29 @@ class Fixnum
 
 				# if 10 million or higher
 				if digits_in_number.count == 8
+
+					# populate 10+ million
 					num_array << digits_in_number[0] + digits_in_number[1]
-				end
+
+					# populate ### thousand
+					num_array << digits_in_number[2] + digits_in_number[3] + digits_in_number[4]
+
+					# populate ### hundred
+					num_array << digits_in_number[5] + digits_in_number[6] + digits_in_number[7]
+
+
+					num_array.each_with_index.map { | i , index |
+						if i.size == 2
+							i.to_i.check_0_thru_tens
+						elsif i == "000" && index == 1
+							millions
+						elsif index == 2
+							i.to_i.check_0_thru_tens
+						end}.join(" ")
+
+				end#/.millions
+
+			elsif digits_in_number.count > 9 && digits_in_number.count < 14
 
 			end #/first if
 
