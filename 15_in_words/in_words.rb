@@ -141,6 +141,19 @@ module SingleDigits
 
 	def three_digit_array
 
+				array = self.to_s.chars
+				new_array = []
+
+				new_array << array[0] + "00"
+				new_array << array[1] + array[2]
+				new_array.map { | i |
+
+					if i.size == 3
+						i.to_i.hundreds
+					elsif i.size == 2 && i != "00"
+						i.to_i.two_digit_array
+					end
+					}.join(" ").strip
 
 	end
 
@@ -151,6 +164,18 @@ module SingleDigits
 
 	end
 
+	def millions
+
+		" million"
+
+	end
+
+
+	def billions
+
+		" billion"
+
+	end
 
 end #/.SingleDigits Module
 
@@ -185,16 +210,8 @@ class Fixnum
 				self.two_digit_array
 
 			elsif digits_in_number.count == 3
-				num_array << digits_in_number[0] + "00"
-				num_array << digits_in_number[1] + digits_in_number[2]
-				num_array.map { | i |
 
-					if i.size == 3
-						i.to_i.hundreds
-					elsif i.size == 2 && i != "00"
-						i.to_i.two_digit_array
-					end
-					}.join(" ").strip
+				self.three_digit_array
 
 			# checking for thousands but less than 1 million
 			elsif digits_in_number.count > 3 && digits_in_number.count < 7
@@ -216,9 +233,25 @@ class Fixnum
 					num_array << digits_in_number[0] + digits_in_number[1]
 					num_array << digits_in_number[2] + digits_in_number[3] + digits_in_number[4]
 
+					num_array.map { | i |
+						if i.size == 2
+							i.to_i.two_digit_array + thousands
+						else
+							i.to_i.three_digit_array
+						end
+					}.join(" ")
 
+
+				end #/.count == 5
+
+			elsif digits_in_number.count > 7 && digits_in_number.count < 9
+
+				# if 10 million or higher
+				if digits_in_number.count == 8
+					num_array << digits_in_number[0] + digits_in_number[1]
 				end
-			end
+
+			end #/first if
 
 
 
