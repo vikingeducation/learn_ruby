@@ -198,7 +198,13 @@ module SingleDigits
 
 	def billions
 
-		"billion"
+		" billion"
+
+	end
+
+	def trillions
+
+		" trillion"
 
 	end
 
@@ -282,7 +288,7 @@ class Fixnum
 						if i.size == 2
 							i.to_i.check_0_thru_tens
 						elsif i == "000" && index == 1
-							millions
+							 millions
 						elsif index == 2
 							i.to_i.check_0_thru_tens
 						end}.join(" ")
@@ -291,6 +297,67 @@ class Fixnum
 
 			elsif digits_in_number.count > 9 && digits_in_number.count < 14
 
+				if digits_in_number.count == 10
+
+					# populate # billion
+					num_array << digits_in_number[0]
+
+					# populate ### million
+					num_array << digits_in_number[1] + digits_in_number[2] + digits_in_number[3]
+
+					# populate ### thousand
+					num_array << digits_in_number[4] + digits_in_number[5] + digits_in_number[6]
+
+					# populate ### hundred
+					num_array << digits_in_number[7] + digits_in_number[8] + digits_in_number[9]
+
+					# read the numbers in the array
+					num_array.each_with_index.map { | i , index |
+						if index == 0
+							i.to_i.check_0_thru_tens + billions
+						elsif index == 1
+							i.to_i.three_digit_array + " " + millions
+						elsif index == 2
+							i.to_i.three_digit_array + thousands
+						elsif index == 3
+							i.to_i.three_digit_array
+						end}.join(" ")
+
+				end
+
+			# read trillions
+			elsif digits_in_number.count > 14
+
+				if digits_in_number.count == 15
+
+					# populate # trillion
+					num_array << digits_in_number[0]
+
+					# populate # billion
+					num_array << digits_in_number[0]
+
+					# populate ### million
+					num_array << digits_in_number[1] + digits_in_number[2] + digits_in_number[3]
+
+					# populate ### thousand
+					num_array << digits_in_number[4] + digits_in_number[5] + digits_in_number[6]
+
+					# populate ### hundred
+					num_array << digits_in_number[7] + digits_in_number[8] + digits_in_number[9]
+
+					# read the numbers in the array
+					num_array.each_with_index.map { | i , index |
+						if index == 0
+							i.to_i.check_0_thru_tens + billions
+						elsif index == 1
+							i.to_i.three_digit_array + " " + millions
+						elsif index == 2
+							i.to_i.three_digit_array + thousands
+						elsif index == 3
+							i.to_i.three_digit_array
+						end}.join(" ")
+
+				end
 			end #/first if
 
 
