@@ -125,21 +125,19 @@ class RPNCalculator
 		arr.split(" ").map { |x|
 
 			# use regex to see if 0-9 - then convert to int
-			if (/[0-9]/) === x
+			(/[0-9]/) === x ? x.to_i : x.to_sym
 
-				x.to_i
-
-			else
-
-				# otherwise its an operand and we convert to a symbol
-				x.to_sym
-
-			end
 		}
 
 
 	end
 
+
+	def evaluate ( string )
+
+
+
+	end
 
 
 end
