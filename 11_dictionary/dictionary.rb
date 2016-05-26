@@ -59,15 +59,25 @@ class Dictionary
 	# find method - search for a specified word
 	def find ( word )
 
+		# all found words to be stored in this hash
 		found = {}
 
 
+		# iterate through the @entries hash
 		@entries.each { | k, v |
+
+			# if the key is within the length of the word it is added to the found hash for that key
 			if k[ 0...word.length ] == word
+
 				found[ k ] = v
+
 			end
+
+			# check the prefix to of the word and the hash value to find a match
 			if word[0..1] == k[0..1]
+
 				found[ k ] = v
+
 			end
 		}
 
@@ -75,7 +85,7 @@ class Dictionary
 
 	end
 
-	# print the hash to pass test
+	# print the hash to pass test - sort first for alphabetical then join
 	def printable
 
 		@entries.sort.map { | k, v | "[#{ k }] \"#{ v }\""}.join("\n")
