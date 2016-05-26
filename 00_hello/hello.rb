@@ -1,8 +1,15 @@
+
+# return hello when called
 def hello
+
 	"Hello!"
+
 end
 
 
-def greet(name)
+# take name parameter and inset into greeting
+def greet( name )
+
 	"Hello, #{name}!"
+
 end

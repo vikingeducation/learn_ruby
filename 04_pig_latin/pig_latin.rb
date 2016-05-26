@@ -4,10 +4,10 @@ require 'pry'
 
 
 
-def translate(s)
+def translate( s )
 
 
-
+	# method checks if a vowel is in the received var and returns boolean value
 	def one_vowel?( word )
 
 		word.start_with?( "a", "e", "i", "o", "u" )
@@ -15,6 +15,10 @@ def translate(s)
 
 	end
 
+
+
+
+	# append 'ay' to the end of the word
 	def translate_one_vowel( word )
 
 				word + "ay"
@@ -22,8 +26,8 @@ def translate(s)
 	end
 
 
-
-	def translate_one_consonant(s)
+	# check for word wih one consonant
+	def translate_one_consonant( s )
 
 		# store the letters in an array
 		ch_array = s.chars
@@ -41,8 +45,8 @@ def translate(s)
 
 
 
-
-	def translate_two_consonants(s)
+	# check for word wih two consonants
+	def translate_two_consonants( s )
 
 				# store the letters in an array
 				ch_array = s.chars
@@ -62,6 +66,8 @@ def translate(s)
 	end
 
 
+
+	# check for word wih three consonants
 	def translate_three_consonants( s )
 
 				# store the letters in an array
@@ -103,20 +109,20 @@ def translate(s)
 
 
 			# check if the second letter is a vowel then translate
-			elsif w.chars[1].start_with?( "a", "e", "i", "o", "u" ) && w.chars[0] != "q"
+			elsif w.chars[ 1 ].start_with?( "a", "e", "i", "o", "u" ) && w.chars[ 0 ] != "q"
 
 				translate_one_consonant( w )
 
-			elsif w.chars[0].start_with?("q") && w.chars[1].start_with?("u")
+			elsif w.chars[ 0 ].start_with?( "q" ) && w.chars[ 1 ].start_with?( "u" )
 
 				translate_two_consonants( w )
 
-			elsif  w.chars[1].start_with?("q")
+			elsif  w.chars[ 1 ].start_with?( "q" )
 
 				translate_three_consonants( w )
 
 			# runs if there are two consonants in the array
-			elsif w.chars[2].start_with?( "a", "e", "i", "o", "u" )
+			elsif w.chars[ 2 ].start_with?( "a", "e", "i", "o", "u" )
 
 				translate_two_consonants( w )
 
@@ -133,7 +139,6 @@ def translate(s)
 end
 
 
-		# called if there are two words or more
 
 
 
