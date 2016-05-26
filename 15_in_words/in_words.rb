@@ -1,3 +1,5 @@
+# in_words.rb
+
 
 require 'pry'
 
@@ -263,12 +265,17 @@ class Fixnum
 			# checking for thousands but less than 1 million
 			elsif digits_in_number.count > 3 && digits_in_number.count < 7
 
+				# if there are 4 numbers (thousand) we break it up into two values to evaluate separately
 				if digits_in_number.count == 4
+
+					# this stores the single digit to be followed by 'thousand'
 					num_array << digits_in_number[0]
+
+					# 3 digits are store to be sent to the 3 digit array
 					num_array << digits_in_number[1] + digits_in_number[2] + digits_in_number[3]
 
 
-
+					# passes the test for 1-9 thousand
 					num_array.map { | i |
 
 						if i.size == 1
@@ -277,12 +284,16 @@ class Fixnum
 						}.join(" ").strip
 
 
-
+				# if 10 thous or higher
 				elsif digits_in_number.count == 5
 
+					# two digits stored first to be evaluated
 					num_array << digits_in_number[0] + digits_in_number[1]
+
+					# then next 3 digits stored for evaluation
 					num_array << digits_in_number[2] + digits_in_number[3] + digits_in_number[4]
 
+					# iterate through the num array to create the words
 					num_array.map { | i |
 						if i.size == 2
 							i.to_i.check_0_thru_tens + thousands
@@ -295,33 +306,43 @@ class Fixnum
 
 
 
-
+			# evaluates the millions checking for x num of digits
 			elsif digits_in_number.count > 7 && digits_in_number.count < 9
 
 				# if 10 million or higher
 				if digits_in_number.count == 8
 
 					# populate 10+ million
-					num_array << digits_in_number[0] + digits_in_number[1]
+					num_array << digits_in_number[ 0 ] + digits_in_number[ 1 ]
 
 					# populate ### thousand
-					num_array << digits_in_number[2] + digits_in_number[3] + digits_in_number[4]
+					num_array << digits_in_number[ 2 ] + digits_in_number[ 3 ] + digits_in_number[ 4 ]
 
 					# populate ### hundred
-					num_array << digits_in_number[5] + digits_in_number[6] + digits_in_number[7]
+					num_array << digits_in_number[ 5 ] + digits_in_number[ 6 ] + digits_in_number[ 7 ]
 
 
 					num_array.each_with_index.map { | i , index |
+
 						if i.size == 2
+
 							i.to_i.check_0_thru_tens
+
 						elsif i == "000" && index == 1
+
 							 millions
+
 						elsif index == 2
+
 							i.to_i.check_0_thru_tens
+
 						end}.join(" ")
+
 
 				end#/.millions
 
+
+			# check digits for billions
 			elsif digits_in_number.count > 9 && digits_in_number.count < 12
 
 				if digits_in_number.count == 10
@@ -375,7 +396,7 @@ class Fixnum
 					num_array << digits_in_number[10] + digits_in_number[11] + digits_in_number[12]
 
 
-					# read the numbers in the array
+					# read the numbers in the array based on index to append the correct trillions/billions etc
 					num_array.each_with_index.map { | i , index |
 
 						if index == 0
