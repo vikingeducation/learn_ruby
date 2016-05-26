@@ -112,15 +112,22 @@ module SingleDigits
 				array = self
 				new_array = []
 
-
+				# check if we don't need to combine words to create a number like sixty six
 				if ( 10..12 ) === array
+
 					return array.ten_to_twelve
+
 				elsif ( 13..19 ) === array
+
 					return array.teens
+
 				elsif array.to_s.chars[ 1 ] == "0"
+
 					return array.tens
+
 				else
 
+					# this is created to divide the numbers into two separate elements we can call on to combine two words for the number
 					new_array << array.to_s.chars[ 0 ] + "0"
 					new_array << array.to_s.chars[ 1 ]
 
@@ -137,6 +144,8 @@ module SingleDigits
 	end #/.two_digit_array
 
 
+
+	# for calling out a hundred number - combined with two digit array
 	def three_digit_array
 
 				array = self.to_s.chars
@@ -200,11 +209,16 @@ module SingleDigits
 
 	end
 
+
+
+
 	def millions
 
 		"million"
 
 	end
+
+
 
 
 	def billions
@@ -213,6 +227,8 @@ module SingleDigits
 
 	end
 
+
+
 	def trillions
 
 		" trillion "
@@ -220,6 +236,9 @@ module SingleDigits
 	end
 
 end #/.SingleDigits Module
+
+
+
 
 
 
