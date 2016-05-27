@@ -122,12 +122,12 @@ class RPNCalculator
 	def tokens(arr)
 
 		# break up the string to evaluate each element
-		arr.split(" ").map { |x|
+		arr.split(" ").map do |x|
 
 			# use regex to see if 0-9 - then convert to int
 			(/[0-9]/) === x ? x.to_i : x.to_sym
 
-		}
+		end
 
 
 	end

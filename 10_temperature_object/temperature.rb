@@ -79,11 +79,12 @@ end
 # subclasses for celsius and fahrenheit
 class Celsius < Temperature
 
-  def in_celsius
+  def initialize ( num )
 
-
+    super({:c => num })
 
   end
+
 
 end
 
@@ -91,6 +92,11 @@ end
 # subclasses for celsius and fahrenheit
 class Fahrenheit < Temperature
 
+  def initialize ( num )
+
+    super({:f => num })
+
+  end
 
 
 end
