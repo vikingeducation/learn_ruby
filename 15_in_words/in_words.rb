@@ -1,26 +1,36 @@
-class Fixnum
+class Integer
 
     def in_words
 
         word_hash = gen_num_hash
+        illion_hash = gen_illion_hash
 
         digits = self.to_s.gsub(/[^\d]/, "").reverse.scan(/.{1,3}/).map {|num_group| num_group.reverse} # Convert to array of and ensure it is nothing but digits
 
         puts "digits: #{digits}"
 
-        words = []
-
-        if digits.length == 1 && digits[0] == 0
-            return word_hash[0]
+        if digits.length == 1 && digits[0] == "0"
+            return "zero"
         end
 
-        digits.each.with_index do |num_group, thousands|
+        words = []
+
+        digits.each.with_index do |num_group, illions|
+
+            next if num_group == "000"
+
             builder = []
+            hundreds = ""
             tens = ""
             units = ""
 
             if num_group.length == 3
-                builder << "#{word_hash[num_group[0]]} hundred"
+                hundreds = word_hash[num_group[0]]
+                if hundreds.nil?
+                    hundreds = ""
+                else
+                    hundreds += " hundred"
+                end
                 num_group[0] = ""
             end
 
@@ -28,15 +38,26 @@ class Fixnum
                 tens = word_hash[num_group]
                 if tens.nil?
                     tens = word_hash[num_group[0] + "0"]
-                    num_group[0] = ""
+                    num_group[0] = "" if tens.nil?
+                    if num_group[0].to_i > 1
+                        units = word_hash[num_group[1]]
+                    end
                 end
             end
 
-            units = word_hash[num_group[0]]
+            if num_group.length == 1
+                units = word_hash[num_group[0]]
+            end
 
+            builder << hundreds
             builder << tens
             builder << units
-            words << builder.join(" ")
+
+            if illions > 0
+                builder << illion_hash[illions]
+            end
+
+            words << (builder - ["", nil]).join(" ")
         end
 
         words.reverse.join(" ").strip
@@ -44,13 +65,8 @@ class Fixnum
     end
 
     private
-        def chunk(string, size)
-        string.scan(/.{1,#{size}}/)
-        end
-
         def gen_num_hash
             {
-                "0" => "zero",
                 "1" => "one",
                 "2" => "two",
                 "3" => "three",
@@ -77,8 +93,16 @@ class Fixnum
                 "60" => "sixty",
                 "70" => "seventy",
                 "80" => "eighty",
-                "90" => "ninety",
-                "00" => "hundred"
+                "90" => "ninety"
+            }
+        end
+
+        def gen_illion_hash
+            {
+                1 => "thousand",
+                2 => "million",
+                3 => "billion",
+                4 => "trillion"
             }
         end
 
