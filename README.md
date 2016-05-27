@@ -4,7 +4,7 @@ Test First Ruby -- RSpec 3 Edition
 
 This repo has been forked from VikingEducation as part of the Odin Project Full Stack Ruby-on-Rails developer course.
 
-I will update with my own code and solutions in this repo.
+
 
 Original README below:
 ==========
