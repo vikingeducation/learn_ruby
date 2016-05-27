@@ -4,7 +4,42 @@
 require 'pry'
 
 
-module SingleDigits
+module Digits
+
+
+
+	def check_0_thru_tens
+
+		if (0..9) === self
+
+			self.zero_to_nine
+
+		elsif (10..12) === self
+
+			self.ten_to_twelve
+
+		elsif (13..19) === self
+
+			self.teens
+
+		elsif (20..99) === self && self.to_s.chars[1] == "0"
+
+			self.tens
+
+		elsif (21..99) === self && self.to_s.chars[1] != "0"
+
+			self.two_digit_array
+
+		elsif (100..999) === self
+
+			self.three_digit_array
+
+		end
+
+	end
+
+
+
 
 	def zero_to_nine
 		if self == 0
@@ -109,6 +144,38 @@ module SingleDigits
 	end
 
 
+
+
+
+
+
+end #/.Digits Module
+
+
+
+module Append
+
+	def thousands
+		" thousand"
+	end
+
+	def millions
+		"million"
+	end
+
+	def billions
+		" billion"
+	end
+
+	def trillions
+		" trillion "
+	end
+
+end
+
+
+module ReadTwoThreeArray
+
 	def two_digit_array
 
 				array = self
@@ -165,97 +232,24 @@ module SingleDigits
 						end
 						}.join(" ").strip
 				end
-	end
+	end #/.three digit array
 
 
-
-
-
-	def check_0_thru_tens
-
-		if (0..9) === self
-
-			self.zero_to_nine
-
-		elsif (10..12) === self
-
-			self.ten_to_twelve
-
-		elsif (13..19) === self
-
-			self.teens
-
-		elsif (20..99) === self && self.to_s.chars[1] == "0"
-
-			self.tens
-
-		elsif (21..99) === self && self.to_s.chars[1] != "0"
-
-			self.two_digit_array
-
-		elsif (100..999) === self
-
-			self.three_digit_array
-
-		end
-
-	end
-
-
-
-
-
-	def thousands
-
-		" thousand"
-
-	end
-
-
-
-
-	def millions
-
-		"million"
-
-	end
-
-
-
-
-	def billions
-
-		" billion"
-
-	end
-
-
-
-	def trillions
-
-		" trillion "
-
-	end
-
-end #/.SingleDigits Module
-
-
+end
 
 
 
 
 class Fixnum
 
-	include SingleDigits
+	include Digits, Append, ReadTwoThreeArray
 
 
-
-		#num_array.map { |i| i.to_i }
 
 		def in_words
 
 				num_array = []
-				digits_in_number = self.to_s.chars
+				digits_array = self.to_s.chars
 
 
 			if (0..999) === self
@@ -263,16 +257,17 @@ class Fixnum
 				self.check_0_thru_tens
 
 			# checking for thousands but less than 1 million
-			elsif digits_in_number.count > 3 && digits_in_number.count < 7
+			elsif digits_array.count > 3 && digits_array.count < 7
 
 				# if there are 4 numbers (thousand) we break it up into two values to evaluate separately
-				if digits_in_number.count == 4
+				if digits_array.count == 4
+
 
 					# this stores the single digit to be followed by 'thousand'
-					num_array << digits_in_number[0]
+					num_array << digits_array[0]
 
 					# 3 digits are store to be sent to the 3 digit array
-					num_array << digits_in_number[1] + digits_in_number[2] + digits_in_number[3]
+					num_array << digits_array[1] + digits_array[2] + digits_array[3]
 
 
 					# passes the test for 1-9 thousand
@@ -285,13 +280,13 @@ class Fixnum
 
 
 				# if 10 thous or higher
-				elsif digits_in_number.count == 5
+				elsif digits_array.count == 5
 
 					# two digits stored first to be evaluated
-					num_array << digits_in_number[0] + digits_in_number[1]
+					num_array << digits_array[0] + digits_array[1]
 
 					# then next 3 digits stored for evaluation
-					num_array << digits_in_number[2] + digits_in_number[3] + digits_in_number[4]
+					num_array << digits_array[2] + digits_array[3] + digits_array[4]
 
 					# iterate through the num array to create the words
 					num_array.map { | i |
@@ -307,19 +302,19 @@ class Fixnum
 
 
 			# evaluates the millions checking for x num of digits
-			elsif digits_in_number.count > 7 && digits_in_number.count < 9
+			elsif digits_array.count > 7 && digits_array.count < 9
 
 				# if 10 million or higher
-				if digits_in_number.count == 8
+				if digits_array.count == 8
 
 					# populate 10+ million
-					num_array << digits_in_number[ 0 ] + digits_in_number[ 1 ]
+					num_array << digits_array[ 0 ] + digits_array[ 1 ]
 
 					# populate ### thousand
-					num_array << digits_in_number[ 2 ] + digits_in_number[ 3 ] + digits_in_number[ 4 ]
+					num_array << digits_array[ 2 ] + digits_array[ 3 ] + digits_array[ 4 ]
 
 					# populate ### hundred
-					num_array << digits_in_number[ 5 ] + digits_in_number[ 6 ] + digits_in_number[ 7 ]
+					num_array << digits_array[ 5 ] + digits_array[ 6 ] + digits_array[ 7 ]
 
 
 					num_array.each_with_index.map { | i , index |
@@ -343,21 +338,21 @@ class Fixnum
 
 
 			# check digits for billions
-			elsif digits_in_number.count > 9 && digits_in_number.count < 12
+			elsif digits_array.count > 9 && digits_array.count < 12
 
-				if digits_in_number.count == 10
+				if digits_array.count == 10
 
 					# populate # billion
-					num_array << digits_in_number[0]
+					num_array << digits_array[0]
 
 					# populate ### million
-					num_array << digits_in_number[1] + digits_in_number[2] + digits_in_number[3]
+					num_array << digits_array[1] + digits_array[2] + digits_array[3]
 
 					# populate ### thousand
-					num_array << digits_in_number[4] + digits_in_number[5] + digits_in_number[6]
+					num_array << digits_array[4] + digits_array[5] + digits_array[6]
 
 					# populate ### hundred
-					num_array << digits_in_number[7] + digits_in_number[8] + digits_in_number[9]
+					num_array << digits_array[7] + digits_array[8] + digits_array[9]
 
 					# read the numbers in the array
 					num_array.each_with_index.map { | i , index |
@@ -374,26 +369,26 @@ class Fixnum
 				end
 
 			# read trillions
-			elsif digits_in_number.count > 12
+			elsif digits_array.count > 12
 
 
-				if digits_in_number.count == 13
+				if digits_array.count == 13
 
 					# populate # trillion
-					num_array << digits_in_number[0]
+					num_array << digits_array[0]
 
 
 					# populate ### billion
-					num_array << digits_in_number[1] + digits_in_number[2] + digits_in_number[3]
+					num_array << digits_array[1] + digits_array[2] + digits_array[3]
 
 					# populate ### million
-					num_array << digits_in_number[4] + digits_in_number[5] + digits_in_number[6]
+					num_array << digits_array[4] + digits_array[5] + digits_array[6]
 
 					# populate ### thousand
-					num_array << digits_in_number[7] + digits_in_number[8] + digits_in_number[9]
+					num_array << digits_array[7] + digits_array[8] + digits_array[9]
 
 					# populate ### hundred
-					num_array << digits_in_number[10] + digits_in_number[11] + digits_in_number[12]
+					num_array << digits_array[10] + digits_array[11] + digits_array[12]
 
 
 					# read the numbers in the array based on index to append the correct trillions/billions etc
