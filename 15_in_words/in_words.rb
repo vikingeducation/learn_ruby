@@ -155,6 +155,7 @@ end #/.Digits Module
 
 module Append
 
+
 	def thousands
 		" thousand"
 	end
@@ -196,7 +197,7 @@ module ReadTwoThreeArray
 
 				else
 
-					# this is created to divide the numbers into two separate elements we can call on to combine two words for the number
+					# this is created to divide the numbers into two separate elements we can then call on to combine two words for the number -- 76 => [70, 6] => ["seventy", "six"]
 					new_array << array.to_s.chars[ 0 ] + "0"
 					new_array << array.to_s.chars[ 1 ]
 
@@ -220,18 +221,31 @@ module ReadTwoThreeArray
 				array = self.to_s.chars
 				new_array = []
 
+				# no zeroes means we need to break up the number into sections -- "345"
 				if array != "000"
+
+					# this pulls the first digit and appends 00 to be read by the hundred method -- "3" + "00"
 					new_array << array[0] + "00"
+
+					# this takes the last two digits to be passed to two digit array method -- "45"
 					new_array << array[1] + array[2]
 					new_array.map { | i |
 
 						if i.size == 3
+
+							# evaluates the hundred
 							i.to_i.hundreds
+
 						elsif i.size == 2 && i != "00"
+
+							# evaluates the two digit number
 							i.to_i.two_digit_array
+
 						end
 						}.join(" ").strip
+
 				end
+
 	end #/.three digit array
 
 

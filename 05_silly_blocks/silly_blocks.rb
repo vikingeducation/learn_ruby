@@ -26,10 +26,9 @@ end
 # calls the block if given and iterates up to the given num
 def repeater( num=1, &block )
 
-	i = 1
-	until i > num
+
+	num.times  do
 	 yield if block_given?
-	 i += 1
 	end
 
 
