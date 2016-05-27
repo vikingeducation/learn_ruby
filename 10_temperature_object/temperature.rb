@@ -1,48 +1,56 @@
 require 'pry'
 
+
+
 class Temperature
 
-	attr_accessor :in_fahrenheit, :in_celsius
 
 	def initialize args
 
-		@f = args[ :f ]
-		@c = args[ :c ]
+		@fahrenheit = args[ :f ]
+		@celsius = args[ :c ]
 
 	end
 
 
 
+	def inspect
+		"#{self.class}: F: #{@in_fahrenheit} C: #{@in_celsius}"
+	end
 
-	class Fahrenheit < Temperature
 
-		def in_fahrenheit
+	def in_fahrenheit
 
-			if @f::in_fahrenheit
-				@f
-			end
-
+		if @celsius
+			( @celsius * ( 9.0 / 5.0 )) + 32
+		else
+			@fahrenheit
 		end
 
 	end
 
 
-	class Celsius < Temperature
+  def in_celsius
 
-		def in_celsius
+    if @fahrenheit
+      ( @fahrenheit - 32 ) * ( 5.0 / 9.0 )
+    else
+      @celsius
+    end
+
+  end
 
 
-		end
 
-	end
 
 end
 
 
-def ftoc(faren)
-	( faren - 32 ) * ( 5.0 / 9.0 )
-end
 
-def ctof(cel)
-	( cel * ( 9.0 / 5.0 )) + 32
-end
+
+
+
+
+
+
+
