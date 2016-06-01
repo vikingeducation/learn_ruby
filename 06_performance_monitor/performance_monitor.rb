@@ -1,7 +1,9 @@
 def measure(n = 1)
-	start = Time.now if n == 1 
+	final = []
 	n.times do 
+		start = Time.now
 		yield
+		final.push Time.now - start
 	end
-	Time.now - start if n == 1
+	final.reduce(:+)/n
 end
