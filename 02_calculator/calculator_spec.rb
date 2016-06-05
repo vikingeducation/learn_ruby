@@ -33,7 +33,7 @@
 #
 #
 
-require "calculator"
+require_relative "calculator.rb"
 
 describe "add" do
   it "adds 0 and 0" do
@@ -79,7 +79,9 @@ end
 
 describe "#multiply" do
 
-  it "multiplies two numbers"
+  it "multiplies two numbers" do 
+    expect(multiply(2, 2)).to eq(4)
+  end
 
   it "multiplies several numbers"
   

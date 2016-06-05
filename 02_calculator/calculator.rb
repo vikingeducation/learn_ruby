@@ -1,4 +1,4 @@
-def add(a, b)
+def add(a, b) 
 	a + b
 end
 
@@ -6,7 +6,11 @@ def subtract(a, b)
 	a - b
 end
 
-def sum(nums)
-	#puts nums
-	nums.inject(0) {|sum, num| sum + num}
+def sum(arr)
+	return 0 if arr.empty?
+	arr.inject(0){|sum, ele| sum + ele}
+end
+
+def multiply(a, b)
+	a * b
 end
