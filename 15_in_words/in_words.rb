@@ -33,35 +33,40 @@ class Fixnum
         else
           tens = slice.to_s[1].to_i
           ones = slice.to_s[2].to_i
-          word += (tens > 0 ? " " +number_words[tens * 10] + " " : "") + (ones > 0 ? number_words[ones] : "") 
+          word += (tens > 0 ? " " + number_words[tens * 10] + (ones > 0 ? " " : "") : "") + (ones > 0 ? number_words[ones] : "")
         end
       end
       word_array << word  
     end
     
     final_word = ""
-    word_array.each_with_index do |num_group, i|
-      if i == 0 && num_group != "zero"
-        final_word = num_group + final_word
-      elsif i == 1 && num_group != "zero" 
-        final_word = num_group + " " + "thousand" + (final_word == "" ? "" : " ") + final_word
-      elsif i == 2 && num_group != "zero"
-        final_word = num_group + " " + "million" + (final_word == "" ? "" : " ")+ final_word
-      elsif i == 3 && num_group != "zero"
-        final_word = num_group + " " + "billion" + (final_word == "" ? "" : " ")+ final_word
-      elsif i == 4 && num_group != "zero"
-        final_word = num_group + " " + "trillion" + (final_word == "" ? "" : " ")+ final_word
+
+    if word_array.join('') == 'zero'
+      final_word += 'zero'
+    else
+      if word_array.to_s == "zero"
+        final_word += "zero"
+      else
+        word_array.each_with_index do |num_group, i|
+          if i == 0 && num_group != "zero"
+            final_word = num_group + final_word
+          elsif i == 1 && num_group != "zero" 
+            final_word = num_group + " " + "thousand" + (final_word == "" ? "" : " ") + final_word
+          elsif i == 2 && num_group != "zero"
+            final_word = num_group + " " + "million" + (final_word == "" ? "" : " ")+ final_word
+          elsif i == 3 && num_group != "zero"
+            final_word = num_group + " " + "billion" + (final_word == "" ? "" : " ")+ final_word
+          elsif i == 4 && num_group != "zero"
+            final_word = num_group + " " + "trillion" + (final_word == "" ? "" : " ")+ final_word
+          end
+        end
       end
     end
-    final_word
+    final_word 
 
 
   end
-    #run program that puts that translates hundred chunks
-    #move each chunk into new array as long string
-    #move array to word, with each entry of the array getting its special word added
-    #return word
-
+ 
 
   
 
