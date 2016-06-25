@@ -95,7 +95,7 @@ describe RPNCalculator do
     calculator.push(3)
     calculator.times
     expect(calculator.value).to eq((1+2)*3)
-
+ 
     # 1 2 3 * + => 1 + (2 * 3)
     calculator.push(1)
     calculator.push(2)
