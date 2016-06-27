@@ -38,6 +38,3 @@ class Dictionary
 
 end
 
-d = Dictionary.new
-
-p d.find('fish')

@@ -45,4 +45,3 @@ class Temperature
 
   end
 
- p Temperature.from_celsius(50).in_celsius

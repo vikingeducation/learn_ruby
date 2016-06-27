@@ -21,22 +21,16 @@ def first_word(phrase)
 end
 
 def titleize(phrase)
-   words = phrase.split(' ')
-   array = []
-   words.each_with_index do |word, index|
+  words = phrase.split(' ')
+  array = []
+  words.each_with_index do |word, index|
     if index==0
       array << word.capitalize
-    elsif ['the', 'and', 'over'].include?(word) 
+    elsif ['the', 'and', 'over'].include?(word)
       array << word
     else
       array << word.capitalize
     end
-  end 
-
-
-   
-    
+  end
   array.join(' ')
-  
-  
 end

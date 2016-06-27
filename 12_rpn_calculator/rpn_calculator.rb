@@ -72,7 +72,4 @@ class RPNCalculator
 
 end
 
-calculator = RPNCalculator.new
-p calculator.evaluate("1 2 3 * + ")
 
-# puts calculator.value

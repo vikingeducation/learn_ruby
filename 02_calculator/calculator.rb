@@ -20,5 +20,4 @@ end
 
 def factorial(a)
   (1..a).inject(:*) || 1
-  
 end
