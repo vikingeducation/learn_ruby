@@ -6,6 +6,5 @@ def measure(num=1)
     last = Time.now
     total += last - start
   end
-
   total / num
 end
