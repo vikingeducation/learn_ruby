@@ -58,9 +58,11 @@ class RPNCalculator
 	def evaluate(str)
 		@stack = []	
 		@value = 0
-		@coutn = -1
+		@count = -1
 		items = str.split(' ')
+		sub_val = 0
 		items.each do |item|
+			#binding.pry
 			if Array("1".."100").include?(item)
 				@stack.push(item.to_i) #stack ends up with all values
 			elsif item == "*" 
@@ -68,9 +70,18 @@ class RPNCalculator
 			elsif item == "+"
 				self.plus
 			elsif item == "-"
-				self.minus
+				#sub_val = @value
+				if items.length < 4
+					self.minus 
+				else
+					sub_val = @stack[-2] - @stack[-1]
+				end
 			elsif item == "/"
-				self.divide		
+				if items.length < 4
+					self.divide		
+				else
+					@value /= sub_val
+				end
 			end
 		end
 		@value
