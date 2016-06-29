@@ -14,7 +14,7 @@ class Dictionary
 	end
 
 	def keywords 
-		@entries.keys
+		@entries.keys.sort
 	end
 
 	def include?(keyword)
@@ -27,4 +27,13 @@ class Dictionary
 			k[0..str.length-1] == str
 		end
 	end
+
+	def printable
+		alpha_keys = @entries.keys.sort 
+		str = ''
+		alpha_keys.each do |key|
+			str << "[#{key}] \"#{@entries[key]}\"\n" 
+		end
+		str.chomp
+	end	
 end
