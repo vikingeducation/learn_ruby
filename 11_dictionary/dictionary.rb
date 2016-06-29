@@ -23,14 +23,8 @@ class Dictionary
 	end
 
 	def find(str)
-		k = @entries.keys
-		results = []
-		k.each do |i|
-			if i[0..str.length] === str
-				results << i
-			end
+		@entries.select do |k, v|
+			k[0..str.length-1] == str
 		end
-		return results if results.empty?
-		@entries.select {|k,v| k == results[0]}
 	end
 end
