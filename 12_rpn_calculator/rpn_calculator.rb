@@ -39,4 +39,33 @@ class RPNCalculator
     @calc.pop
   end
 
+  def tokens (s)
+    a = s.split(" ")
+    operators = ["+", "-", "/", "*"]
+    a.collect! do |x|
+      if operators.include?(x)
+        x.to_sym
+      elsif x.include?(".")
+        x.to_f
+      else
+        x.to_i
+      end
+    end
+  end
+
+  def evaluate(s)
+    a = self.tokens(s)
+    a.each do |x|
+      case
+      when x == :+ then self.plus
+      when x == :- then self.minus
+      when x == :* then self.times
+      when x == :/ then self.divide
+      else self.push(x)
+      end
+    end
+    self.value
+  end
+
+
 end
