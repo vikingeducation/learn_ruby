@@ -8,7 +8,7 @@
 
 require "array_extensions" # we don't call it "array.rb" since that would be confusing
 
-describe Array do
+describe Array do 
 
   describe "#sum" do
     it "has a #sum method" do
