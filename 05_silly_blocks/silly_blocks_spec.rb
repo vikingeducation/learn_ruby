@@ -6,7 +6,7 @@
 # * loops
 #
 
-require "silly_blocks"
+require "./silly_blocks"
 
 describe "some silly block functions" do
 
@@ -64,7 +64,5 @@ describe "some silly block functions" do
       end
       expect(n).to eq(10)
     end
-
   end
-
 end
