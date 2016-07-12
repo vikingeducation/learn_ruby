@@ -17,7 +17,7 @@
 #
 #
 
-require "temperature"
+require "./temperature"
 
 describe Temperature do
 
@@ -37,7 +37,7 @@ describe Temperature do
         end
 
         it "at body temperature" do
-          expect(Temperature.new(:f => 98.6).in_celsius).to eq(37)
+          expect(Temperature.new(:f => 98.6).in_celsius).to be_within(0.1).of(37)
         end
 
         it "at an arbitrary temperature" do
