@@ -7,7 +7,7 @@
 #
 # # Timer
 
-require 'timer'
+require './timer.rb'
 
 describe "Timer" do
   before(:each) do
