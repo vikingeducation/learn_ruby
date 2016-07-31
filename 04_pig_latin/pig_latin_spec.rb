@@ -17,7 +17,7 @@
 #
 #
 
-require "pig_latin"
+require "./pig_latin.rb"
 
 describe "#translate" do
 
