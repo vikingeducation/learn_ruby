@@ -24,7 +24,7 @@ end
 def translate string
   vowel =['a','e','i','o','u']
   arr = string.split(" ")
-  arr = arr[0].split("")+arr[1].split("")
+
 
   arr = sch_join arr
   arr = qu_join arr
@@ -54,3 +54,5 @@ def translate string
   end
   string = arr.join
 end
+
+def translate_words
