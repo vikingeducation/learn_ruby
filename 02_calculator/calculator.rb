@@ -14,7 +14,22 @@ def sum(array)
   end
 end
 
+def multiply(*num)
+  num.reduce(:*)
+end
 
-def multiply(a, b)
-  a * b
+def power(a, b)
+  a ** b
+end
+
+
+def factorial(n)
+	nil if n < 0
+	result = 1
+
+	while n > 0
+		result *= n
+		n -= 1
+	end
+	result
 end

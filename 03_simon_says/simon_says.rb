@@ -12,7 +12,7 @@ def repeat(word, num = 2)
 end
 
 def start_of_word(word, num)
-  word = word.split("").first(num).join("")
+  word.split("").first(num).join("")
 end
 
 def first_word(word)
@@ -20,5 +20,14 @@ def first_word(word)
 end
 
 def titleize(word)
-  word.split.map {|w| w[0].upcase + x[1..-1].join(" ")}
+  array = ["and", "the", "of", "in", "at", "on", "over"]
+
+  word = word.split(" ").each_with_index do |w, i|
+    if array.include?(w) && i == 0
+      w.capitalize!
+    elsif !array.include?(w)
+      w.capitalize!
+    end
+  end
+  word.join(" ")
 end
