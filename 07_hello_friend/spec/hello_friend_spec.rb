@@ -88,7 +88,7 @@
 #
 #
 
-require "friend"
+require "./hello_friend"
 
 describe Friend do
   it "says hello" do
