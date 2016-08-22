@@ -11,6 +11,11 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry (0.10.1-x64-mingw32)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+      win32console (~> 1.3)
     pry-byebug (3.2.0)
       byebug (~> 5.0)
       pry (~> 0.10)
@@ -28,9 +33,11 @@ GEM
       rspec-support (~> 3.1.0)
     rspec-support (3.1.2)
     slop (3.6.0)
+    win32console (1.3.2)
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   pry-byebug
@@ -38,4 +45,4 @@ DEPENDENCIES
   rspec (~> 3.0)
 
 BUNDLED WITH
-   1.10.5
+   1.12.5
