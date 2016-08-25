@@ -1,0 +1,2 @@
+class Temperature
+end
