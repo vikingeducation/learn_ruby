@@ -20,13 +20,13 @@ describe Dictionary do
   it 'can add whole entries with keyword and definition' do
     @d.add('fish' => 'aquatic animal')
     expect(@d.entries).to eq({'fish' => 'aquatic animal'})
-    expect(@d.keywords).to eq(['fish'])
+    expect(@d.keys).to eq(['fish'])
   end
 
   it 'add keywords (without definition)' do
     @d.add('fish')
     expect(@d.entries).to eq({'fish' => nil})
-    expect(@d.keywords).to  eq(['fish'])
+    expect(@d.keys).to  eq(['fish'])
   end
 
   it 'can check whether a given keyword exists' do
@@ -71,7 +71,7 @@ describe Dictionary do
     @d.add('zebra' => 'African land animal with stripes')
     @d.add('fish' => 'aquatic animal')
     @d.add('apple' => 'fruit')
-    expect(@d.keywords).to eq(%w(apple fish zebra))
+    expect(@d.keys).to eq(%w(apple fish zebra))
   end
 
   it 'can produce printable output like so: [keyword] "definition"' do
