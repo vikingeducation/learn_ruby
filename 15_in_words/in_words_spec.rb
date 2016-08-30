@@ -89,7 +89,8 @@ describe Fixnum do
     expect(10_000_001.in_words).to eq('ten million one')
   end
 
-  it "reads billions" do
+  it "read
+  's billions" do
     expect(1_234_567_890.in_words).to eq('one billion two hundred thirty four million five hundred sixty seven thousand eight hundred ninety')
   end
 
