@@ -56,5 +56,4 @@ describe "Timer" do
   #     expect(@timer.padded(12)).to eq('12')
   #   end
   # end
-
 end
