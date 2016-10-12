@@ -1,5 +1,12 @@
 #be able to sequence go back to back with operations w/o creating new obj
 class RPNCalculator
+  
+  attr_reader :value
+  
+  # def value
+  #   @value
+  # end
+  
   def initialize
     @stack = []
     @value = 0
@@ -71,10 +78,6 @@ class RPNCalculator
     
   end
 
-  def value
-    @value
-  end
+  
 
 end
-
-

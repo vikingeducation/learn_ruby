@@ -1,21 +1,22 @@
 class Timer
+
+  attr_accessor :seconds
   
-  def initialize 
-    @seconds = 0
+  def initialize(secs = 0)
+    @seconds = secs
     @minutes = 0
     @hours   = 0
   end
   
-  def seconds
-    @seconds
-  end
+  # def seconds
+  #   @seconds
+  # end
   
-  def seconds=(seconds)
-    @seconds = seconds
-  end
+  # def seconds=(seconds)
+  #   @seconds = seconds
+  # end
   
   def seconds_to_minutes_hours
-    
     while @seconds >= 60
       if (@seconds - 3600 > 0)
         @hours += 1
@@ -46,5 +47,4 @@ class Timer
     "#{@hour_str}:#{@min_str}:#{@sec_str}"
     
   end
-  
-end #CLASS END
+end 

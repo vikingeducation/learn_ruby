@@ -1,13 +1,11 @@
 def reverser 
-  yield.split(" ").map { |word| word.reverse }.join(" ") 
+  return yield.split(" ").map { |word| word.reverse }.join(" ") 
 end
 
-def adder int = 1
-  yield + int
+def adder(int = 1)
+  return yield + int
 end
 
-def repeater iterations = 1
-  iterations.times do
-    yield
-  end
+def repeater(i=3)
+	return i.times { yield }
 end

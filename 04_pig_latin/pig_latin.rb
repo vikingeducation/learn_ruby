@@ -1,6 +1,6 @@
 VOWELS = ['a', 'e', 'i', 'o', 'u']
 
-def translate string
+def translate(string)
   words = string.split(" ")
 
   return words.map do |word|
@@ -10,12 +10,12 @@ def translate string
 end
 
 
-def translate_word word
+def translate_word(word)
   
   working_index = nil
   group1, group2, groups = '', '', ''
   
-  if   word[0..1] == 'qu' || word[1..2] == 'qu'
+  if word[0..1] == 'qu' || word[1..2] == 'qu'
     regex = word.scan(/\As?q[a-z]/)
     working_index = regex[0].length
     group1 = word[0...working_index]
