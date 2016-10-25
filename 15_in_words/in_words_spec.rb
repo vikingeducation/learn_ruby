@@ -38,7 +38,7 @@ describe Fixnum do
   it "reads 10 to 12" do
     expect(10.in_words).to eq('ten')
     expect(11.in_words).to eq('eleven')
-    expect(12.in_words).to eq ('twelve')
+    expect(12.in_words).to eq('twelve')
   end
 
   it "reads teens" do
