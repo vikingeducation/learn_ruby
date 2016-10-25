@@ -77,23 +77,70 @@ end
 # once the above tests pass,
 # write tests and code for the following:
 
-describe "#multiply" do
+# describe "#multiply" do
+#   it "multiplies two numbers"
+#   it "multiplies several numbers"
+# end
 
-  it "multiplies two numbers"
+describe "multiply" do 
+  it "does not multiply 0 numbers" do 
+    expect(mult()).to eq(false)
+  end
 
-  it "multiplies several numbers"
-  
+  it "does not multiply 1 number" do 
+    expect(mult(2)).to eq(false)
+  end
+
+  it "multiplies 2 and 3" do 
+    expect(mult(2,3)).to eq(6)
+  end
+
+  it "multiplies 8, 12, 16, 2, and 11" do 
+    expect(mult(8,12,16,2,11)).to eq(33792)
+  end
 end
 
-describe "#power" do
-  it "raises one number to the power of another number"
+# describe "#power" do
+#   it "raises one number to the power of another number"
+# end
+
+describe "power" do
+  it "raises one number to the power of a positive number" do
+    expect(pow(3,2)).to eq(9)
+  end
+
+  it "raises one number to the power of a negative number" do 
+    expect(pow(2,-4)).to eq(0.0625)
+  end
+
+  it "raises one number to the power of 0" do
+    expect(pow(1000000,0)).to eq(1)
+  end
 end
 
 # http://en.wikipedia.org/wiki/Factorial
-describe "#factorial" do
-  it "computes the factorial of 0"
-  it "computes the factorial of 1"
-  it "computes the factorial of 2"
-  it "computes the factorial of 5"
-  it "computes the factorial of 10"
+# describe "#factorial" do
+  # it "computes the factorial of 0"
+  # it "computes the factorial of 1"
+  # it "computes the factorial of 2"
+  # it "computes the factorial of 5"
+  # it "computes the factorial of 10"
+# end
+
+describe "factorial" do 
+  it "computes the factorial of 0" do
+    expect(fac(0)).to eq(1)
+  end
+  it "computes the factorial of 1" do
+    expect(fac(1)).to eq(1)
+  end
+  it "computes the factorial of 2" do
+    expect(fac(2)).to eq(2)
+  end
+  it "computes the factorial of 5" do
+    expect(fac(5)).to eq(120)
+  end
+  it "computes the factorial of 10" do
+    expect(fac(10)).to eq(3628800)
+  end
 end
