@@ -9,9 +9,11 @@ class Array
   end
 
   def square
-    self.map do |num|
-      num**2
-    end
+    self.map {|num| num**2 }
+  end
+
+  def square!
+    self.map! {|num| num**2 }
   end
 
   def sum
