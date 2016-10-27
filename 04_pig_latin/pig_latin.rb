@@ -9,6 +9,9 @@ def translate_word(text)
       if vowels.include?(current_letter)
         array.unshift(current_letter)
         break
+      elsif current_letter == 'q'
+        current_letter = current_letter + array.shift
+        array.push(current_letter)
       else
         array.push(current_letter)
       end
