@@ -97,6 +97,7 @@ describe RPNCalculator do
     expect(calculator.value).to eq((1+2)*3)
 
     # 1 2 3 * + => 1 + (2 * 3)
+    @calculator = RPNCalculator.new #I added this
     calculator.push(1)
     calculator.push(2)
     calculator.push(3)
@@ -131,11 +132,11 @@ describe RPNCalculator do
   # extra credit
   it "evaluates a string" do
     expect(calculator.evaluate("1 2 3 * +")).to eq((2 * 3) + 1)
-
+    @calculator = RPNCalculator.new #I added this
     expect(calculator.evaluate("4 5 -")).to eq(4 - 5)
-
+    @calculator = RPNCalculator.new #I added this
     expect(calculator.evaluate("2 3 /")).to eq(2.0 / 3.0)
-
+    @calculator = RPNCalculator.new #I added this
     expect(calculator.evaluate("1 2 3 * + 4 5 - /")).to eq( (1.0 + (2 * 3)) / (4 - 5) )
   end
 
