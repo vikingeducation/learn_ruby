@@ -3,11 +3,17 @@ class Temperature
     @f = options[:f] ||= options[:fahrenheit]
     @c = options[:c] ||= options[:celsius]
   end
+  def self.ftoc(f)
+    (f.to_f - 32.0) * 5.0/9.0
+  end
+  def self.ctof(c)
+    c.to_f * 9.0/5.0 + 32
+  end
   def in_fahrenheit
-    @f || @c.to_f * 9.0/5.0 + 32
+    @f || self.class.ctof(@c)
   end
   def in_celsius
-    @c || (@f.to_f - 32.0) * 5.0/9.0
+    @c || self.class.ftoc(@f)
   end
   def self.from_celsius(c)
     Temperature.new({:c => c})
