@@ -16,3 +16,14 @@ class Temperature
     Temperature.new({:f => f})
   end
 end
+
+class Celsius < Temperature
+  def initialize(c)
+    @c = c
+  end
+end
+class Fahrenheit < Temperature
+  def initialize(f)
+    @f = f
+  end
+end
