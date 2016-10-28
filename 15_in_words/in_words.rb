@@ -41,13 +41,13 @@ class Fixnum
     until num == 0
       word_list.each do |base, name|
         if num < 10 && num/base > 0
-          word += "#{name}"
+          word << "#{name}"
           num -= num      
         elsif num < 100 && num/base > 0
-          word += "#{name} "
+          word << "#{name} "
           num %= base
         elsif num/base > 0
-          word += write_words(num/base) + " #{name} "
+          word << write_words(num/base) + " #{name} "
           num %= base
         end
       end
