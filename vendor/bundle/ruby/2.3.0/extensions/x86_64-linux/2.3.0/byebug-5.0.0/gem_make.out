@@ -1,0 +1,19 @@
+current directory: /home/samps/sites/assignments/learn_ruby/vendor/bundle/ruby/2.3.0/gems/byebug-5.0.0/ext/byebug
+/usr/bin/ruby -r ./siteconf20161027-1433-fbqg38.rb extconf.rb
+creating Makefile
+
+current directory: /home/samps/sites/assignments/learn_ruby/vendor/bundle/ruby/2.3.0/gems/byebug-5.0.0/ext/byebug
+make "DESTDIR=" clean
+
+current directory: /home/samps/sites/assignments/learn_ruby/vendor/bundle/ruby/2.3.0/gems/byebug-5.0.0/ext/byebug
+make "DESTDIR="
+compiling threads.c
+compiling byebug.c
+compiling context.c
+compiling locker.c
+compiling breakpoint.c
+linking shared-object byebug/byebug.so
+
+current directory: /home/samps/sites/assignments/learn_ruby/vendor/bundle/ruby/2.3.0/gems/byebug-5.0.0/ext/byebug
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20161027-1433-zgd52b/byebug
