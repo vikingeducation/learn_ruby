@@ -24,6 +24,8 @@ class Fixnum
 		end	
 	end
 
+	private
+
 	def descriptor(exp)
 		return " trillion" if exp == 12
 		return " billion" if exp == 9
