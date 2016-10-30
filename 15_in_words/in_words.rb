@@ -35,15 +35,16 @@ class Fixnum
       1 => "one"
     }
     string = ""
-    if self == 0
-      return "zero"
-    else
-      dictionary.each do |int, word|
-        if self/int > 0
-          string += word + ' ' + (self/10).in_words
-          string.strip!
-          break
-        end
+    dictionary.each do |int, word|
+      if self/int > 0 && self/10 > 0
+        string += word + ' ' + (self/10).in_words
+        string.strip!
+        break
+      elsif self == int
+        string = word
+        string.strip!
+      elsif self/10 == 0 && self == 0
+        string = "zero"
       end
     end
     string
