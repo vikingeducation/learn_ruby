@@ -13,3 +13,7 @@ def sum(arr)
   arr.each{|x| total += x }
   return total
 end
+
+def multiply
+
+end
