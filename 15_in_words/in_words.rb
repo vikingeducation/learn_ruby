@@ -1,6 +1,7 @@
 class Fixnum
 	def in_words
 		case
+		when self >= 1_000_000_000_000_000 then raise "Sorry, number too high!"
 		when self >= 1_000_000_000_000 then hundreds_and_up(12)
 		when self >= 1_000_000_000 then hundreds_and_up(9) 	
 		when self >= 1_000_000 then hundreds_and_up(6)
@@ -16,8 +17,10 @@ class Fixnum
 			return teen_beginnings(self%10) + 'teen'
 		when self/10 == 0 # ones
 			return ones(self)
+		when self < 0
+			return "negative " + (self.abs).in_words
 		else 
-			return "Sorry, too high!"
+			return "Unknown number"
 		end	
 	end
 
