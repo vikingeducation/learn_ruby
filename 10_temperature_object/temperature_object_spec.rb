@@ -98,6 +98,14 @@ describe Temperature do
   #
   describe "utility class methods" do
 
+    it "converts fahrenheit to celsius" do
+      expect(Temperature.ftoc(32)).to eq(0)
+    end
+
+    it "converts celsius to faharenheit" do
+      expect(Temperature.ctof(0)).to eq(32)
+    end
+
   end
 
   # Here's another way to solve the problem!
