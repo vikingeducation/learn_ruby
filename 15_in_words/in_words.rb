@@ -1,11 +1,11 @@
 class Fixnum
 	def in_words
-		case 	
-		when self >= 1_000_000_000_000 then hundreds_and_up(1_000_000_000_000)
-		when self >= 1_000_000_000 then hundreds_and_up(1_000_000_000)
-		when self >= 1_000_000 then hundreds_and_up(1_000_000)
-		when self >= 1000 then hundreds_and_up(1_000)
-		when self >= 100 then hundreds_and_up(100)
+		case
+		when self >= 1_000_000_000_000 then hundreds_and_up(12)
+		when self >= 1_000_000_000 then hundreds_and_up(9) 	
+		when self >= 1_000_000 then hundreds_and_up(6)
+		when self >= 1000 then hundreds_and_up(3)
+		when self >= 100 then hundreds_and_up(2)
 		when self/10 > 1 #tens
 			return tens(self/10) if self%10 == 0 
 			return tens(self/10) + " " + ones(self%10)
@@ -21,17 +21,17 @@ class Fixnum
 		end	
 	end
 
-	def descriptor(place)
-		return " trillion" if place == 1_000_000_000_000
-		return " billion" if place == 1_000_000_000
-		return " million" if place == 1_000_000
-		return " thousand" if place == 1000
+	def descriptor(exp)
+		return " trillion" if exp == 12
+		return " billion" if exp == 9
+		return " million" if exp == 6
+		return " thousand" if exp == 3
 		return " hundred"
 	end
 
-	def hundreds_and_up(place)
-		return (self/place).in_words + descriptor(place) if self%place == 0
-		return (self/place).in_words + descriptor(place) + " " + (self%place).in_words
+	def hundreds_and_up(exp)
+		return (self / (10**exp) ).in_words + descriptor(exp) if self%(10**exp) == 0
+		return (self/ (10**exp) ).in_words + descriptor(exp) + " " + (self%(10**exp)).in_words
 	end
 
 	def ones(n)
