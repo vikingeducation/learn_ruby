@@ -3,10 +3,30 @@ require 'pry-byebug'
 
 class Fixnum
   def in_words
-    dictionary = {
+    string = self.to_s
+    one_less_digit = string[1..string.length].to_i
+    first_digit = string[0].to_i
+    output = ""
+    orders_of_magnitude = {
+      1000000000000 => "trillion",
+      1000000000 => "billion",
       1000000 => "million",
       1000 => "thousand",
       100 => "hundred",
+    }
+    orders_of_magnitude.each do |magnitude, word|
+      if self >= magnitude
+        quantity = self / magnitude
+        remainder = self - quantity * magnitude
+        if remainder > 0
+          output += quantity.in_words + ' ' + word + ' ' + remainder.in_words
+        else
+          output += quantity.in_words + ' ' + word
+        end
+        return output
+      end
+    end
+    dictionary = {
       90 => "ninety",
       80 => "eighty",
       70 => "seventy",
@@ -35,23 +55,6 @@ class Fixnum
       2 => "two",
       1 => "one"
     }
-    string = self.to_s
-    one_less_digit = string[1..string.length].to_i
-    first_digit = string[0].to_i
-    output = ""
-    if self >= 1000
-      thousands = self / 1000
-      remainder = self - thousands * 1000
-      if remainder > 0
-        output += thousands.in_words + ' thousand ' + (self - thousands*1000).in_words
-      else
-        output += thousands.in_words + ' thousand'
-      end
-      #binding.pry
-      return output
-    elsif self >= 100
-      output += first_digit.in_words + ' '
-    end
     dictionary.each do |match, word|
       if self/match > 0 && self > 20
         if one_less_digit == 0
