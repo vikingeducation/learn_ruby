@@ -3,8 +3,6 @@ require 'pry-byebug'
 
 class Fixnum
   def in_words
-    string = self.to_s
-    number_of_digits = string.length
     dictionary = {
       1000000 => "million",
       1000 => "thousand",
@@ -37,10 +35,16 @@ class Fixnum
       2 => "two",
       1 => "one"
     }
+    string = self.to_s
+    one_less_digit = string[1..string.length].to_i
+    first_digit = string[0].to_i
     output = ""
+    if self >= 100
+      output += first_digit.in_words + ' '
+      #binding.pry
+    end
     dictionary.each do |int, word|
       if self/int > 0 && self/10 > 0 && self > 20
-        one_less_digit = string[1..string.length].to_i
         if one_less_digit == 0
           output += word
         else
