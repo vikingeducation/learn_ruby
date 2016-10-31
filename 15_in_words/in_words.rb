@@ -39,12 +39,21 @@ class Fixnum
     one_less_digit = string[1..string.length].to_i
     first_digit = string[0].to_i
     output = ""
-    if self >= 100
-      output += first_digit.in_words + ' '
+    if self >= 1000
+      thousands = self / 1000
+      remainder = self - thousands * 1000
+      if remainder > 0
+        output += thousands.in_words + ' thousand ' + (self - thousands*1000).in_words
+      else
+        output += thousands.in_words + ' thousand'
+      end
       #binding.pry
+      return output
+    elsif self >= 100
+      output += first_digit.in_words + ' '
     end
-    dictionary.each do |int, word|
-      if self/int > 0 && self/10 > 0 && self > 20
+    dictionary.each do |match, word|
+      if self/match > 0 && self > 20
         if one_less_digit == 0
           output += word
         else
@@ -52,7 +61,7 @@ class Fixnum
         end
         output.strip!
         break
-      elsif self == int
+      elsif self == match
         output = word
         output.strip!
       elsif self/10 == 0 && self == 0
@@ -60,6 +69,5 @@ class Fixnum
       end
     end
     output
-
   end
 end
