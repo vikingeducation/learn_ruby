@@ -1,3 +1,6 @@
+require 'pry'
+require 'pry-byebug'
+
 class Fixnum
   def in_words
     string = self.to_s
@@ -34,29 +37,25 @@ class Fixnum
       2 => "two",
       1 => "one"
     }
-    string = ""
+    output = ""
     dictionary.each do |int, word|
-      if self/int > 0 && self/10 > 0
-        string += word + ' ' + (self/10).in_words
-        string.strip!
+      if self/int > 0 && self/10 > 0 && self > 20
+        one_less_digit = string[1..string.length].to_i
+        if one_less_digit == 0
+          output += word
+        else
+          output += word + ' ' + one_less_digit.in_words
+        end
+        output.strip!
         break
       elsif self == int
-        string = word
-        string.strip!
+        output = word
+        output.strip!
       elsif self/10 == 0 && self == 0
-        string = "zero"
+        output = "zero"
       end
     end
-    string
-    # if self > 20
-    #   tens = self / 10 * 10
-    #   ones = self % 10
-    #   first_digit = string[0].to_i
-    #   "#{}"
-    # elsif self >= 100
-    #   hundreds = self / 100 * 100
-    #   thousands = self / 1000 * 1000
-    # end
+    output
 
   end
 end
