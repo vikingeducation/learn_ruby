@@ -7,7 +7,6 @@ def translate(words)
 
   # Check one word at time
   word_arr.each_with_index do |word, i|
-    max_check = 3
     j = 0
     not_vowels = ""
     continguous_con = true
@@ -17,28 +16,21 @@ def translate(words)
       word.concat("ay")
     else
       # Checks first 3 characters of a word
-      while j < max_check
-        # puts "continguous_con #{continguous_con} and j is #{j}"
+      while j < 3
         if((is_vowel(word,j) == false) && continguous_con)
-          letter = word[j]
-          # puts "letter is #{letter}"
-          not_vowels += letter
+          not_vowels += word[j]
         else
           continguous_con = false
-          # puts "continguous_con was reached so its a vowel"
         end
         j += 1
-         # puts "not_vowels #{not_vowels}"
       end
 
       num_of_con = not_vowels.length
       word_arr[i] = word.slice!(num_of_con..-1).concat(not_vowels) + "ay"
-      # word.concat("ay")
     end
   end
 
   word_arr.join(" ")
-  # puts "word_arr #{word_arr}"
 end
 
 
@@ -55,4 +47,3 @@ def is_vowel(word, pos)
 end
 
 
-translate("banana")
