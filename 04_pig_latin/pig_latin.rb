@@ -36,6 +36,7 @@ end
 
 # Returns true or false if the letter is a vowel
 def is_vowel(word, pos)
+# "u" is not considered a vowel in pig latin
   vowels = ["a", "e", "i", "o"]
   is_vowel = false
   vowels.each do |vowel|
