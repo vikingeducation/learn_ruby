@@ -31,10 +31,10 @@ describe "#translate" do
     expect(s).to eq("ananabay")
   end
 
-  # it "translates a word beginning with two consonants" do
-  #   s = translate("cherry")
-  #   expect(s).to eq("errychay")
-  # end
+  it "translates a word beginning with two consonants" do
+    s = translate("cherry")
+    expect(s).to eq("errychay")
+  end
 
   it "translates two words" do
     s = translate("eat pie")
@@ -67,6 +67,9 @@ describe "#translate" do
 
   # Test-driving bonus:
   # * write a test asserting that capitalized words are still capitalized (but with a different initial capital letter, of course)
-  # * retain the punctuation from the original phrase
+  it "translates many words and retain the punctuation from the original phrase" do
+    s = translate("The quick brown Fox")
+    expect(s).to eq("eThay ickquay ownbray oxFay")
+  end
 
 end
