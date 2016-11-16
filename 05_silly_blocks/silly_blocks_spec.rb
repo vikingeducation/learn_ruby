@@ -18,12 +18,12 @@ describe "some silly block functions" do
       expect(result).to eq("olleh")
     end
 
-    # it "reverses each word in the string returned by the default block" do
-    #   result = reverser do
-    #     "hello dolly"
-    #   end
-    #   expect(result).to eq("olleh yllod")
-    # end
+    it "reverses each word in the string returned by the default block" do
+      result = reverser do
+        "hello dolly"
+      end
+      expect(result).to eq("olleh yllod")
+    end
   end
 
   describe "adder" do
@@ -33,11 +33,11 @@ describe "some silly block functions" do
       end).to eq(6)
     end
 
-    # it "adds 3 to the value returned by the default block" do
-    #   expect(adder(3) do
-    #     5
-    #   end).to eq(8)
-    # end
+    it "adds 3 to the value returned by the default block" do
+      expect(adder(3) do
+        5
+      end).to eq(8)
+    end
   end
 
   describe "repeater" do

@@ -1,21 +1,42 @@
 # TDD RSpec
 # silly_blocks.rb
 
+# Reverse words in string
 def reverser
-  "hello".reverse!
-  # "hello dolly".reverse!
+  str = yield
+  words = str.split(" ")
+
+  words.each do |word|
+    word.reverse!
+  end
+  words.join(" ")
+end
+
+result = reverser do
+  "hello"
+end
+
+reverse_words = reverser do
+  "hello dolly"
 end
 
 
-def adder
-  5 + 1
+def adder(n=1)
+  yield + n
 end
 
-# def adder(n)
-#   5 + 3
+ adder(3) do
+  5
+ end
+
+
+
+def repeater(n=1)
+  n.times do
+    yield
+  end
+end
+
+# block_was_executed = repeater do
+#   true
 # end
-
-
-def repeater
-  true
-end
