@@ -3,6 +3,7 @@
 
 def measure(n=1)
   time_start = Time.now
+  
   if (n>1)
     n.times do
       yield
@@ -11,7 +12,9 @@ def measure(n=1)
     yield
   end
 
-  (Time.now - time_start) / (n=1 ? 1 : n)
+# Get the time elapsed if the function is called once otherwise
+# get the average time
+  (Time.now - time_start) / (n==1 ? 1 : n)
 end
 
 measure do
