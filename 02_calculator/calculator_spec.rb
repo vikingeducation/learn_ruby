@@ -79,21 +79,39 @@ end
 
 describe "#multiply" do
 
-  it "multiplies two numbers"
+  it "multiplies two numbers" do
+    expect(multiply(7,11)).to eq(77)
+    expect(multiply(0,2)).to eq(0)
+    expect(multiply(5,1)).to eq(5)
+  end
 
   it "multiplies several numbers"
   
 end
 
 describe "#power" do
-  it "raises one number to the power of another number"
+  it "raises one number to the power of another number" do
+    expect(power(2,2)).to eq(4)
+    expect(power(1,3)).to eq(1)
+    expect(power(3,3)).to eq(27)
+  end
 end
 
 # http://en.wikipedia.org/wiki/Factorial
 describe "#factorial" do
-  it "computes the factorial of 0"
-  it "computes the factorial of 1"
-  it "computes the factorial of 2"
-  it "computes the factorial of 5"
-  it "computes the factorial of 10"
+  it "computes the factorial of 0" do
+    expect(factorial(0)).to eq(0)
+  end
+  it "computes the factorial of 1" do
+    expect(factorial(1)).to eq(1)
+  end
+  it "computes the factorial of 2" do
+    expect(factorial(2)).to eq(2)
+  end
+  it "computes the factorial of 5" do
+    expect(factorial(5)).to eq(120)
+  end
+  it "computes the factorial of 10" do
+    expect(factorial(10)).to eq(3628800)
+  end
 end
