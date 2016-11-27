@@ -17,7 +17,7 @@
 #
 #
 
-require "temperature"
+require "./temperature.rb"
 
 describe Temperature do
 

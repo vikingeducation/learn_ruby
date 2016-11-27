@@ -6,7 +6,7 @@
 # * loops
 #
 
-require "silly_blocks"
+require "./sill_blocks.rb"
 
 describe "some silly block functions" do
 

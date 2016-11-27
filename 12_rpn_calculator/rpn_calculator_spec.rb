@@ -33,7 +33,7 @@
 # * <http://en.wikipedia.org/wiki/Reverse_Polish_notation>
 # * <http://www.calculator.org/rpn.aspx>
 #
-require "rpn_calculator"
+require "./rpn_calculator.rb"
 
 describe RPNCalculator do
 
