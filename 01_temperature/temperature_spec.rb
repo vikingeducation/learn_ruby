@@ -15,7 +15,7 @@
 #    1.0 / 2.0 => 0.5
 #
 
-require "temperature"
+require "./temperature"
 
 describe "temperature conversion functions" do
 
@@ -30,7 +30,7 @@ describe "temperature conversion functions" do
     end
 
     it "converts body temperature" do
-      expect(ftoc(98.6)).to eq(37)
+      expect(ftoc(98.6)).to be_within(0.1).of(37)
     end
 
     it "converts arbitrary temperature" do
