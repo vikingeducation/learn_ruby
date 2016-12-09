@@ -47,7 +47,7 @@ attr_accessor :entries, :keywords
 
   def printable
     words_sorted = @entries.sort_by { |word, defn| word}
-    words_sorted.map{ |word, defn| "[#{word}] \"#{defn}\"\n" }.join
+    words_sorted.map{ |word, defn| "[#{word}] \"#{defn}\"" }.join("\n")
 
     # sorted_keys = @entries.keys.sort
 
