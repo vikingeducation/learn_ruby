@@ -28,7 +28,7 @@ attr_accessor :entries, :keywords
 
 
   def keywords
-    @entries.keys
+    @entries.keys.sort
   end
 
   def include?(word)
@@ -36,16 +36,28 @@ attr_accessor :entries, :keywords
   end
 
   def find(word)
-    if(@entries.has_key?(word))
-    # Returns the key-value as an array which has to be forced back to a has value
-      # Hash[*@entries.assoc(word)]
-      @entries.select { |w,d| w == word} 
 
-      # {word => @entries[word]}
+    if(@entries.has_key?(word))
+      @entries.select { |w,d| w == word} 
     else
-      return {}
+      @entries.select { |key, value| key.start_with?(word)}
     end
 
+  end
+
+  def printable
+    words_sorted = @entries.sort_by { |word, defn| word}
+    words_sorted.map{ |word, defn| "[#{word}] \"#{defn}\"\n" }.join
+
+    # sorted_keys = @entries.keys.sort
+
+    # sorted_keys.each do | word|
+    #   "[#{word}] \"#{defn}\""
+    # end
+
+    # @entries.each do |word, defn|
+    #   output += "[#{word}] \"#{defn}\""
+    # end
   end
 
 end
