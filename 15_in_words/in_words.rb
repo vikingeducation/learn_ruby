@@ -24,6 +24,8 @@ class Fixnum
       hundreds(self)
     elsif (self < 1000000)
       thousands(self)
+    elsif (self < 1_000_000_000)
+      millions(self)
     end
 
   end
@@ -115,30 +117,70 @@ class Fixnum
 
    def hundreds(n)
     hundred = "hundred"
-    remainder_100 = n%100
+    remainder = n%100
 
-      i = single_dig(n/100).concat(" " + hundred)
+    # Get how many hundreds first
+    i = single_dig(n/100).concat(" " + hundred)
 
-      if ((remainder_100 != 0) && (remainder_100 < 20))
-        j = teens(remainder_100)
-      else
-        j = tens(remainder_100)
-      end
-    return i.concat(" " + j).strip
+    # Then utilise the tens and teens functions
+    if ((remainder != 0) && (remainder < 20))
+      j = teens(remainder)
+    else
+      j = tens(remainder)
+    end
+  return i.concat(" " + j).strip
   end
 
   def thousands(n)
     thousand = "thousand"
-    remainder_1000 = n%1000
+    remainder = n%1000
+    divide_1000 = n/1000
+    
+    # Get how many thousands first
+    if (remainder == 0)
+      i = single_dig(divide_1000).concat(" " + thousand)
+    elsif((remainder !=0) && (divide_1000 < 20))
+      i = teens(divide_1000).concat(" " + thousand)
+    elsif((remainder !=0) && (divide_1000 < 100))
+      i = tens(divide_1000).concat(" " + thousand)
+    end
 
-      i = single_dig(n/1000).concat(" " + thousand)
-
-      # if ((remainder_100 != 0) && (remainder_100 < 20))
-      #   j = teens(remainder_100)
-      # else
-      #   j = tens(remainder_100)
-      # end
+    # Then utilise the 100s function to do the rest
+    if(remainder != 0)
+      j = hundreds(remainder)
+    else
       j = ""
+    end
+
+    return i.concat(" " + j).strip
+  end
+
+  def millions(n)
+    million = "million"
+    remainder = n%1000000
+    divide_mill = n/1000000
+
+    remainder_1000 = n%1000
+    remainder_100 = n%1000
+    
+    # Get how many millions first
+    if (remainder == 0)
+      i = single_dig(divide_mill).concat(" " + million)
+      puts "#{i} single"
+    elsif((remainder !=0) && (divide_mill < 20))
+      i = teens(divide_mill).concat(" " + million)
+      puts "#{i} tens"
+    elsif((remainder !=0) && (divide_mill < 100))
+      i = tens(divide_mill).concat(" " + million)
+    end
+
+    # Then utilise the 1000s function to do the rest
+    if(remainder != 0)
+      j = thousands(remainder)
+    else
+      j = ""
+    end
+
     return i.concat(" " + j).strip
   end
 
