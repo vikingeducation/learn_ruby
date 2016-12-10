@@ -41,6 +41,7 @@ describe "some silly block functions" do
   end
 
   describe "repeater" do
+    
     it "executes the default block" do
       block_was_executed = false
       repeater do
