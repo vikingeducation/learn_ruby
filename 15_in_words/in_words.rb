@@ -14,13 +14,13 @@ class Fixnum
     words = []
     num = self
 
+    # split num into chunks of 3 digits and store in array
     chunks = self.to_s.reverse.scan(/.{1,3}/).reverse.map!{|n| n.reverse.to_i}
 
+    # keep track of the chunk of 1000 we're on
     z = chunks.size
 
     chunks.each_with_index do |n, i|
-
-      puts "n #{n}"
 
       n = hundreds(words, n)
 
