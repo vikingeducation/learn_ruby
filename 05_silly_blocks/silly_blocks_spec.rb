@@ -29,13 +29,13 @@ describe "some silly block functions" do
   describe "adder" do
     it "adds one to the value returned by the default block" do
       expect(adder do
-        5
+               5
       end).to eq(6)
     end
 
     it "adds 3 to the value returned by the default block" do
       expect(adder(3) do
-        5
+               5
       end).to eq(8)
     end
   end
