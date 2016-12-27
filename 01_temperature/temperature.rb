@@ -1,5 +1,5 @@
 def ftoc(f_temp)
-  ((f_temp - 32) * 5)/9
+  ((f_temp - 32.0) * 5.0)/9.0
 end
 
 def ctof(c_temp)
