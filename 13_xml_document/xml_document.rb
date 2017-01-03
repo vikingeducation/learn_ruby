@@ -17,13 +17,13 @@ class XmlDocument
   def goodbye(_options = {}, &block)
     return xml_builder('goodbye', &block) if block_given?
 
-    "<goodbye/>"
+    '<goodbye/>'
   end
 
   def come_back(_options = {}, &block)
     return xml_builder('come_back', &block) if block_given?
 
-    "<come_back/>"
+    '<come_back/>'
   end
 
   def ok_fine(options = {}, &block)
