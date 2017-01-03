@@ -6,7 +6,7 @@ class XmlDocument
     @indent_count = 0
   end
 
-  def hello(options = {})
+  def hello(options = {}, &block)
     builder = ''
     builder = " name='#{options[:name]}'" if options[:name]
 
