@@ -7,62 +7,28 @@ class XmlDocument
   end
 
   def hello(options = {}, &block)
-    builder = ''
     builder = " name='#{options[:name]}'" if options[:name]
 
-    if block_given?
-      built_xml = ''
-      if @indent
-        indent_space = increase_indent
-        built_xml = "#{indent_space}<hello>\n#{yield}#{indent_space}</hello>\n"
-      else
-        built_xml = "<hello>#{yield}</hello>"
-      end
-
-      return built_xml
-    end
+    return xml_builder('hello', &block) if block_given?
 
     "<hello#{builder}/>"
   end
 
-  def goodbye
-    builder = ''
-    if block_given?
-      built_xml = ''
-      if @indent
-        indent_space = increase_indent
-        built_xml = "#{indent_space}<goodbye>\n#{yield}#{indent_space}</goodbye>\n"
-      else
-        built_xml = "<goodbye>#{yield}</goodbye>"
-      end
+  def goodbye(_options = {}, &block)
+    return xml_builder('goodbye', &block) if block_given?
 
-      return built_xml
-    end
-
-    "<goodbye#{builder}/>"
+    "<goodbye/>"
   end
 
-  def come_back
-    builder = ''
-    if block_given?
-      built_xml = ''
-      if @indent
-        indent_space = increase_indent
-        built_xml = "#{indent_space}<come_back>\n#{yield}#{indent_space}</come_back>\n"
-      else
-        built_xml = "<come_back>#{yield}</come_back>"
-      end
+  def come_back(_options = {}, &block)
+    return xml_builder('come_back', &block) if block_given?
 
-      return built_xml
-    end
-
-    "<come_back#{builder}/>"
+    "<come_back/>"
   end
 
-  def ok_fine(options = {})
-    builder = ''
+  def ok_fine(options = {}, &block)
     builder = " be='#{options[:be]}'" if options[:be]
-    return "<ok_fine>#{yield}</ok_fine>" if block_given?
+    return xml_builder('ok_fine', &block) if block_given?
 
     if @indent
       indent_space = increase_indent
@@ -72,10 +38,22 @@ class XmlDocument
     end
   end
 
+  def xml_builder(caller)
+    built_xml = ''
+    if @indent
+      indent_space = increase_indent
+      built_xml = "#{indent_space}<#{caller}>\n#{yield}#{indent_space}</#{caller}>\n"
+    else
+      built_xml = "<#{caller}>#{yield}</#{caller}>"
+    end
+
+    built_xml
+  end
+
   def increase_indent
     indent_space = '  ' * @indent_count
     @indent_count = 1 + @indent_count
-    return indent_space
+    indent_space
   end
 
   def send(tag_name)
