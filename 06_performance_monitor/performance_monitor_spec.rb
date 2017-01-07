@@ -31,7 +31,7 @@ describe "Performance Monitor" do
   end
 
   it "takes about 1 second to run a block that sleeps for 1 second" do
-    elapsed_time = measure do
+    elapsed_time = measure() do
       sleep 1
     end
     expect(elapsed_time).to be_within(0.1).of(1)
