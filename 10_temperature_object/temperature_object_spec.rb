@@ -15,8 +15,6 @@
 # The temperature object's constructor should accept an *options hash* which contains either a `:celcius` entry or a `:fahrenheit` entry.
 #
 #
-#
-
 require "temperature"
 
 describe Temperature do
