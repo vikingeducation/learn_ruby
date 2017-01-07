@@ -1,4 +1,4 @@
-# # Topics
+  # # Topics
 # * arrays
 # * arithmetic
 # * strings
@@ -91,7 +91,7 @@ describe RPNCalculator do
     # 1 2 + 3 * => (1 + 2) * 3
     calculator.push(1)
     calculator.push(2)
-    calculator.plus
+    calculator.plus 
     calculator.push(3)
     calculator.times
     expect(calculator.value).to eq((1+2)*3)
