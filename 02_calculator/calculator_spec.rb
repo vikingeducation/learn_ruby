@@ -33,7 +33,7 @@
 #
 #
 
-require "calculator"
+require_relative "calculator"
 
 describe "add" do
   it "adds 0 and 0" do
