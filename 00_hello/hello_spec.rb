@@ -113,7 +113,8 @@
 #       "Hello, #{who}!"
 #     end
 #
-require "hello"
+# require "hello"
+require_relative "./hello.rb"
 
 describe "the hello function" do
   it "says hello" do
