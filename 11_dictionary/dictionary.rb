@@ -43,7 +43,7 @@ class Dictionary
     result << "[#{key}] \"#{val}\"\n"
 
     end
-    result.strip #remove last \n
+    result
 
   end
 
