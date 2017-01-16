@@ -41,7 +41,6 @@ class Dictionary
     result = ""
     hash.each do |key,val|
     result << "[#{key}] \"#{val}\"\n"
-
     end
     result
 
