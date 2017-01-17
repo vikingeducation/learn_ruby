@@ -1,0 +1,9 @@
+#convert fahrenheit to celsius
+def ftoc(temp_f)
+  (temp_f - 32) * (5.0/9.0)
+end
+
+#convert celsius to fahrenheit
+def ctof(temp_c)
+  (temp_c) * (9.0/5.0) + 32
+end
