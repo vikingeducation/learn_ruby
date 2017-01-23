@@ -13,3 +13,7 @@ end
 def multiply(numbers)
   numbers.inject(1) { |product, number| product * number }
 end
+
+def power(base, exponent)
+  base ** exponent
+end
