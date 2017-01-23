@@ -1,7 +1,8 @@
 def translate(sentence)
   words = sentence.split
-  translated_words = words.map { |word| translate_word(word) }
-  translated_words.join(" ")
+  words = words.map { |word| translate_word(word) }
+  words = words.map { |word| correct_capitalization(word) }
+  words.join(" ")
 end
 
 def translate_word(word)
@@ -15,16 +16,15 @@ def translate_word(word)
 
   # word contains "qu" phoneme
   if has_qu_phoneme?(word)
-    # check if "qu" is preceded by a consonant
-    qu_index = word.index("qu")
+    qu_index = word.index(/[Qq]u/)
 
     # word starts with "qu"
     if qu_index == 0
-      return word[2..-1] + "qu" + ay_sound
+      return word[2..-1] + word[qu_index..qu_index + 1] + ay_sound
     else
       # "qu" is preceded by another character, check if it's a consonant
       if !vowels.include?(word[qu_index - 1])
-        return word[qu_index + 2..-1] + word[qu_index - 1..qu_index + 1] + "ay"
+        return word[qu_index + 2..-1] + word[qu_index - 1..qu_index + 1] + ay_sound
       end
     end
   end
@@ -54,6 +54,13 @@ end
 
 # check if word has the "qu" phoneme
 def has_qu_phoneme?(word)
-  word[0..2].include?("qu")
+  word.downcase[0..2].include?("qu")
 end
 
+def correct_capitalization(word)
+  if word.downcase != word
+    return word.downcase.capitalize
+  else
+    return word
+  end
+end
