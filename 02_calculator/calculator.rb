@@ -17,3 +17,13 @@ end
 def power(base, exponent)
   base ** exponent
 end
+
+def factorial(number)
+  raise "Invalid input" if number < 0
+
+  1 if number == 0 || number == 1
+
+  result = 1
+  number.downto(1) { |n| result *= n }
+  result
+end
