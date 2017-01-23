@@ -78,11 +78,15 @@ end
 # write tests and code for the following:
 
 describe "#multiply" do
+  it "multiplies two numbers" do
+    expect(multiply([2, 5])).to eq(10)
+    expect(multiply([5, 10])).to eq(50)
+  end
 
-  it "multiplies two numbers"
-
-  it "multiplies several numbers"
-  
+  it "multiplies several numbers" do
+    expect(multiply([1, 2, 3])).to eq(6)
+    expect(multiply([0, 5, 10])).to eq(0)
+  end
 end
 
 describe "#power" do
