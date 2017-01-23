@@ -22,3 +22,13 @@ def adder(input=0)
     end
   end
 end
+
+def repeater(num_times=1)
+  if block_given?
+    if num_times == 1
+      yield
+    else
+      num_times.times { yield }
+    end
+  end
+end
