@@ -18,3 +18,14 @@ end
 def first_word(sentence)
   sentence.split[0]
 end
+
+def titleize(sentence)
+  excluded_words = %w(a an the for and nor but or yet so
+                      at around by after along for from of
+                      on to with without over)
+
+  words = sentence.split(" ")
+  words.map { |word| word.capitalize! unless excluded_words.include?(word) }
+  words[0].capitalize!
+  words.join(" ")
+end
