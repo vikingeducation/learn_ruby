@@ -1,9 +1,7 @@
 def measure(passes = 1)
   if block_given?
     start_time = Time.now
-    passes.times do |pass|
-      yield
-    end
+    passes.times { |pass| yield }
     return (Time.now - start_time) / passes.to_f
   end
 
