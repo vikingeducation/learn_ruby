@@ -10,3 +10,15 @@ def reverser
     end
   end
 end
+
+def adder(input=0)
+  if block_given?
+    block = yield
+    
+    if input == 0
+      return block + 1
+    else
+      return input + 5
+    end
+  end
+end
