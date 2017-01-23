@@ -14,3 +14,7 @@ end
 def start_of_word(word, num_letters)
   word[0..(num_letters - 1)]
 end
+
+def first_word(sentence)
+  sentence.split[0]
+end
