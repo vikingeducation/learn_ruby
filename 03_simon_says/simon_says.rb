@@ -10,3 +10,7 @@ def repeat(phrase, num_times=2)
   output = (" " + phrase) * num_times
   output.strip
 end
+
+def start_of_word(word, num_letters)
+  word[0..(num_letters - 1)]
+end
