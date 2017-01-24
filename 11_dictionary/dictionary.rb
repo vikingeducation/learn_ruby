@@ -26,21 +26,14 @@ class Dictionary
 
   def find(word)
     output = {}
-    @keywords.each do |keyword|
-    
-      if keyword.start_with?(word)
-        output[keyword] = @entries[keyword]
-      end
-    end
+    @keywords.each { |keyword| output[keyword] = @entries[keyword] if keyword.start_with?(word) }
     
     output  
   end
 
   def printable
     output = ""
-    @keywords.each do |keyword|
-      output += "[#{keyword}] \"#{@entries[keyword]}\"\n"
-    end
+    @keywords.each { |keyword| output += "[#{keyword}] \"#{@entries[keyword]}\"\n" }
 
     output.chomp
   end
