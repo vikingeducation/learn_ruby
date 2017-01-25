@@ -28,4 +28,8 @@ class XmlDocument
   def send(tag_name)
     "<#{tag_name}/>"
   end
+
+  def goodbye
+    "<goodbye/>"
+  end
 end
