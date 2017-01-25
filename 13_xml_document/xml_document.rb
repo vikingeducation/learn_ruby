@@ -2,34 +2,44 @@ class XmlDocument
   def initialize
   end
 
-  def hello(options = {})
-    # do we need to consider the case where
-    # both a block and options hash are given?
+  def send(tag_name, options = {}, &block)
+    block_content = ""
+    attributes = ""
 
-    if block_given?
-      text = yield
-      return "<hello>#{text}</hello>"
-    elsif options.empty?
-      return "<hello/>"
-    else
-      start_tag = "<hello"
-      end_tag = "/>"
-      attributes = ""
-    
+    # handle block if a block is provided
+    block_content = yield if block_given?
+
+    # build attributes string
+    unless options.empty?
       options.each do |key, value|
-        attribute = "#{key}='#{value}'"
-        attributes += "#{attribute} "
+        attributes += "#{key}='#{value}' "
       end
 
-      return "#{start_tag} #{attributes.rstrip!}#{end_tag}"
+      attributes.rstrip!
+    end
+
+    # no block and no attributes provided
+    if block_content.empty? && attributes.empty?
+      return "<#{tag_name}/>"
+    end
+
+    # block provided, with no attributes
+    if !block_content.empty? && attributes.empty?
+      return "<#{tag_name}>#{block_content}</#{tag_name}>"
+    end
+
+    # no block provided, but attributes provided
+    if block_content.empty? && !attributes.empty?
+      return "<#{tag_name} #{attributes}/>"
+    end
+
+    # both block and attributes provided
+    if !block_content.empty? && !attributes.empty?
+      "<#{tag_name} #{attributes}>#{block_content}</#{tag_name}>"
     end
   end
 
-  def send(tag_name)
-    "<#{tag_name}/>"
-  end
-
-  def method_missing(symbol)
-    self.send(symbol)
+  def method_missing(symbol, options = {}, &block)
+    send(symbol, options, &block)
   end
 end
