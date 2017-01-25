@@ -11,19 +11,36 @@ class RPNCalculator
   end
 
   def plus
-    @expression << "+ "
+    # @expression.empty? ? raise "calculator is empty" : @expression << "+ "
+    if @expression.empty?
+      raise "calculator is empty"
+    else
+      @expression << "+ "
+    end
   end
 
   def minus
-    @expression << "- "
+    if @expression.empty?
+      raise "calculator is empty"
+    else
+      @expression << "- "
+    end
   end
 
   def divide
-    @expression << "/ "
+    if @expression.empty?
+      raise "calculator is empty"
+    else
+      @expression << "/ "
+    end
   end
 
   def times
-    @expression << "* "
+    if @expression.empty?
+      raise "calculator is empty"
+    else
+      @expression << "* "
+    end
   end
 
   def value
@@ -31,7 +48,6 @@ class RPNCalculator
 
     until tokens.empty?
       token = tokens.shift
-      p token
 
       unless operator?(token)
         @stack.push(token)
@@ -56,6 +72,21 @@ class RPNCalculator
     end
 
     return @stack.last
+  end
+
+  def tokens(string)
+    tokens = string.split
+    result = []
+
+    tokens.each do |token|
+      if operator?(token)
+        result << token.to_sym
+      else
+        result << token.to_f
+      end
+    end
+
+    result
   end
 
   def operator?(value)
