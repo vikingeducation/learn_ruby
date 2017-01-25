@@ -11,7 +11,6 @@ class RPNCalculator
   end
 
   def plus
-    # @expression.empty? ? raise "calculator is empty" : @expression << "+ "
     if @expression.empty?
       raise "calculator is empty"
     else
@@ -89,17 +88,14 @@ class RPNCalculator
     result
   end
 
+  def evaluate(string)
+    calc = RPNCalculator.new
+    calc.expression = string
+    calc.value
+  end
+
   def operator?(value)
     operators = %w(+ - / *)
     operators.include?(value)
   end
 end
-
-# calc = RPNCalculator.new
-# calc.push(2)
-# calc.push(3)
-# calc.push(4)
-# calc.divide
-# calc.times
-# p calc.expression
-# p calc.value
