@@ -3,20 +3,26 @@ class XmlDocument
   end
 
   def hello(options = {})
-    if options.empty?
+    # do we need to consider the case where
+    # both a block and options hash are given?
+
+    if block_given?
+      text = yield
+      return "<hello>#{text}</hello>"
+    elsif options.empty?
       return "<hello/>"
-    end
-
-    start_tag = "<hello"
-    end_tag = "/>"
-    attributes = ""
+    else
+      start_tag = "<hello"
+      end_tag = "/>"
+      attributes = ""
     
-    options.each do |key, value|
-      attribute = "#{key}='#{value}'"
-      attributes += "#{attribute} "
-    end
+      options.each do |key, value|
+        attribute = "#{key}='#{value}'"
+        attributes += "#{attribute} "
+      end
 
-    "#{start_tag} #{attributes.rstrip!}#{end_tag}"
+      return "#{start_tag} #{attributes.rstrip!}#{end_tag}"
+    end
   end
 
   def send(tag_name)
