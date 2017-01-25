@@ -29,7 +29,7 @@ class XmlDocument
     "<#{tag_name}/>"
   end
 
-  def goodbye
-    "<goodbye/>"
+  def method_missing(symbol)
+    self.send(symbol)
   end
 end
