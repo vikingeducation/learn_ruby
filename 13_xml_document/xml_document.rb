@@ -18,4 +18,8 @@ class XmlDocument
 
     "#{start_tag} #{attributes.rstrip!}#{end_tag}"
   end
+
+  def send(tag_name)
+    "<#{tag_name}/>"
+  end
 end
