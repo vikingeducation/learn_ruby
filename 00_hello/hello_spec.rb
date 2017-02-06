@@ -25,7 +25,7 @@
 # Open up `hello.rb` in a text editor. Save it. Run the test again.
 #
 #     rake
-#
+#ra
 # ## Watch it fail
 #
 # Now you should see an error like this:
