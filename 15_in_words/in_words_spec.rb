@@ -20,7 +20,7 @@
 
 require "in_words"
 
-describe Fixnum do
+describe Integer do
 
   it "reads 0 to 9" do
     expect(0.in_words).to eq('zero')
