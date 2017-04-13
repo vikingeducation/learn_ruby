@@ -6,7 +6,8 @@
 #
 #     cd 00_hello
 #
-# This directory is the starting point for this exercise. It contains a spec file and you'll be adding a ruby file to (eventually) make the specs pass.
+# This directory is the starting point for this exercise. It contains a spec
+# file and you'll be adding a ruby file to (eventually) make the specs pass.
 #
 # ## Run the test
 #
@@ -14,7 +15,8 @@
 #
 # ## Watch it fail
 #
-# You should see an error. **Don't get scared!** Try to read it and figure out what the computer wants to tell you. Somewhere on the first line it should say something like
+# You should see an error. **Don't get scared!** Try to read it and figure out
+# what the computer wants to tell you. Somewhere on the first line it should say something like
 #
 #     cannot load such file -- test-first-teaching/hello/hello (LoadError)
 #
