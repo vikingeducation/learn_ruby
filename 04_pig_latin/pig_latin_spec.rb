@@ -17,9 +17,9 @@
 #
 #
 
-require "pig_latin"
+require_relative "pig_latin"
 
-describe "#translate" do
+describe "translate" do
 
   it "translates a word beginning with a vowel" do
     s = translate("apple")
