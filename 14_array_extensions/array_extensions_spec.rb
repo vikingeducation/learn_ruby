@@ -6,7 +6,7 @@
 # * reopening classes
 #
 
-require "array_extensions" # we don't call it "array.rb" since that would be confusing
+require_relative "array_extensions" # we don't call it "array.rb" since that would be confusing
 
 describe Array do
 
