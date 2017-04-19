@@ -31,13 +31,7 @@ class Dictionary
 
 
   def printable
-    @entries.sort.each do |key,value|
-      puts "#{key}" "#{value}"
-    end
+    @entries.sort.map {|key,value| "\[#{key}\] \"#{value}\"\n"}.join.chomp
   end
 
 end
-
-
-#dic = Dictionary.new.add('fish' => 'water animal')
-#dic.printable
