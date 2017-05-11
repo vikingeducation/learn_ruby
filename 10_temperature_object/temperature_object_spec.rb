@@ -17,7 +17,7 @@
 #
 #
 
-require "temperature"
+require_relative "temperature"
 
 describe Temperature do
 
