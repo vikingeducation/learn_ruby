@@ -1,0 +1,6 @@
+
+
+run="git status \n git checkout -b adding-unit-tests \n git add . \n git commit -m 'adding some unit tests' \n git push origin adding-unit-tests"
+
+
+
